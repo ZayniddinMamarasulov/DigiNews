@@ -31,7 +31,8 @@ class _AuthPageState extends State<AuthPage> {
                 const SizedBox(height: 96),
                 signButtons(),
                 const SizedBox(height: 16),
-                signButtons()
+                signButtons(),
+                const Text("Forget pass")
               ],
             ),
           ),
