@@ -18,8 +18,8 @@ class NewsApp extends StatelessWidget {
   final String change8 = "identifikatsiya";
   final String change9 = "hozi biza giot commit qilib ozgairshlarni umuman olganda kodlarni local save qildik endi uni globalga push qilamiz";
   final String change10= "bro zor usuli bor edi esdan chiqib binnima qilib sizni boshizi qotiribman hoz.....";
-  final String sss= "aytaylik change boldi endi";
-
+  final String change11= "aytaylik change boldi endi";
+  final String change12= "menimcha endi oxshadi";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
