@@ -11,7 +11,7 @@ class NewsApp extends StatelessWidget {
   final String change = "Hozi biz ozgarish qildik";
   final String change2 = "shunga oxshatob proejctni kotarasiz";
   final String change3 = "yani ozgairshlar qilasiz";
-  final String change4 = "endi ozgairshlarni saqlaymiz buning uchun // git add . // yozamiz";
+  final String change4 = " endi ozgairshlarni saqlaymiz buning uchun // git add . // yozamiz";
   final String change5 = "agar sezgan bolsangiz qoshganimizdan keyin rang ozgardi";
   final String change6 = "git add tochka qilsez hamma fayllar qoshiladi agar bitta gayl qoshaman desez git add main.dart qilib noimini yozishiz kera";
   final String change7 = "hozir men yozgan korinishda commit yozasiz yan nima ishlar qilingani";
