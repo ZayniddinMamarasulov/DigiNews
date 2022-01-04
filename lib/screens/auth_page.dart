@@ -87,7 +87,7 @@ class _AuthPageState extends State<AuthPage> {
           const Padding(
             padding: EdgeInsets.only(left: 24, right: 24, bottom: 16),
               child: Text(
-            "By continuing, you accept the Terms of Use and Privacy Policy",
+            "By continuing, you accept the Terms of Use and Privacy Policy ",
             style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                 textAlign: TextAlign.center,
           )),
