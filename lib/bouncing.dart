@@ -1,10 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
-class Bounce extends StatelessWidget {
+class BounceScreen extends StatelessWidget {
   Widget child;
 
-  Bounce({Key? key, required this.child}) : super(key: key);
+  BounceScreen({Key? key, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class Bounce extends StatelessWidget {
         duration: const Duration(milliseconds: 100),
         scaleFactor: 1.5,
         onPressed: () {
-          print("onPressed");
+          debugPrint("onPressed");
         },
         child: child);
   }
