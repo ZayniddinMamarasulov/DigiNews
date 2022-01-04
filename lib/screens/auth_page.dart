@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/colors.dart';
-import 'package:news_app/screens/home_page.dart';
+
+import 'login_screen.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -35,7 +35,11 @@ class _AuthPageState extends State<AuthPage> {
                 signButtons(
                     imageUrl: "assets/sms.png",
                     color: Colors.black,
-                    onTap: (){
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginScreen()));
                       debugPrint("Continue with Email");
                     },
                     borderColor: Colors.transparent,
@@ -46,7 +50,7 @@ class _AuthPageState extends State<AuthPage> {
                     imageUrl: "assets/facebook.png",
                     color: Colors.black,
                     textColor: Colors.white,
-                    onTap: (){
+                    onTap: () {
                       debugPrint("Continue with Facebook");
                     },
                     borderColor: Colors.transparent,
@@ -56,7 +60,7 @@ class _AuthPageState extends State<AuthPage> {
                     imageUrl: "assets/google.png",
                     color: Colors.transparent,
                     textColor: Colors.black,
-                    onTap: (){
+                    onTap: () {
                       debugPrint("Continue with Google");
                     },
                     borderColor: const Color(0xffA6A6A6),
@@ -85,12 +89,12 @@ class _AuthPageState extends State<AuthPage> {
           ),
           const Spacer(),
           const Padding(
-            padding: EdgeInsets.only(left: 24, right: 24, bottom: 16),
+              padding: EdgeInsets.only(left: 24, right: 24, bottom: 16),
               child: Text(
-            " By continuing, you accept the Terms of Use and Privacy Policy ",
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                "By continuing, you accept the Terms of Use and Privacy Policy ",
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                 textAlign: TextAlign.center,
-          )),
+              )),
         ],
       ),
     );
@@ -130,24 +134,5 @@ class _AuthPageState extends State<AuthPage> {
         ),
       ),
     );
-  }
-
-  Route _createRoute() {
-    return PageRouteBuilder(
-        pageBuilder: (context, animations, secondaryAnimation) =>
-            const HomePage(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(1.0, 0.0);
-          const end = Offset.zero;
-          const curve = Curves.easeInOutQuad;
-
-          var tween =
-              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-          return SlideTransition(
-            position: animation.drive(tween),
-            child: child,
-          );
-        });
   }
 }
