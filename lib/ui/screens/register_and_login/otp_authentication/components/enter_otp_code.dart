@@ -138,7 +138,7 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
         onChanged: (value) {
           if (value.length == 1) {
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const PickTopicsPage()));
+                builder: (context) => PickTopicsPage()));
             print('ok');
           }
         },

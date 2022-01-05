@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/app_theme.dart';
 import 'package:news_app/ui/navigation/main_navigation.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class NewsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: DigiTheme.light(),
       debugShowCheckedModeBanner: false,
       title: "News App",
       // home: AuthPage(),

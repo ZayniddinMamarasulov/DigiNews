@@ -28,7 +28,7 @@ class _VerificationMethodState extends State<VerificationMethod> {
           methodTxt: 'Phone Number',
           text: 'Send to your phone number',
           icon: 'phone.png',
-          method: 2,
+          method: 2 ,
         ),
         ContinueButton(selectMethod: selectMethod),
       ],

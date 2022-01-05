@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/ui/navigation/main_navigation.dart';
-
 import 'components/agreement_text.dart';
 import 'components/login_text_button.dart';
 import 'components/sign_buttons.dart';

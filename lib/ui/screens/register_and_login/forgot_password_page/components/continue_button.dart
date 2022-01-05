@@ -3,6 +3,7 @@ import 'package:news_app/ui/navigation/main_navigation.dart';
 
 class ContinueButton extends StatelessWidget {
   final int selectMethod;
+
   const ContinueButton({Key? key, required this.selectMethod})
       : super(key: key);
 
