@@ -1,7 +1,6 @@
-import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../bouncing.dart';
+import '../../bouncing.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -51,12 +50,13 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Bounce(
-                  child: Container(
-                width: 120,
-                height: 60,
-                child: const Text("button"),
-                color: Colors.red,
-              ))
+                child: Container(
+                  width: 120,
+                  height: 60,
+                  child: const Text("button"),
+                  color: Colors.red,
+                ),
+              ),
             ],
           ),
         ),
