@@ -29,9 +29,7 @@ class _AuthPageState extends State<AuthPage> {
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 96),
-                signButtons(),
                 const SizedBox(height: 16),
-                signButtons(),
                 const Text("Forget pass")
               ],
             ),
@@ -41,7 +39,7 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
-  Widget signButtons() {
+  Widget signButtons(Color color, String text, ) {
     return InkWell(
       onTap: () {
         Navigator.of(context).push(_createRoute());
