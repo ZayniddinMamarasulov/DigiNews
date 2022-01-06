@@ -32,10 +32,10 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - assets/images/
 
 flutter_native_splash:
-  background_image: assets/splash.png
+  background_image: assets/images/splash.png
 
   android: true
   ios: true
