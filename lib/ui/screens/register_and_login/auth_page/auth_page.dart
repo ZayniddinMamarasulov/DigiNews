@@ -1,10 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/ui/navigation/main_navigation.dart';
-
-import 'components/agreement_text.dart';
-import 'components/login_text_button.dart';
-import 'components/sign_buttons.dart';
-import 'components/welcome_text.dart';
+import 'sign_buttons.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -24,14 +21,24 @@ class _AuthPageState extends State<AuthPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const WelcomeText(),
+              const SizedBox(height: 60.0),
+              Image.asset("assets/images/app_logo.png"),
+              const SizedBox(height: 24.0),
+              const Text(
+                "Welcome to\nDigiNews",
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.2,
+                ),
+              ),
+              const Spacer(),
               SignButtons(
                 color: Colors.black,
                 icon: 'assets/images/sms.png',
                 txt: 'Continue with Email',
                 func: () {
-                  print('email');
-                  showSnackbar(context, 'email button clicked');
+                  debugPrint('email button clicked');
                 },
               ),
               SignButtons(
@@ -39,7 +46,7 @@ class _AuthPageState extends State<AuthPage> {
                 icon: 'assets/images/fb_icon.png',
                 txt: 'Continue with Facebook',
                 func: () {
-                  showSnackbar(context, 'facebook button clicked');
+                  debugPrint('facebook button clicked');
                 },
               ),
               SignButtons(
@@ -51,17 +58,73 @@ class _AuthPageState extends State<AuthPage> {
                       .pushNamed(MainNavigationRouteNames.signUp);
                 },
               ),
-              const LoginTextButton(),
-              const AgreementText(),
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: Center(
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Already have an account?  ',
+                      style: const TextStyle(
+                        color: Colors.grey,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'Login',
+                          style: const TextStyle(
+                            color: Colors.redAccent,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.of(context)
+                                  .pushNamed(MainNavigationRouteNames.login);
+                              debugPrint('login');
+                            },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 80),
+              Center(
+                child: Column(
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        text: 'By continuing, you accept the ',
+                        style: const TextStyle(
+                          color: Colors.grey,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: ' Terms of Use',
+                            style: const TextStyle(
+                              color: Colors.black,
+                            ),
+                            recognizer: TapGestureRecognizer()..onTap = () {},
+                          ),
+                          const TextSpan(
+                            text: '  and ',
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: const Text('Privacy Policy'),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
       ),
     );
-  }
-
-  void showSnackbar(BuildContext context, String text) {
-    final snackBar = SnackBar(content: Text(text));
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

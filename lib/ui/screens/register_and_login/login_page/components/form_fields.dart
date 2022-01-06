@@ -5,10 +5,10 @@ import 'package:news_app/ui/screens/register_and_login/login_page/components/for
 import 'create_button.dart';
 import 'custom_container_for_forms.dart';
 import 'custom_input_decoration.dart';
-import 'error_text.dart';
+import '../../../../utils/error_text.dart';
 
 class FormFields extends StatefulWidget {
-  FormFields({Key? key}) : super(key: key);
+  const FormFields({Key? key}) : super(key: key);
 
   @override
   State<FormFields> createState() => _FormFieldsState();
@@ -56,10 +56,10 @@ class _FormFieldsState extends State<FormFields> {
         );
         errorText = null;
       } else {
-        print('error');
+        debugPrint('error');
       }
     } else {
-      print('error');
+      debugPrint('error');
     }
   }
 
@@ -68,6 +68,7 @@ class _FormFieldsState extends State<FormFields> {
       titleForm: 'Password',
       isError: passError,
       child: TextFormField(
+        textInputAction: TextInputAction.done,
         validator: (value) {
           if (value!.isEmpty) {
             setState(() {
@@ -98,6 +99,7 @@ class _FormFieldsState extends State<FormFields> {
       titleForm: 'Email',
       isError: emailError,
       child: TextFormField(
+        textInputAction: TextInputAction.next,
         controller: _emailController,
         validator: (value) {
           if (value!.isEmpty) {
@@ -125,6 +127,8 @@ class _FormFieldsState extends State<FormFields> {
     return InputDecoration(
       contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 17),
       suffixIcon: IconButton(
+        focusColor: Colors.transparent,
+        splashColor: Colors.transparent,
         onPressed: () {
           _toggleVisibility();
         },

@@ -3,11 +3,11 @@ import 'package:news_app/ui/navigation/main_navigation.dart';
 
 import 'create_button.dart';
 import 'custom_container_for_forms.dart';
-import 'custom_input_decoration.dart';
+import '../../../../utils/custom_input_decoration.dart';
 import 'error_text.dart';
 
 class FormFields extends StatefulWidget {
-  FormFields({Key? key}) : super(key: key);
+  const FormFields({Key? key}) : super(key: key);
 
   @override
   State<FormFields> createState() => _FormFieldsState();
@@ -51,10 +51,10 @@ class _FormFieldsState extends State<FormFields> {
         Navigator.of(context).pushNamed(MainNavigationRouteNames.login);
         errorText = null;
       } else {
-        print('error');
+        debugPrint('error');
       }
     } else {
-      print('error');
+      debugPrint('error');
     }
   }
 
@@ -62,6 +62,7 @@ class _FormFieldsState extends State<FormFields> {
     return CustomContainer(
       titleForm: 'Password',
       child: TextFormField(
+        textInputAction: TextInputAction.done,
         validator: (value) {
           if (value!.isEmpty) {
             setState(() {
@@ -91,6 +92,7 @@ class _FormFieldsState extends State<FormFields> {
     return CustomContainer(
       titleForm: 'Email',
       child: TextFormField(
+        textInputAction: TextInputAction.next,
         validator: (value) {
           if (value!.isEmpty) {
             setState(() {
@@ -117,6 +119,7 @@ class _FormFieldsState extends State<FormFields> {
     return CustomContainer(
       titleForm: 'Name',
       child: TextFormField(
+        textInputAction: TextInputAction.next,
         validator: (value) {
           if (value!.isEmpty) {
             nameError = true;
@@ -138,6 +141,8 @@ class _FormFieldsState extends State<FormFields> {
     return InputDecoration(
       contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 17),
       suffixIcon: IconButton(
+        focusColor: Colors.transparent,
+        splashColor: Colors.transparent,
         onPressed: () {
           _toggleVisibility();
         },

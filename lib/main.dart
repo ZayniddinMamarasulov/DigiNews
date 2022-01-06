@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/ui/navigation/main_navigation.dart';
 
+
 void main() {
   runApp(const NewsApp());
 }

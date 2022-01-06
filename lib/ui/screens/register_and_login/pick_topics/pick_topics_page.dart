@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:filter_list/filter_list.dart';
 import 'package:news_app/ui/utils/app_bar.dart';
-import 'package:news_app/ui/screens/register_and_login/pick_topics/chip_model.dart';
+import 'package:news_app/ui/utils/chip_model.dart';
 
 class PickTopicsPage extends StatefulWidget {
   const PickTopicsPage({Key? key}) : super(key: key);

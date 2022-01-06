@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/ui/utils/button_style.dart';
 
 class EmailFormRecoveryPass extends StatefulWidget {
   const EmailFormRecoveryPass({Key? key}) : super(key: key);
@@ -22,7 +23,10 @@ class _EmailFormRecoveryPassState extends State<EmailFormRecoveryPass> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            buildTitleText(),
+            const Text(
+              'Email',
+              style: TextStyle(fontSize: 16),
+            ),
             _CustomContainer(
               child: TextFormField(
                 controller: controller,
@@ -45,7 +49,12 @@ class _EmailFormRecoveryPassState extends State<EmailFormRecoveryPass> {
                 },
               ),
             ),
-            _errorText(errorMessage: errorMessage),
+            Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  errorMessage,
+                  style: const TextStyle(color: Colors.redAccent),
+                )),
             SizedBox(
               height: 56,
               width: double.infinity,
@@ -53,14 +62,19 @@ class _EmailFormRecoveryPassState extends State<EmailFormRecoveryPass> {
                 onPressed: () {
                   formKey.currentState?.validate();
                   if (errorMessage.isEmpty) {
-                    // qayergadir o'tish
-                    print('ok');
+                    debugPrint('ok');
                   } else {
-                    print('invalid');
+                    debugPrint('invalid');
                   }
                 },
                 style: buildButtonStyle(),
-                child: buttonChildText(),
+                child: const Text(
+                  'Send OTP Code',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white),
+                ),
               ),
             )
           ],
@@ -80,57 +94,14 @@ class _CustomContainer extends StatelessWidget {
       width: double.infinity,
       height: 56,
       alignment: Alignment.center,
-      margin: _marginHeight(context),
+      margin: EdgeInsets.only(
+          top: 12, bottom: MediaQuery.of(context).size.height * 0.12),
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: _customDecoration(),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.redAccent),
+      ),
       child: child,
     );
   }
-
-  BoxDecoration _customDecoration() {
-    return BoxDecoration(
-      borderRadius: BorderRadius.circular(12),
-      border: Border.all(color: Colors.redAccent),
-    );
-  }
-
-  EdgeInsets _marginHeight(BuildContext context) {
-    return EdgeInsets.only(
-        top: 12, bottom: MediaQuery.of(context).size.height * 0.12);
-  }
-}
-
-Align _errorText({required String errorMessage}) {
-  return Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-        errorMessage,
-        style: const TextStyle(color: Colors.redAccent),
-      ));
-}
-
-Text buildTitleText() {
-  return const Text(
-    'Email',
-    style: TextStyle(fontSize: 16),
-  );
-}
-
-Text buttonChildText() {
-  return const Text(
-    'Send OTP Code',
-    style: TextStyle(
-        fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
-  );
-}
-
-ButtonStyle buildButtonStyle() {
-  return ButtonStyle(
-    shape: MaterialStateProperty.all(
-      RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-    ),
-    backgroundColor: MaterialStateProperty.all(Colors.grey.shade900),
-  );
 }

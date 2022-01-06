@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/ui/screens/register_and_login/login_page/components/app_bar.dart';
+import 'package:news_app/ui/utils/app_bar.dart';
 
 import 'components/form_for_email.dart';
 import 'components/info_text.dart';

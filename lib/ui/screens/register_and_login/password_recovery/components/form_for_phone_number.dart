@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:news_app/ui/utils/button_style.dart';
 
 class PhoneNumberForm extends StatefulWidget {
   const PhoneNumberForm({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
               decoration: _customDecoration(),
               child: InternationalPhoneNumberInput(
                 onInputChanged: (PhoneNumber value) {
-                  print(value);
+                  debugPrint(value.toString());
                 },
                 onInputValidated: (bool value) {
                   setState(() {
@@ -48,7 +49,7 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
                         ? errorMessage = ''
                         : errorMessage = '- Invalid phone number';
                   });
-                  print(value);
+                  debugPrint(value.toString());
                 },
                 keyboardType: const TextInputType.numberWithOptions(
                   decimal: true,
@@ -77,10 +78,9 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
                 onPressed: () {
                   formKey.currentState?.validate();
                   if (errorMessage.isEmpty) {
-                    // qayergadir o'tish
-                    print('ok');
+                    debugPrint('ok');
                   } else {
-                    print('invalid');
+                    debugPrint('invalid');
                   }
                 },
                 style: buildButtonStyle(),
@@ -127,16 +127,5 @@ Text buttonChildText() {
     'Send OTP Code',
     style: TextStyle(
         fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
-  );
-}
-
-ButtonStyle buildButtonStyle() {
-  return ButtonStyle(
-    shape: MaterialStateProperty.all(
-      RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-    ),
-    backgroundColor: MaterialStateProperty.all(Colors.grey.shade900),
   );
 }

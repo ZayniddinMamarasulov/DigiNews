@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/ui/screens/register_and_login/login_page/components/app_bar.dart';
+import 'package:news_app/ui/utils/app_bar.dart';
 import 'package:news_app/ui/screens/register_and_login/otp_authentication/components/resend_code.dart';
 import 'package:news_app/ui/screens/register_and_login/otp_authentication/components/verify_login_text.dart';
 
