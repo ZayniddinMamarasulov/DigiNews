@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../bouncing.dart';
+import '../../bouncing.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,8 +38,8 @@ class _HomePageState extends State<HomePage> {
                     });
                   },
                   child: const Text("Click")),
-              const SizedBox(height: 120),
-              BounceScreen(
+              SizedBox(height: 120),
+              Bounce(
                 child: const Text(
                   "Hello !",
                   style: TextStyle(
@@ -49,13 +49,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              BounceScreen(
-                  child: Container(
-                width: 120,
-                height: 60,
-                child: const Text("button"),
-                color: Colors.red,
-              ))
+              Bounce(
+                child: Container(
+                  width: 120,
+                  height: 60,
+                  child: const Text("button"),
+                  color: Colors.red,
+                ),
+              ),
             ],
           ),
         ),

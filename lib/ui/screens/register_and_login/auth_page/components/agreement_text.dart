@@ -23,10 +23,7 @@ class AgreementText extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.black,
                     ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        print('wow');
-                      },
+                    recognizer: TapGestureRecognizer()..onTap = () {},
                   ),
                   const TextSpan(
                     text: '  and ',

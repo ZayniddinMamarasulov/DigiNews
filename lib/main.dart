@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/registr_and_login/auth_page/auth_page.dart';
+import 'package:news_app/ui/navigation/main_navigation.dart';
 
 void main() {
   runApp(const NewsApp());
@@ -8,12 +8,16 @@ void main() {
 class NewsApp extends StatelessWidget {
   const NewsApp({Key? key}) : super(key: key);
 
+  static final mainNavigation = MainNavigation();
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "News App",
-      home: AuthPage(),
+      // home: AuthPage(),
+      initialRoute: mainNavigation.initialRoute(),
+      routes: mainNavigation.routes,
     );
   }
 }

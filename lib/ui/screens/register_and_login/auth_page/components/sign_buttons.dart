@@ -25,6 +25,11 @@ class SignButtons extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: color,
+            border: Border.all(
+              color: color == Colors.white
+                  ? Colors.grey.shade200
+                  : Colors.transparent,
+            ),
           ),
           height: 56,
           width: double.infinity,

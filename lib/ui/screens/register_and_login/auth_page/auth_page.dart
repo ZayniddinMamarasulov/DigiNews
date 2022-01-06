@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/colors.dart';
-import 'package:news_app/screens/registr_and_login/auth_page/components/agreement_text.dart';
+import 'package:news_app/ui/navigation/main_navigation.dart';
 
+import 'components/agreement_text.dart';
 import 'components/login_text_button.dart';
 import 'components/sign_buttons.dart';
 import 'components/welcome_text.dart';
@@ -17,7 +17,7 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -47,7 +47,8 @@ class _AuthPageState extends State<AuthPage> {
                 icon: 'assets/images/google_icon.png',
                 txt: 'Continue with Google',
                 func: () {
-                  showSnackbar(context, 'google button clicked');
+                  Navigator.of(context)
+                      .pushNamed(MainNavigationRouteNames.signUp);
                 },
               ),
               const LoginTextButton(),
