@@ -15,7 +15,7 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "News App",
-      home: Lesson(),
+      home: ForgotPassword(),
     );
   }
 }
