@@ -7,12 +7,13 @@ class WelcomeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 80.0),
+        SizedBox(height: height * 0.1),
         Image.asset("assets/images/app_logo.png"),
-        const SizedBox(height: 24.0),
+        SizedBox(height: height * 0.025),
         const Text(
           "Welcome to\nDigiNews",
           style: TextStyle(

@@ -17,7 +17,6 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -31,7 +30,6 @@ class _AuthPageState extends State<AuthPage> {
                 txt: 'Continue with Email',
                 func: () {
                   print('email');
-                  showSnackbar(context, 'email button clicked');
                 },
               ),
               SignButtons(
@@ -39,7 +37,7 @@ class _AuthPageState extends State<AuthPage> {
                 icon: 'assets/images/fb_icon.png',
                 txt: 'Continue with Facebook',
                 func: () {
-                  showSnackbar(context, 'facebook button clicked');
+                  print('facebook');
                 },
               ),
               SignButtons(
@@ -58,10 +56,5 @@ class _AuthPageState extends State<AuthPage> {
         ),
       ),
     );
-  }
-
-  void showSnackbar(BuildContext context, String text) {
-    final snackBar = SnackBar(content: Text(text));
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

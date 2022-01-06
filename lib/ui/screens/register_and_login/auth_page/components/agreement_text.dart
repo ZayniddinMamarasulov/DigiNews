@@ -8,16 +8,20 @@ class AgreementText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.only(top: 100.0, bottom: 8),
+        padding:
+            EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.14),
         child: Column(
           children: [
             RichText(
               text: TextSpan(
-                text: 'By continuing, you accept the ',
-                style: const TextStyle(
-                  color: Colors.grey,
-                ),
+                text: '',
                 children: [
+                  const TextSpan(
+                    text: 'By continuing, you accept the ',
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
                   TextSpan(
                     text: ' Terms of Use',
                     style: const TextStyle(

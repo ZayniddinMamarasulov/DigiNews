@@ -8,6 +8,7 @@ class SignUpText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(height: 8),
         const Text(
           'Sign Up',
           style: TextStyle(
@@ -24,7 +25,7 @@ class SignUpText extends StatelessWidget {
             fontWeight: FontWeight.w400,
           ),
         ),
-        const SizedBox(height: 28),
+        const SizedBox(height: 24),
       ],
     );
   }

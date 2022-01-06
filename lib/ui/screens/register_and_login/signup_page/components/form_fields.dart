@@ -62,6 +62,7 @@ class _FormFieldsState extends State<FormFields> {
     return CustomContainer(
       titleForm: 'Password',
       child: TextFormField(
+        style: const TextStyle(color: Colors.black),
         validator: (value) {
           if (value!.isEmpty) {
             setState(() {
@@ -91,6 +92,7 @@ class _FormFieldsState extends State<FormFields> {
     return CustomContainer(
       titleForm: 'Email',
       child: TextFormField(
+        style: const TextStyle(color: Colors.black),
         validator: (value) {
           if (value!.isEmpty) {
             setState(() {
@@ -117,6 +119,7 @@ class _FormFieldsState extends State<FormFields> {
     return CustomContainer(
       titleForm: 'Name',
       child: TextFormField(
+        style: const TextStyle(color: Colors.black),
         validator: (value) {
           if (value!.isEmpty) {
             nameError = true;
@@ -136,7 +139,7 @@ class _FormFieldsState extends State<FormFields> {
 
   InputDecoration customPasswordInputDecoration(bool isError, String hintText) {
     return InputDecoration(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 17),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
       suffixIcon: IconButton(
         onPressed: () {
           _toggleVisibility();

@@ -35,6 +35,8 @@ class _VerificationMethodState extends State<VerificationMethod> {
     );
   }
 
+  // email yoki nomer metodlarini custom shakli
+  // qaysi biridir bosilganda ikkala metoddan bittasini selectMethod olvoladi oziga
   Widget resetPassMethod({
     required String methodTxt,
     required String text,

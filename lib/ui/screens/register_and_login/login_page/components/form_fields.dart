@@ -68,6 +68,7 @@ class _FormFieldsState extends State<FormFields> {
       titleForm: 'Password',
       isError: passError,
       child: TextFormField(
+        style: const TextStyle(color: Colors.black),
         validator: (value) {
           if (value!.isEmpty) {
             setState(() {
@@ -98,6 +99,7 @@ class _FormFieldsState extends State<FormFields> {
       titleForm: 'Email',
       isError: emailError,
       child: TextFormField(
+        style: const TextStyle(color: Colors.black),
         controller: _emailController,
         validator: (value) {
           if (value!.isEmpty) {
@@ -123,7 +125,7 @@ class _FormFieldsState extends State<FormFields> {
 
   InputDecoration customPasswordInputDecoration(bool isError, String hintText) {
     return InputDecoration(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 17),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
       suffixIcon: IconButton(
         onPressed: () {
           _toggleVisibility();
@@ -137,6 +139,7 @@ class _FormFieldsState extends State<FormFields> {
             )
           : InputBorder.none,
       hintText: hintText,
+      // hintStyle: TextStyle(color: Colors.black),
       enabledBorder: isError
           ? OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
