@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/main_navigation.dart';
 import 'package:news_app/utils/colors.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/app_bar.dart';
 
@@ -50,6 +51,12 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                 runSpacing: 12,
                 children: topics,
               ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, MainNavigationRouteNames.home);
+                },
+                child: const Text('Next'),
+              )
             ],
           ),
         ),
@@ -61,7 +68,9 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
     bool isSelected = topic.isSelected;
     return ChoiceChip(
       backgroundColor: Colors.grey[100],
-      label: Text(topic.title,),
+      label: Text(
+        topic.title,
+      ),
       selectedColor: Colors.black,
       labelStyle: TextStyle(color: isSelected ? Colors.white : Colors.black),
       selected: isSelected,

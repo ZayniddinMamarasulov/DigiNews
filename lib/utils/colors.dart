@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 class AppColors {
-  static Color white = const Color(0xFFE5E5E5);
+  static const Color white =  Color(0xFFE5E5E5);
+  static const Color unselectedLabel = Color(0x00b8b8b8);
+
 
   //TODO : MOVE LIST BELOW to another file
 

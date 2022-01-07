@@ -16,6 +16,7 @@ abstract class MainNavigationRouteNames {
   static const resetPassWithEmail = '/reset_pass_with_email';
   static const resetPassWithPhoneNumber = '/reset_pass_with_phone_number';
   static const authentication = '/auth/sign_up/authentication';
+  static const home = '/home';
 }
 
 class MainNavigation {
@@ -32,6 +33,7 @@ class MainNavigation {
     MainNavigationRouteNames.resetPassWithEmail: (context) =>
         const RecoveryPassByEmail(),
     MainNavigationRouteNames.resetPassWithPhoneNumber: (context) =>
-        const RecoveryPassByPhoneNumber(),
+        const RecoveryPassByPhoneNumber()
+    // MainNavigationRouteNames.home: (context) => const HomeTest(),
   };
 }

@@ -2,8 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
 
-class SignUptextButton extends StatelessWidget {
-  const SignUptextButton({Key? key}) : super(key: key);
+class SignUpButton extends StatelessWidget {
+  const SignUpButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
