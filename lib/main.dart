@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:news_app/ui/navigation/main_navigation.dart';
 
+import 'app_theme.dart';
+
 void main() {
   runApp(const NewsApp());
 }
@@ -20,7 +22,7 @@ class NewsApp extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         print(snapshot.data);
         return MaterialApp(
-          theme: snapshot.data ? ThemeData.light() : ThemeData.dark(),
+          theme: snapshot.data ? DigiTheme.light() : DigiTheme.dark(),
           debugShowCheckedModeBanner: false,
           title: "News App",
           initialRoute: mainNavigation.initialRoute(),

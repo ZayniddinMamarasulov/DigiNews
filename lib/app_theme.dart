@@ -90,9 +90,9 @@ class DigiTheme {
       appBarTheme: AppBarTheme(
         foregroundColor: Colors.white,
         backgroundColor: Colors.grey[900],
+        elevation: 0,
       ),
       hintColor: Colors.grey,
-      inputDecorationTheme: InputDecorationTheme(),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
         backgroundColor: Colors.green,
