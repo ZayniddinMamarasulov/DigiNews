@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/my_topic.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/app_bar.dart';
