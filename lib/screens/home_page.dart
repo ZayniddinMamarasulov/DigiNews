@@ -1,4 +1,3 @@
-import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../bouncing.dart';
@@ -16,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home page')),
+      appBar: AppBar(title: const Text('Home page')),
       backgroundColor: Colors.yellow,
       body: SafeArea(
         child: Container(
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                     });
                   },
                   child: const Text("Click")),
-              SizedBox(height: 120),
+              const SizedBox(height: 120),
               Bounce(
                 child: const Text(
                   "Hello !",

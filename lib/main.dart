@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/auth_page.dart';
 import 'package:news_app/screens/home_page.dart';
+import 'package:news_app/screens/loging_page.dart';
 
 void main() {
   runApp(const NewsApp());
@@ -22,9 +23,9 @@ class NewsApp extends StatelessWidget {
   final String change12= "menimcha endi oxshadi";
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "News App",
-      home: AuthPage(),
+      home: LogingPage(),
     );
   }
 }
