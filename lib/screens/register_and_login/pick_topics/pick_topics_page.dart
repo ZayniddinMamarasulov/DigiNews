@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/main_navigation.dart';
 import 'package:news_app/models/my_topic.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/app_bar.dart';
 
@@ -73,7 +74,10 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                 height: 56,
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamed(MainNavigationRouteNames.home);
+                    },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12))),

@@ -29,14 +29,6 @@ class NewsApp extends StatelessWidget {
           routes: mainNavigation.routes,
         );
       },
-      /*child: MaterialApp(
-        theme: DigiTheme.light(),
-        debugShowCheckedModeBanner: false,
-        title: "News App",
-        // home: AuthPage(),
-        initialRoute: mainNavigation.initialRoute(),
-        routes: mainNavigation.routes,
-      ),*/
     );
   }
 }

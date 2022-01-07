@@ -9,7 +9,6 @@ class MyTopic {
 
   MyTopic(this.title, {this.isSelected = false});
 
-  //TODO : MOVE LIST BELOW to another file
   static List<MyTopic> topics = [
     MyTopic('🎶 Music'),
     MyTopic('💼 Business'),
