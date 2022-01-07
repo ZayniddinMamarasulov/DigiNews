@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:news_app/ui/navigation/main_navigation.dart';
+import 'package:news_app/main_navigation.dart';
 
-import 'app_theme.dart';
+import 'utils/app_theme.dart';
 
 void main() {
   runApp(const NewsApp());
