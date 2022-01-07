@@ -11,7 +11,7 @@ class WelcomeText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: height * 0.1),
+        SizedBox(height: height * 0.02),
         Image.asset("assets/images/app_logo.png"),
         SizedBox(height: height * 0.025),
         const Text(
