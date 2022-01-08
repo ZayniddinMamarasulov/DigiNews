@@ -73,7 +73,7 @@ class ForgotPasswordPage extends StatelessWidget {
                             fontSize: 16,
                              fontWeight: FontWeight.w700,
                           ),),
-                          SizedBox(height: 4,),
+                           SizedBox(height: 4,),
                           Text('Send to your email',style: TextStyle(
                             fontSize: 16,
                              fontWeight: FontWeight.w400,
@@ -88,7 +88,7 @@ class ForgotPasswordPage extends StatelessWidget {
 
               ),
             ),
-            SizedBox(height: 24,),
+            const SizedBox(height: 24,),
 
             InkWell(
               child: Container(

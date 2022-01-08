@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/screens/auth_page.dart';
 import 'package:news_app/screens/forgot_password.dart';
 import 'package:news_app/screens/home_page.dart';
+import 'package:news_app/screens/notification_page.dart';
 import 'package:news_app/screens/sign_up.dart';
 import 'package:news_app/screens/login_page.dart';
 void main() {
@@ -15,7 +16,7 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "News App",
-      home: AuthPage()
+      home: NotificatinPage()
     );
   }
 }
