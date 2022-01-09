@@ -161,6 +161,30 @@ class LikedMassage extends StatelessWidget {
       children: [
         Container(
           width: 40,
+          child: Stack(
+            children: const [
+              CircleAvatar(
+                radius: 14,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  radius: 12,
+                  backgroundImage: AssetImage('assets/avatar_man.png'),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 12.0, 0, 0),
+                child: CircleAvatar(
+                  radius: 14,
+                  backgroundColor: Colors.white,
+                  child: CircleAvatar(
+                    radius: 12,
+
+                    backgroundImage: AssetImage('assets/avatar_woman.png'),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         const SizedBox(width: 16,),
         Column(
@@ -326,6 +350,30 @@ class FollowingMassages extends StatelessWidget {
       children: [
         Container(
           width: 40,
+          child: Stack(
+            children: const [
+              CircleAvatar(
+                radius: 14,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  radius: 12,
+                  backgroundImage: AssetImage('assets/avatar_man.png'),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 12.0, 0, 0),
+                child: CircleAvatar(
+                  radius: 14,
+                  backgroundColor: Colors.white,
+                  child: CircleAvatar(
+                    radius: 12,
+
+                    backgroundImage: AssetImage('assets/avatar_woman.png'),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         const SizedBox(width: 16,),
         Column(
