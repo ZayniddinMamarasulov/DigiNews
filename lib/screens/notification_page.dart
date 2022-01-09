@@ -57,7 +57,22 @@ class _NotificatinPageState extends State<NotificatinPage> {
               SizedBox(height: 16,),
               FollowedMassage(),
               SizedBox(height: 16,),
+              Line(),
+              SizedBox(height: 16,),
               FollowingMassages(),
+              SizedBox(height: 16,),
+              Line(),
+              SizedBox(height: 16,),
+              FollowedMassage(),
+              SizedBox(height: 16,),
+              Line(),
+              SizedBox(height: 16,),
+              LikedPost(),
+              SizedBox(height: 16,),
+              Line(),
+              SizedBox(height: 16,),
+              LikedPost(),
+              SizedBox(height: 16,),
             ],
           ),
         ),
@@ -132,7 +147,6 @@ class FollowingMassage extends StatelessWidget {
   }
 }
 
-
 class LikedMassage extends StatelessWidget {
   const LikedMassage({Key? key}) : super(key: key);
 
@@ -182,9 +196,6 @@ class LikedMassage extends StatelessWidget {
   }
 }
 
-
-
-
 class Congrats extends StatelessWidget {
   const Congrats({Key? key}) : super(key: key);
 
@@ -226,8 +237,6 @@ class Congrats extends StatelessWidget {
   }
 }
 
-
-
 class Line extends StatelessWidget {
   const Line({Key? key}) : super(key: key);
 
@@ -239,8 +248,6 @@ class Line extends StatelessWidget {
     );
   }
 }
-
-
 
 class FollowedMassage extends StatelessWidget {
   const FollowedMassage({Key? key}) : super(key: key);
@@ -346,6 +353,54 @@ class FollowingMassages extends StatelessWidget {
           ],
         ),
 
+      ],
+    );
+  }
+}
+
+class LikedPost extends StatelessWidget {
+  const LikedPost({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    String name;
+    int time;
+    name = 'Alisher Ismoilov';
+    time= 2;
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CircleAvatar(
+          radius: 20,
+          backgroundColor: Colors.pinkAccent,
+          child: Image.asset('assets/avatar_angela.png'),
+        ),
+        const SizedBox(width: 16,),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox( width: 160 ,child: RichText(text: TextSpan(text: name,
+                style: const TextStyle( fontWeight: FontWeight.w700, color: Colors.black, fontSize: 14),
+                children: const <TextSpan>[
+                  TextSpan(
+                    text: " liked your photo",
+                    style: TextStyle( fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14),
+                  )
+                ]
+            ),
+            )),
+            const SizedBox(height: 4,),
+            Text('${time.toString()} day ago', style: const TextStyle(
+              color: Colors.grey,
+              fontWeight: FontWeight.w400,
+              fontSize: 12,
+              height: 1.3,
+            ),),
+          ],
+        ),
+        Expanded(child: Container()),
+        Image.asset('assets/post_liked.png')
       ],
     );
   }
