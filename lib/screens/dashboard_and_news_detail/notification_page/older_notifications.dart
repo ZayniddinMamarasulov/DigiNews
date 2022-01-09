@@ -106,11 +106,10 @@ class _OlderNotificationsState extends State<OlderNotifications> {
               children: [
                 CircleAvatar(
                   radius: 20,
-                  backgroundColor: Colors.pink,
-                  child: Image.asset(
+                  backgroundImage: AssetImage(
                     'assets/images/$avatar.png',
-                    fit: BoxFit.fill,
                   ),
+                  backgroundColor: Colors.pink,
                 ),
                 const SizedBox(width: 12),
                 SizedBox(
@@ -146,7 +145,7 @@ class _OlderNotificationsState extends State<OlderNotifications> {
                 ),
               ],
             ),
-            Container(
+            SizedBox(
               height: 60,
               width: 80,
               child: Image.asset('assets/images/$postImage.png'),
@@ -166,12 +165,11 @@ class _OlderNotificationsState extends State<OlderNotifications> {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 20,
               backgroundColor: Colors.pink,
-              child: Image.asset(
+              backgroundImage: AssetImage(
                 'assets/images/avatar_1.png',
-                fit: BoxFit.fill,
               ),
             ),
             const SizedBox(width: 12),

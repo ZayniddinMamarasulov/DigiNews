@@ -31,14 +31,7 @@ class _RecentNotificationsState extends State<RecentNotifications> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundColor: Colors.pink,
-                    child: Image.asset(
-                      'assets/images/avatar_1.png',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
+                  const TwoAccountAvatar(),
                   const SizedBox(width: 12),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,13 +72,12 @@ class _RecentNotificationsState extends State<RecentNotifications> {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 20,
-              backgroundColor: Colors.pink,
-              child: Image.asset(
+              backgroundImage: AssetImage(
                 'assets/images/avatar_1.png',
-                fit: BoxFit.fill,
               ),
+              backgroundColor: Colors.pink,
             ),
             const SizedBox(width: 12),
             Column(
@@ -134,6 +126,48 @@ class _RecentNotificationsState extends State<RecentNotifications> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class TwoAccountAvatar extends StatelessWidget {
+  const TwoAccountAvatar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 40,
+      width: 40,
+      child: Stack(
+        children: [
+          CircleAvatar(
+            radius: 12,
+            backgroundColor: Colors.pink,
+            backgroundImage: AssetImage(
+              'assets/images/t_avatar_1.png',
+            ),
+          ),
+          Positioned(
+            left: 10,
+            top: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Colors.white, width: 2),
+              ),
+              child: CircleAvatar(
+                radius: 12,
+                backgroundImage: AssetImage(
+                  'assets/images/t_avatar_2.png',
+                ),
+                backgroundColor: Colors.pink,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
