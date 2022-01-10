@@ -11,6 +11,7 @@ class SvgExample extends StatefulWidget {
 class _SvgExampleState extends State<SvgExample> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Svg picture example"),
