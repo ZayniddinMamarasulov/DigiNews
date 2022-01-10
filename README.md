@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-<a href="https://github.com/ZayniddinMamarasulov/DigiNews/tree/umarbek"><img src="assets/screens/welcome_screen.png" align="left" height="216" width="432"></a>
+<a href="https://github.com/ZayniddinMamarasulov/DigiNews/tree/umarbek"><img src="assets/screens/welcome_screen.png" align="left" height="432" width="216"></a>
 ![](assets/screens/welcome_screen.png "Welcome Screen" {width=216px height=432px})
 
 ![](assets/screens/welcome_screen.png "Welcome Screen" {width=216px height=432px})
