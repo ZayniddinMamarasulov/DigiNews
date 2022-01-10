@@ -70,7 +70,7 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
   Widget facebookButtons() {
-    //facebook button
+    //facebook
     return InkWell(
       onTap: () {
       },
