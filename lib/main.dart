@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
+import 'package:news_app/utils/svg_example.dart';
 
 import 'utils/app_theme.dart';
 
@@ -25,8 +26,9 @@ class NewsApp extends StatelessWidget {
           theme: snapshot.data ? DigiTheme.light() : DigiTheme.dark(),
           debugShowCheckedModeBanner: false,
           title: "News App",
-          initialRoute: mainNavigation.initialRoute(),
-          routes: mainNavigation.routes,
+          home: const SvgExample(),
+          // initialRoute: mainNavigation.initialRoute(),
+          // routes: mainNavigation.routes,
         );
       },
     );
