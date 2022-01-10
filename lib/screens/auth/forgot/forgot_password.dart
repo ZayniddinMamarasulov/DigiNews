@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:news_app/colors.dart';
+import 'package:news_app/screens/auth/forgot/forgot_email.dart';
+import 'package:news_app/screens/auth/forgot/forgot_number.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -10,6 +12,8 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
+  bool isEmail =false;
+  bool isPhone =false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,14 +32,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   children: [
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back_outlined,
                         size: 30,
                       ),
                     ),
                     Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                       child: Text(
                         'Reset Password',
                         style: TextStyle(
@@ -46,7 +50,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                     Container(
                       alignment: Alignment.topLeft,
-                      margin: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       child: Text(
                         'Select verification method and we will send verification code',
                         style: TextStyle(
@@ -55,11 +59,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             fontSize: 16),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            isEmail = true;
+                            isPhone = false;
+                          });
+                        },
                         child: Container(
-                          margin: EdgeInsets.only(top: 16,bottom: 16,left: 5),
+                          margin: const EdgeInsets.only(top: 16,bottom: 16,left: 5),
                           child: Row(
                             children: [
                               SvgPicture.asset('assets/email.svg'),
@@ -68,7 +77,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 children: [
                                   Container(
                                     margin:
-                                    EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                                    const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
                                     child: Text(
                                       'Email',
                                       style: TextStyle(
@@ -79,7 +88,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   ),
                                   Container(
                                     alignment: Alignment.topLeft,
-                                    margin: EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                                    margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
                                     child: Text(
                                       'Send to your email',
                                       style: TextStyle(
@@ -96,13 +105,19 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)),
-                          side: BorderSide(color: AppColors.red),
+                          side: BorderSide(color: isEmail?AppColors.red:AppColors.white),
                         )),
-                    SizedBox(height: 18,),
+                    const SizedBox(height: 18,),
                     OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                         setState(() {
+                           isPhone = true;
+                           isEmail = false;
+
+                         });
+                        },
                         child: Container(
-                          margin: EdgeInsets.only(top: 16,bottom: 16,left: 5),
+                          margin: const EdgeInsets.only(top: 16,bottom: 16,left: 5),
                           child: Row(
                             children: [
                               SvgPicture.asset('assets/phone.svg'),
@@ -111,7 +126,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 children: [
                                   Container(
                                     margin:
-                                    EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                                    const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
                                     child: Text(
                                       'Phone Number',
                                       style: TextStyle(
@@ -122,24 +137,24 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   ),
                                   Container(
                                     alignment: Alignment.topLeft,
-                                    margin: EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                                    margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
                                     child: Text(
                                       'Send to your phone number',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w400,
-                                          color: AppColors.grey,
+                                          color: Colors.grey,
                                           fontSize: 16),
                                     ),
                                   ),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ),
                         style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)),
-                          side: BorderSide(color: AppColors.white),
+                          side: BorderSide(color: isPhone?AppColors.red:AppColors.white),
                         )),
                   ],
                 ),
@@ -154,9 +169,15 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 40, horizontal: 24),
                     child: ElevatedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(18.0),
+                      onPressed: () {
+                        if(isEmail){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotEmail()));
+                        }else{
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotNumber()));
+                        }
+                      },
+                      child: const Padding(
+                        padding:  EdgeInsets.all(18.0),
                         child: Text(
                           'Continue',
                           style: TextStyle(fontSize: 18, color: Colors.white),
@@ -164,7 +185,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       ),
                       style: ButtonStyle(
                           shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0))),
-
                           backgroundColor:
                               MaterialStateProperty.all(AppColors.black),
                           alignment: Alignment.center),
