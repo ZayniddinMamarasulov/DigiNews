@@ -176,7 +176,7 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
           if (value.length == 1) {
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => const PickTopicsPage()));
-            print('ok');
+            debugPrint('ok');
           }
 
           // 4chi katak ochirilsa 3chiga qaytish

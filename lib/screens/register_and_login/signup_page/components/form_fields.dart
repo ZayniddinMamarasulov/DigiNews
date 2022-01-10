@@ -7,7 +7,7 @@ import 'custom_input_decoration.dart';
 import 'error_text.dart';
 
 class FormFields extends StatefulWidget {
-  FormFields({Key? key}) : super(key: key);
+  const FormFields({Key? key}) : super(key: key);
 
   @override
   State<FormFields> createState() => _FormFieldsState();
@@ -51,10 +51,10 @@ class _FormFieldsState extends State<FormFields> {
         Navigator.of(context).pushNamed(MainNavigationRouteNames.login);
         errorText = null;
       } else {
-        print('error');
+        debugPrint('error');
       }
     } else {
-      print('error');
+      debugPrint('error');
     }
   }
 

@@ -21,10 +21,10 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.symmetric(horizontal: 22.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const WelcomeBackText(),
+            children: const [
+              WelcomeBackText(),
               FormFields(),
-              const SignUptextButton(),
+              SignUptextButton(),
             ],
           ),
         ),

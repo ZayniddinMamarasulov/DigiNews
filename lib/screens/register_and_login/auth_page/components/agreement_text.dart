@@ -40,7 +40,7 @@ class AgreementText extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                print('hi');
+                debugPrint('hi');
               },
               child: const Text('Privacy Policy'),
             ),

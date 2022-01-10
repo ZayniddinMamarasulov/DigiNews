@@ -40,7 +40,7 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
               decoration: _customDecoration(),
               child: InternationalPhoneNumberInput(
                 onInputChanged: (PhoneNumber value) {
-                  print(value);
+                  debugPrint(value.toString());
                 },
                 onInputValidated: (bool value) {
                   setState(() {
@@ -48,7 +48,7 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
                         ? errorMessage = ''
                         : errorMessage = '- Invalid phone number';
                   });
-                  print(value);
+                  debugPrint(value.toString());
                 },
                 keyboardType: const TextInputType.numberWithOptions(
                   decimal: true,
@@ -78,9 +78,9 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
                   formKey.currentState?.validate();
                   if (errorMessage.isEmpty) {
                     // qayergadir o'tish
-                    print('ok');
+                    debugPrint('ok');
                   } else {
-                    print('invalid');
+                    debugPrint('invalid');
                   }
                 },
                 style: buildButtonStyle(),

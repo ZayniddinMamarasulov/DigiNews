@@ -28,7 +28,7 @@ class LoginTextButton extends StatelessWidget {
                     Navigator.of(context)
                         .pushNamed(MainNavigationRouteNames.login);
 
-                    print('login');
+                    debugPrint('login');
                   },
               ),
             ],

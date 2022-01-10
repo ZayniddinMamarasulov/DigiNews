@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class PopularPage extends StatefulWidget {
   const PopularPage({Key? key}) : super(key: key);
@@ -11,11 +10,6 @@ class PopularPage extends StatefulWidget {
 class _PopularPageState extends State<PopularPage> {
   @override
   Widget build(BuildContext context) {
-    final Widget svgBanner = SvgPicture.asset(
-      'assets/images/test3.svg',
-      width: MediaQuery.of(context).size.width,
-      height: 320,
-    );
     return Column(children: [
       Container(
         margin: const EdgeInsets.all(24.0),
@@ -48,27 +42,27 @@ class _PopularPageState extends State<PopularPage> {
               Container(
                 height: 60,
                 color: Colors.red,
-                margin: EdgeInsets.all(4.0),
+                margin: const EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
                 color: Colors.red,
-                margin: EdgeInsets.all(4.0),
+                margin: const EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
                 color: Colors.red,
-                margin: EdgeInsets.all(4.0),
+                margin: const EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
                 color: Colors.red,
-                margin: EdgeInsets.all(4.0),
+                margin: const EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
                 color: Colors.red,
-                margin: EdgeInsets.all(4.0),
+                margin: const EdgeInsets.all(4.0),
               ),
             ],
           ),

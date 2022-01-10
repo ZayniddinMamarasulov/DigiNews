@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/main_navigation.dart';
 import 'package:news_app/screens/home/popular_page.dart';
 import 'package:news_app/screens/home/recent_page.dart';
 import 'package:news_app/screens/home/trending_page.dart';
 import 'package:news_app/utils/app_colors.dart';
-import 'package:news_app/utils/bouncing.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   void _handlerTab() {
     setState(() {
-      print(_tabController.index);
+      debugPrint(_tabController.index.toString());
     });
   }
 
@@ -42,7 +42,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             icon: Image.asset('assets/icons/ic_search.png'),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .pushNamed(MainNavigationRouteNames.notification);
+            },
             icon: Image.asset('assets/icons/ic_notification.png'),
           ),
           const SizedBox(width: 18.0)
@@ -68,7 +71,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             indicatorColor: Colors.white,
             labelColor: AppColors.selectedTabColor,
             unselectedLabelColor: AppColors.unSelectedTabColor,
-            tabs: [
+            tabs: const [
               Tab(text: 'Popular'),
               Tab(text: 'Trending'),
               Tab(text: 'Recent'),
@@ -77,7 +80,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: [
+              children: const [
                 PopularPage(),
                 TrendingPage(),
                 RecentPage(),

@@ -54,9 +54,9 @@ class _EmailFormRecoveryPassState extends State<EmailFormRecoveryPass> {
                   formKey.currentState?.validate();
                   if (errorMessage.isEmpty) {
                     // qayergadir o'tish
-                    print('ok');
+                    debugPrint('ok');
                   } else {
-                    print('invalid');
+                    debugPrint('invalid');
                   }
                 },
                 style: buildButtonStyle(),

@@ -48,7 +48,7 @@ class _AuthPageState extends State<AuthPage> {
                   icon: 'assets/images/sms.png',
                   txt: 'Continue with Email',
                   func: () {
-                    print('email');
+                    debugPrint('email');
                   },
                 ),
                 SignButtons(
@@ -56,7 +56,7 @@ class _AuthPageState extends State<AuthPage> {
                   icon: 'assets/images/fb_icon.png',
                   txt: 'Continue with Facebook',
                   func: () {
-                    print('facebook');
+                    debugPrint('facebook');
                   },
                 ),
                 SignButtons(

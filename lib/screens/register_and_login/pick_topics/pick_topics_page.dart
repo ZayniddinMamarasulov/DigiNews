@@ -63,7 +63,7 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                         }
 
                         // tanlanganlar
-                        print(selectTopics);
+                        debugPrint(selectTopics.toString());
                       });
                     },
                   );

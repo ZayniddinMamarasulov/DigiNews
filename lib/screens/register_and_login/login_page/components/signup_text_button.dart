@@ -27,7 +27,7 @@ class SignUptextButton extends StatelessWidget {
                   ..onTap = () {
                     Navigator.of(context)
                         .pushNamed(MainNavigationRouteNames.signUp);
-                    print('sign up');
+                    debugPrint('sign up');
                   },
               ),
             ],

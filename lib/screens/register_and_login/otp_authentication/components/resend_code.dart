@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +27,7 @@ class _ResendCodeState extends State<ResendCode> {
               text: ' Resend Code',
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  print('re-send code');
+                  debugPrint('re-send code');
                 },
               style: const TextStyle(
                 color: Colors.redAccent,

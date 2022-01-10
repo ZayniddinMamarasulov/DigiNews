@@ -47,7 +47,7 @@ class _VerificationMethodState extends State<VerificationMethod> {
       onTap: () {
         setState(() {
           selectMethod = method;
-          print(method);
+          debugPrint(method.toString());
         });
       },
       child: Container(

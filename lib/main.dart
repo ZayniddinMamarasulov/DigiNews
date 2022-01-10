@@ -20,7 +20,7 @@ class NewsApp extends StatelessWidget {
       stream: StreamContrl.setTheme.stream,
       initialData: true,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        print(snapshot.data);
+        debugPrint(snapshot.data.toString());
         return MaterialApp(
           theme: snapshot.data ? DigiTheme.light() : DigiTheme.dark(),
           debugShowCheckedModeBanner: false,

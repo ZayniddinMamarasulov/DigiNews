@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/home/notification/notification_page.dart';
 import 'package:news_app/screens/home/home_page.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
@@ -18,6 +19,7 @@ abstract class MainNavigationRouteNames {
   static const resetPassWithPhoneNumber = '/reset_pass_with_phone_number';
   static const authentication = '/auth/sign_up/authentication';
   static const home = '/home';
+  static const notification = '/notification';
 }
 
 class MainNavigation {
@@ -37,5 +39,6 @@ class MainNavigation {
         const RecoveryPassByPhoneNumber(),
     MainNavigationRouteNames.home: (context) =>
         const HomePage(),
+    MainNavigationRouteNames.notification: (context) => const NotificationScreen(),
   };
 }

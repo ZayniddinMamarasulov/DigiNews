@@ -4,7 +4,7 @@ InputDecoration customInputDecoration(bool isError, String hintText) {
   return InputDecoration(
     contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
     suffixIcon: hintText == 'Your password'
-        ? IconButton(onPressed: () {}, icon: Icon(Icons.visibility))
+        ? IconButton(onPressed: () {}, icon: const Icon(Icons.visibility))
         : null,
     border: isError
         ? OutlineInputBorder(
