@@ -55,7 +55,7 @@ class _AuthPageState extends State<AuthPage> {
           child: Row(
             children: [
               Image.asset('assets/sms.png'),
-              const SizedBox(width: 54),
+              const SizedBox(width: 50),
               const Text(
                 "Continue with Email",
                 style: TextStyle(
@@ -70,7 +70,7 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
   Widget facebookButtons() {
-    //facebook
+    //facebook button
     return InkWell(
       onTap: () {
       },
