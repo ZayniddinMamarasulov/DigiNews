@@ -4,14 +4,10 @@ A new Flutter project.
 
 ## Getting Started
 
- Welcome Screen
-![](assets/screens/welcome_screen.png)
+![image](assets/screens/welcome_screen.png "Welcome Screen" {width=216px height=432px})
 
- Authentication Page
-![](assets/screens/sp1.png)
+![image](assets/screens/sp1.png " Authentication Page" {width=216px height=432px})
 
- Pick Topics Page
-![](assets/screens/chip_topics.png)
+![image](assets/screens/tip_topics.png "Pick Topics Page" {width=216px height=432px})
 
- Notification Page
-![](assets/screens/notification_page.png)
+![image](assets/screens/notification_page.png "Notification Page" {width=216px height=432px})
