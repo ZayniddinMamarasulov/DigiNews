@@ -144,7 +144,7 @@ class _EmailPageState extends State<EmailPage> {
                         Align(
                           alignment: Alignment.bottomRight,
                           child: TextButton(
-                            //shuni Align degan Widgetga Prada kegin alignment deganiga bottomright qil
+
                             onPressed: () {
                               Navigator.pushNamed(context, ResetPasswordPage.id);
                             },
