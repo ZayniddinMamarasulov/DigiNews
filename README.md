@@ -3,14 +3,14 @@
 A new Flutter project.
 
 ## Getting Started
-
+ Authentication Page
+<img src="assets/screens/sp1.png.png" width="216" height="432" title="Authentication Page" alt="Authentication Page">
+ 
+ Welcome Page
 <img src="assets/screens/welcome_screen.png" width="216" height="432" title="Welcome Screen" alt="Welcome Screen">
-![](assets/screens/welcome_screen.png "Welcome Screen" {width=216px height=432px})
 
-![](assets/screens/welcome_screen.png "Welcome Screen" {width=216px height=432px})
+ Pict Topics Page
+<img src="assets/screens/tic_topics.png" width="216" height="432" title="Pict Topics Page" alt="Pict Topics Page">
 
-![](assets/screens/sp1.png " Authentication Page" {width=216px height=432px})
-
-![](assets/screens/tip_topics.png "Pick Topics Page" {width=216px height=432px})
-
-![](assets/screens/notification_page.png "Notification Page" {width=216px height=432px})
+ Notification Page
+<img src="assets/screens/notification_page.png" width="216" height="432" title="Notification Page" alt="Notification Page">
