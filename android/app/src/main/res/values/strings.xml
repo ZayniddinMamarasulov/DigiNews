@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name">DigiNews</string>
+   <string name="facebook_app_id">501563884608461</string>
+   <string name="fb_login_protocol_scheme">fb501563884608461</string>
+</resources>

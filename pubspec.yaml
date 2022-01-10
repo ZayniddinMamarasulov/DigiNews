@@ -17,6 +17,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^1.3.2
   bouncing_widget: ^2.0.0
+  firebase_core: ^1.10.6
+  firebase_auth: ^3.3.4
+  intl_phone_number_input: ^0.7.0+2
+  google_fonts: ^2.2.0
+  google_sign_in: ^5.2.1
+  flutter_facebook_auth: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -30,13 +36,19 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - assets/images/
 
 flutter_native_splash:
-  background_image: assets/splash.png
+  background_image: assets/images/splash.png
 
   android: true
   ios: true
   web: true
   android_gravity: center
   fullscreen: true
+
+
+  fonts:
+    - family: MStoreIcons
+      fonts:
+        - asset: fonts/MStoreIcons.ttf
