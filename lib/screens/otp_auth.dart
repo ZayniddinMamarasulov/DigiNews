@@ -130,7 +130,7 @@ class _OtpAuthState extends State<OtpAuth> {
                       ),
                     ),
                     const SizedBox(width: 125),
-                    Image.asset("assets/img3.jpg"),
+                    Image.asset("assets/sms.png"),
                   ],
                 ),
               ),

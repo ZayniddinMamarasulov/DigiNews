@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:news_app/screens/auth_page.dart';
 import 'package:news_app/screens/home_page.dart';
 import 'package:news_app/screens/loging_page.dart';
+import 'package:news_app/screens/natification_page.dart';
+import 'package:news_app/screens/otp_auth.dart';
 
 void main() {
   runApp(const NewsApp());
 }
-
 class NewsApp extends StatelessWidget {
   const NewsApp({Key? key}) : super(key: key);
   final String change = "Hozi biz ozgarish qildik";
@@ -25,7 +26,7 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "News App",
-      home: LogingPage(),
+      home: NotiPage(),
     );
   }
 }
