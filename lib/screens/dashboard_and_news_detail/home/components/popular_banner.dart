@@ -14,6 +14,8 @@ class PopularBanner extends StatefulWidget {
 }
 
 class _PopularBannerState extends State<PopularBanner> {
+  //nimadir o'zgarish
+
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
