@@ -20,7 +20,7 @@ dependencies:
   intl_phone_number_input: ^0.7.0+2
   google_fonts: ^2.2.0
   flutter_svg: ^1.0.0
-
+  carousel_slider: ^4.0.0
 
 
 dev_dependencies:

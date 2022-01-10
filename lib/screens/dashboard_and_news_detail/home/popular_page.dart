@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_banner.dart';
+import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_carousel.dart';
+import 'package:news_app/utils/app_colors.dart';
 
 class PopularPage extends StatefulWidget {
   const PopularPage({Key? key}) : super(key: key);
@@ -17,29 +20,7 @@ class _PopularPageState extends State<PopularPage> {
       height: 320,
     );
     return Column(children: [
-      Container(
-        margin: const EdgeInsets.all(24.0),
-        width: double.infinity,
-        height: 320,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage('assets/images/popular_banner.png'),
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: const [
-            Padding(
-              padding: EdgeInsets.all(24.0),
-              child: Text(
-                "Here's What You\nNeed To Know About\nDumplings",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
-              ),
-            ),
-          ],
-        ),
-      ),
+      PopularCarousel(),
       Expanded(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 24.0),
