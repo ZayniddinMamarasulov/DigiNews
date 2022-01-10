@@ -118,7 +118,6 @@ class _EmailPageState extends State<EmailPage> {
                                                  });
                                                },
                                              ),
-
                                            ),
                                            validator: (value) {
                                              if (value!.length < 6) {
