@@ -25,7 +25,7 @@ class _AuthPageState extends State<AuthPage> {
               children: [
                 const SizedBox(height: 124.0),
                 Image.asset("assets/digi-newsa.png"),
-                const SizedBox(height: 80),
+                const SizedBox(height: 70),
                 emailButtons(),
                 const SizedBox(height: 16),
                 facebookButtons(),
