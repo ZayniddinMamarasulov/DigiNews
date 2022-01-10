@@ -28,27 +28,27 @@ class _PopularPageState extends State<PopularPage> {
             children: [
               Container(
                 height: 60,
-                color: Colors.red,
+                color: Colors.blue,
                 margin: EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
-                color: Colors.red,
+                color: Colors.blue,
                 margin: EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
-                color: Colors.red,
+                color: Colors.blue,
                 margin: EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
-                color: Colors.red,
+                color: Colors.blue,
                 margin: EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
-                color: Colors.red,
+                color: Colors.blue,
                 margin: EdgeInsets.all(4.0),
               ),
             ],
