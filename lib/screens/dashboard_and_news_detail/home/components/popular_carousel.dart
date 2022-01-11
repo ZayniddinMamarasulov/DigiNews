@@ -39,7 +39,7 @@ class _PopularCarouselState extends State<PopularCarousel> {
           initialPage: 0,
           enlargeCenterPage: true,
           height: 360.0,
-          enableInfiniteScroll: true,
+          enableInfiniteScroll: false,
         ),
       ),
     );
