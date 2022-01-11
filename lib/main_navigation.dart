@@ -10,7 +10,6 @@ import 'package:news_app/screens/register_and_login/otp_authentication/authentic
 import 'package:news_app/screens/register_and_login/password_recovery/email_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/password_recovery/phone_number_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/signup_page/signup_page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class MainNavigationRouteNames {
   static const splashScreen = '/splash_screen';
@@ -26,20 +25,7 @@ abstract class MainNavigationRouteNames {
 }
 
 class MainNavigation {
-  Future checkFirstSeen() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool _seen = (prefs.getBool('seen') ?? false);
-
-    if (_seen) {
-      return MainNavigationRouteNames.auth;
-    } else {
-      // Set the flag to true at the end of onboarding screen if everything is successfull and so I am commenting it out
-      await prefs.setBool('seen', true);
-      return MainNavigationRouteNames.splashScreen;
-    }
-  }
-
-  String initialRoute() => MainNavigationRouteNames.splashScreen;
+  String initialRoute() => MainNavigationRouteNames.home;
 
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.splashScreen: (context) => const OnboardingApp(),
