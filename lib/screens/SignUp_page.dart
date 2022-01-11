@@ -68,6 +68,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       Text("Email",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16),),
                       SizedBox(height: 10,),
                       Container(
+                        color: Colors.grey[200],
                         child:  Center(
                           child: Form(
                             key: formKey,
@@ -79,7 +80,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                       // borderSide: BorderSide.none,
-                                      borderRadius: BorderRadius.circular(16),
+                                      borderRadius: BorderRadius.circular(12),
                                     ),
                                     hintText: "Your emaill addres",
 
@@ -96,6 +97,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 const SizedBox(height: 10,),
 
                                 Container(
+                                  color: Colors.grey[200],
                                   width: double.infinity,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
