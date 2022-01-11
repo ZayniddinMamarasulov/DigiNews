@@ -103,7 +103,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text("Password",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
-                                      SizedBox(height: 10,),
+                                      SizedBox(height: 10),
                                       TextFormField(
                                         obscureText: isPassVisible,
                                         decoration: InputDecoration(
