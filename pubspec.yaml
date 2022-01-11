@@ -21,6 +21,10 @@ dependencies:
   google_fonts: ^2.2.0
   flutter_svg: ^1.0.0
   carousel_slider: ^4.0.0
+  percent_indicator: ^3.4.0
+  shared_preferences: ^2.0.12
+
+
 
 
 dev_dependencies:

@@ -11,22 +11,36 @@ class PopularCarousel extends StatefulWidget {
 }
 
 class _PopularCarouselState extends State<PopularCarousel> {
+  int currentIndex = 0;
+  CarouselController controller = CarouselController();
+
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-      itemCount: StaticData.popularBanners.length,
-      itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-          Container(
-              child: PopularBanner(
-        item: StaticData.popularBanners[itemIndex],
-      )),
-      options: CarouselOptions(
-        autoPlay: true,
-        viewportFraction: 0.9,
-        initialPage: 0,
-        enlargeCenterPage: true,
-        height: 360.0,
-        enableInfiniteScroll: false,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: CarouselSlider.builder(
+        carouselController: controller,
+        itemCount: StaticData.popularBanners.length,
+        itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
+          return PopularBanner(
+            carouselController: controller,
+            item: StaticData.popularBanners[itemIndex],
+            currentIndex: currentIndex,
+          );
+        },
+        options: CarouselOptions(
+          autoPlay: true,
+          onPageChanged: (index, _) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          viewportFraction: 0.9,
+          initialPage: 0,
+          enlargeCenterPage: true,
+          height: 360.0,
+          enableInfiniteScroll: true,
+        ),
       ),
     );
   }
