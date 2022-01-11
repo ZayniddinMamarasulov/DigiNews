@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_carousel.dart';
 import 'package:news_app/utils/static_data.dart';
