@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_banner.dart';
+// import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_banner.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_carousel.dart';
-import 'package:news_app/utils/app_colors.dart';
+// import 'package:news_app/utils/app_colors.dart';
 
 class PopularPage extends StatefulWidget {
   const PopularPage({Key? key}) : super(key: key);
@@ -14,11 +14,11 @@ class PopularPage extends StatefulWidget {
 class _PopularPageState extends State<PopularPage> {
   @override
   Widget build(BuildContext context) {
-    final Widget svgBanner = SvgPicture.asset(
-      'assets/images/test3.svg',
-      width: MediaQuery.of(context).size.width,
-      height: 320,
-    );
+    // final Widget svgBanner = SvgPicture.asset(
+    //   'assets/images/test3.svg',
+    //   width: MediaQuery.of(context).size.width,
+    //   height: 320,
+    // );
     return Column(children: [
       PopularCarousel(),
       Expanded(
@@ -28,12 +28,12 @@ class _PopularPageState extends State<PopularPage> {
             children: [
               Container(
                 height: 60,
-                color: Colors.blue,
+                color: Colors.cyan,
                 margin: EdgeInsets.all(4.0),
               ),
               Container(
                 height: 60,
-                color: Colors.blue,
+                color: Colors.cyan,
                 margin: EdgeInsets.all(4.0),
               ),
               Container(
