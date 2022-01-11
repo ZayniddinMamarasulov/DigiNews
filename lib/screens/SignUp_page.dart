@@ -106,6 +106,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                       SizedBox(height: 10),
                                       TextFormField(
                                         obscureText: isPassVisible,
+
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(
 
