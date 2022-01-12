@@ -17,7 +17,7 @@ class NewsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: StreamContrl.setTheme.stream,
+      stream: StreamControllerHelper.setTheme.stream,
       initialData: true,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         print(snapshot.data);
@@ -33,6 +33,6 @@ class NewsApp extends StatelessWidget {
   }
 }
 
-class StreamContrl {
+class StreamControllerHelper {
   static StreamController<bool> setTheme = StreamController();
 }

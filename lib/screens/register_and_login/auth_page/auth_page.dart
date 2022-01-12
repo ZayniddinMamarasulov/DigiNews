@@ -33,7 +33,7 @@ class _AuthPageState extends State<AuthPage> {
                     onPressed: () {
                       setState(() {
                         isLight = !isLight;
-                        StreamContrl.setTheme.add(isLight);
+                        StreamControllerHelper.setTheme.add(isLight);
                       });
                     },
                     icon: Icon(

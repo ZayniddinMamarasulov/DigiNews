@@ -51,7 +51,9 @@ class _OnboardingAppState extends State<OnboardingApp> {
               radius: 100,
               lineWidth: 4.0,
               percent: percent,
-              animationDuration: 500,
+              animationDuration: 800,
+              animateFromLastPercent: true,
+              animation: true,
               backgroundColor: Colors.transparent,
               progressColor: Colors.black,
               center: GestureDetector(
