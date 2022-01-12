@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/sing_up.dart';
 
 import '../colors.dart';
 
@@ -105,8 +106,8 @@ class _LogingPageState extends State<LogingPage> {
                 ),
                 SizedBox(height: 20),
                 Row(
-                  children: const [
-                    Text(
+                  children:  [
+                    const Text(
                       "Alredy have an account?",
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
@@ -114,11 +115,7 @@ class _LogingPageState extends State<LogingPage> {
                           fontSize: 14),
                     ),
                     SizedBox(width: 5),
-                    Text(
-                      "Loging",
-                      style: TextStyle(
-                          color: Colors.red, fontWeight: FontWeight.w800),
-                    ),
+                    signButtons(),
                   ],
                 ),
                 Padding(
@@ -135,5 +132,35 @@ class _LogingPageState extends State<LogingPage> {
         ),
       ),
     );
+  }
+  Widget signButtons() {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(_createRoute());
+      },
+      child:  Text(
+        "Login",
+        style: TextStyle(
+            color: Colors.red, fontWeight: FontWeight.w800),
+      ),
+    );
+  }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animations, secondaryAnimation) => SingUp(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.easeInOutQuad;
+
+          var tween =
+          Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        });
   }
 }

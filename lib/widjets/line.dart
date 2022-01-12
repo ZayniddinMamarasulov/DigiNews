@@ -10,3 +10,12 @@ class VerticalDivider extends StatelessWidget {
     );
   }
 }
+@override
+Widget build(BuildContext context) {
+  return DecoratedBox(
+    decoration: BoxDecoration(
+      image: DecorationImage(image: AssetImage("your_asset"), fit: BoxFit.cover),
+    ),
+    child: Center(child: FlutterLogo(size: 300)),
+  );
+}
