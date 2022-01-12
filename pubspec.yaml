@@ -30,6 +30,8 @@ flutter:
 
   assets:
     - assets/
+    - assets/Icons/
+    - assets/Image/
 
 flutter_native_splash:
   background_image: assets/splash.png

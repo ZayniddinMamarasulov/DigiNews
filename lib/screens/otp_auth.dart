@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../colors.dart';
+import 'login_scrin.dart';
 
 class OtpAuth extends StatefulWidget {
   const OtpAuth({Key? key}) : super(key: key);
@@ -117,20 +118,12 @@ class _OtpAuthState extends State<OtpAuth> {
               height: 56,
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.all(16),
+                padding:  EdgeInsets.all(16),
                 child: Row(
                   children: [
                     const SizedBox(width: 150),
-                    const Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
-                    ),
+                     signButtons(),
                     const SizedBox(width: 125),
-                    Image.asset("assets/sms.png"),
                   ],
                 ),
               ),
@@ -139,5 +132,38 @@ class _OtpAuthState extends State<OtpAuth> {
         ],
       ),
     );
+  }
+  Widget signButtons() {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(_createRoute());
+      },
+      child:  Text(
+        "Login",
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animations, secondaryAnimation) => LogingScrin(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.easeInOutQuad;
+
+          var tween =
+          Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        });
   }
 }

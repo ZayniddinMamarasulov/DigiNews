@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../colors.dart';
+import 'otp_auth.dart';
 
 class SingUp extends StatefulWidget {
   const SingUp({Key? key}) : super(key: key);
@@ -98,18 +99,10 @@ class _SingUpState extends State<SingUp> {
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Row(
-                  children:  [
-                    const SizedBox(width: 120),
-                    const Text(
-                      "Create account",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(width: 80),
-                    Image.asset("assets/img3.jpg"),
+                  children:   [
+                    SizedBox(width: 120),
+                    signButtons(),
+                    SizedBox(width: 80),
                   ],
                 ),
               ),
@@ -118,5 +111,38 @@ class _SingUpState extends State<SingUp> {
         ],
       ),
     );
+  }
+  Widget signButtons() {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(_createRoute());
+      },
+      child: Text(
+        "Create account",
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animations, secondaryAnimation) => OtpAuth(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.easeInOutQuad;
+
+          var tween =
+          Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        });
   }
 }

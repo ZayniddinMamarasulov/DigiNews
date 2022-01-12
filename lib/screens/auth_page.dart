@@ -54,7 +54,7 @@ class _AuthPageState extends State<AuthPage> {
           padding: const EdgeInsets.all(16.0),
           child: Row(
             children: [
-              Image.asset('assets/sms.png'),
+              Image.asset('assets/sms1.png'),
               const SizedBox(width: 54),
               const Text(
                 "Continue with Email",
