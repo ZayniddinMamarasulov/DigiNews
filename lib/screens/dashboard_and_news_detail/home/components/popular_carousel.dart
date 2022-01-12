@@ -19,6 +19,7 @@ class _PopularCarouselState extends State<PopularCarousel> {
           Container(
               child: PopularBanner(
         item: StaticData.popularBanners[itemIndex],
+
       )),
       options: CarouselOptions(
         autoPlay: true,
@@ -27,7 +28,13 @@ class _PopularCarouselState extends State<PopularCarousel> {
         enlargeCenterPage: true,
         height: 360.0,
         enableInfiniteScroll: false,
+
       ),
+
     );
   }
+  // Widget buildIndicator()=>AnimatedSmoothIndicator(
+  //   activeIndex: activeIndex,
+  //   count: popularBanners.length,
+  // );
 }
