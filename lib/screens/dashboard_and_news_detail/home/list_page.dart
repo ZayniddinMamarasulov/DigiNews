@@ -99,33 +99,6 @@ class _ListpageState extends State<Listpage> {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
-
-            Container(
-              height: 60,
-              color: Colors.red,
-              margin: EdgeInsets.all(4.0),
-            ),
-            Container(
-              height: 60,
-              color: Colors.cyan,
-              margin: EdgeInsets.all(4.0),
-            ),
-            Container(
-              height: 60,
-              color: Colors.blue,
-              margin: EdgeInsets.all(4.0),
-            ),
-            Container(
-              height: 60,
-              color: Colors.blue,
-              margin: EdgeInsets.all(4.0),
-            ),
-            Container(
-              height: 60,
-              color: Colors.blue,
-              margin: EdgeInsets.all(4.0),
-            ),
           ],
         ),
       ),
