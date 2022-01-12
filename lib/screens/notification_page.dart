@@ -131,7 +131,7 @@ class FollowingMassage extends StatelessWidget {
             height: 36,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
-              color: AppColors.buttonColor,
+              color: AppColors.avatarBg,
             ),
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -227,10 +227,10 @@ class Congrats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CircleAvatar(
-          backgroundColor: AppColors.buttonColor,
+       const CircleAvatar(
+          backgroundColor: AppColors.avatarBg,
           radius: 20,
-          child: const Text('10K', style: TextStyle(
+          child: Text('10K', style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w900,
             color: Colors.white,

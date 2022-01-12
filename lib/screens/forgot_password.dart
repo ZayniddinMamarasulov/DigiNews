@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/colors.dart';
+
 import 'package:news_app/screens/sign_up.dart';
 import 'package:news_app/main.dart';
+import 'package:news_app/utils/app_colors.dart';
 import 'forgot_password.dart';
 import 'forgot_password.dart';
-import 'package:news_app/colors.dart';
+
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);

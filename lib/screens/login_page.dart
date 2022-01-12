@@ -4,6 +4,7 @@ import 'package:news_app/screens/sign_up.dart';
 import 'package:news_app/main.dart';
 import 'forgot_password.dart';
 import 'forgot_password.dart';
+import 'package:news_app/models/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -89,8 +90,8 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
               TextButton(onPressed: ()=>{
-               Navigator.push(context, resetPassword())
-              }, child: Text('Forgot Password',style: TextStyle(
+               Navigator.pushNamed(context, MainNavigationNames.forgotpasword)
+              }, child: const Text('Forgot Password',style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 16,
                 color: Colors.red,
@@ -106,7 +107,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 height: 56,
                 width: double.infinity,
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Login',
                     style: TextStyle(
@@ -123,10 +124,10 @@ class LoginPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don't have an account?"),
+                const Text("Don't have an account?"),
                 TextButton(onPressed: ()=>{
-                  Navigator.push(context, signUp())
-                }, child: Text('SignUp',style: TextStyle(
+                  Navigator.pushNamed(context, MainNavigationNames.signup)
+                }, child: const Text('SignUp',style: TextStyle(
                   color: Colors.red,
                   fontWeight: FontWeight.w500,
                   fontSize: 14,

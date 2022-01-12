@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/auth_page.dart';
+import 'package:news_app/models/routes.dart';
 import 'package:news_app/screens/forgot_password.dart';
-import 'package:news_app/screens/home_page.dart';
 import 'package:news_app/screens/sign_up.dart';
 import 'package:news_app/screens/login_page.dart';
 import 'package:news_app/main.dart';
@@ -67,7 +66,7 @@ class SignUpPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4.0),
                   )),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             const Text(
               'Email',
               style: TextStyle(
@@ -85,7 +84,7 @@ class SignUpPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4.0),
                   )),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             const Text(
               'Password',
               style: TextStyle(
@@ -114,7 +113,7 @@ class SignUpPage extends StatelessWidget {
                 ),
                 height: 56,
                 width: double.infinity,
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Login',
                     style: TextStyle(
@@ -127,14 +126,14 @@ class SignUpPage extends StatelessWidget {
               ),
               onTap: () => {},
             ),
-            SizedBox(height: 16,),
+            const SizedBox(height: 16,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Already registered?"),
+                const Text("Already registered?"),
                 TextButton(onPressed: ()=>{
-                  Navigator.push(context, (login()))
-                }, child: Text('Login',style: TextStyle(
+                  Navigator.pushNamed(context, MainNavigationNames.loginpage )
+                }, child: const Text('Login',style: TextStyle(
                  color: Colors.red,
                   fontWeight: FontWeight.w500,
                   fontSize: 14,
