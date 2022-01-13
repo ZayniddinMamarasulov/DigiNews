@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/home/notification/notification_page.dart';
 import 'package:news_app/screens/home/home_page.dart';
+import 'package:news_app/screens/home/onboarding/onboarding.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
 import 'package:news_app/screens/register_and_login/login_page/login_page.dart';
@@ -20,12 +21,14 @@ abstract class MainNavigationRouteNames {
   static const authentication = '/auth/sign_up/authentication';
   static const home = '/home';
   static const notification = '/notification';
+  static const onboarding = '/onboarding';
 }
 
 class MainNavigation {
-  String initialRoute() => MainNavigationRouteNames.auth;
+  String initialRoute() => MainNavigationRouteNames.onboarding;
 
   final routes = <String, Widget Function(BuildContext)>{
+    MainNavigationRouteNames.onboarding: (context) => const OnBoarding(),
     MainNavigationRouteNames.auth: (context) => const AuthPage(),
     MainNavigationRouteNames.signUp: (context) => const SignupPage(),
     MainNavigationRouteNames.authentication: (context) =>
