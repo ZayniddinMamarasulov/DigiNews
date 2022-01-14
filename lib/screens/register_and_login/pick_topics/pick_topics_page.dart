@@ -30,13 +30,13 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
       getChip(AppColors.topics[13], 13),
       getChip(AppColors.topics[14], 14),
     ];
-
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: buildAppBar(context),
       body: Container(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             children: [
               const Text(
@@ -51,12 +51,22 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                 runSpacing: 12,
                 children: topics,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, MainNavigationRouteNames.home);
-                },
-                child: const Text('Next'),
-              )
+              Container(
+                  height: height * 0.08,
+                  width: double.infinity,
+                  margin: EdgeInsets.symmetric(vertical: height * 0.06),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12))),
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.grey.shade900)),
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, MainNavigationRouteNames.drawer);
+                    },
+                    child: const Text('Get Started'),
+                  ))
             ],
           ),
         ),
