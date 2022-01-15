@@ -50,6 +50,7 @@ class _AuthPageState extends State<AuthPage> {
                       .pushNamed(MainNavigationRouteNames.signUp);
                 },
               ),
+              Text("Text"),
               const LoginTextButton(),
               const AgreementText(),
             ],
