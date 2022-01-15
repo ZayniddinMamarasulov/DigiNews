@@ -20,7 +20,7 @@ class _PopularPageState extends State<PopularPage> {
         children: [
           PopularCarousel(),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
@@ -41,7 +41,8 @@ class _PopularPageState extends State<PopularPage> {
               ],
             ),
           ),
-          ListView.builder(
+          const SizedBox(height: 8),
+          ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: StaticData.latestNews.length,
@@ -49,14 +50,15 @@ class _PopularPageState extends State<PopularPage> {
               var list = StaticData.latestNews[index];
               return Container(
                 height: 96,
-                padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 8),
+                margin: const EdgeInsets.symmetric(vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       height: 96,
-                      width: 80,
-                      margin: const EdgeInsets.only(right: 12.0),
+                      width: 84,
+                      margin: const EdgeInsets.only(right: 16.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         image: DecorationImage(
@@ -66,16 +68,22 @@ class _PopularPageState extends State<PopularPage> {
                       ),
                     ),
                     SizedBox(
-                      width: 250,
+                      width: 240,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(list.category),
+                          Text(
+                            list.category,
+                            style: TextStyle(color: Colors.grey[600]),
+                          ),
                           Text(
                             list.title,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
                               fontSize: 16,
+                              height: 1.3,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
@@ -84,13 +92,29 @@ class _PopularPageState extends State<PopularPage> {
                             children: [
                               Row(
                                 children: [
-                                  const Text('1 days ago | '),
-                                  Text('${list.readingTime} mins read'),
+                                  const Text(
+                                    '1 days ago  •  ',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
+                                  Text(
+                                    '${list.readingTime} mins read',
+                                    style: const TextStyle(color: Colors.grey),
+                                  ),
                                 ],
                               ),
-                              const Icon(
-                                Icons.bookmark_add_outlined,
-                                color: Colors.grey,
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    list.isSaved = !list.isSaved;
+                                  });
+                                },
+                                child: Icon(
+                                  list.isSaved
+                                      ? Icons.bookmark_added_outlined
+                                      : Icons.bookmark_add_outlined,
+                                  color:
+                                      list.isSaved ? Colors.black : Colors.grey,
+                                ),
                               ),
                             ],
                           ),
@@ -99,6 +123,12 @@ class _PopularPageState extends State<PopularPage> {
                     )
                   ],
                 ),
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                child: Divider(),
               );
             },
           )

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/home_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/notification_page/notification_page.dart';
+import 'package:news_app/screens/dashboard_and_news_detail/saved_page/saved_page.dart';
 import 'package:news_app/screens/onboarding/onboarding.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
@@ -22,6 +23,7 @@ abstract class MainNavigationRouteNames {
   static const authentication = '/auth/sign_up/authentication';
   static const home = '/home';
   static const notification = '/notification';
+  static const savedNews = '/savedNews';
 }
 
 class MainNavigation {
@@ -43,5 +45,6 @@ class MainNavigation {
     MainNavigationRouteNames.home: (context) => const HomePage(),
     MainNavigationRouteNames.notification: (context) =>
         const NotificationPage(),
+    MainNavigationRouteNames.savedNews: (context) => const SavedPage(),
   };
 }
