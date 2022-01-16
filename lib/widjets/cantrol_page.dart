@@ -12,6 +12,7 @@ class _CantrolPageState extends State<CantrolPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+        elevation: 100,
         backgroundColor: Colors.black,
         child: Container(
           color: Colors.black,
@@ -21,9 +22,9 @@ class _CantrolPageState extends State<CantrolPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 109),
-                Image.asset("assets/Icons/img_16.png", height: 70, width: 70),
+                Image.asset("assets/Icons/img_16.png", height: 40, width: 40),
                 SizedBox(height: 16),
-                Text(
+                const Text(
                   "Tiana Vetrovs",
                   style: TextStyle(
                       fontSize: 18,
@@ -155,11 +156,13 @@ class _CantrolPageState extends State<CantrolPage> {
         ),
       ),
       appBar: AppBar(
+        backgroundColor: Colors.lightBlueAccent,
+
         actions: [
           Image.asset("assets/Icons/img_17.png"),
-
         ],
       ),
+      backgroundColor: Colors.white,
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/colors.dart';
 import 'package:news_app/pages/menu_page.dart';
+import 'News/saved_news.dart';
 import 'natification_page.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -36,6 +37,10 @@ class _DashboardPageState extends State<DashboardPage> {
                 icon: Image.asset("assets/img_13.png"),
                 iconSize: 24,
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SavedNews()),
+                  );
                   setState(() {});
                 },
               ),
@@ -139,6 +144,10 @@ class _DashboardPageState extends State<DashboardPage> {
                 color: Colors.blue,
                 image: const DecorationImage(
                     image: AssetImage("assets/img_15.png"), fit: BoxFit.fill)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Latest News",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),),
           ),
           Expanded(
             child: Padding(

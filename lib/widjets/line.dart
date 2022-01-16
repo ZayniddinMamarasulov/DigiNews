@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 class VerticalDivider extends StatelessWidget {
+  const VerticalDivider({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return new Container(
+    return Container(
       height: 30.0,
       width: 1.0,
       color: Colors.white30,
@@ -12,7 +14,7 @@ class VerticalDivider extends StatelessWidget {
 }
 @override
 Widget build(BuildContext context) {
-  return DecoratedBox(
+  return const DecoratedBox(
     decoration: BoxDecoration(
       image: DecorationImage(image: AssetImage("your_asset"), fit: BoxFit.cover),
     ),
