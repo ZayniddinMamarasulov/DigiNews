@@ -6,6 +6,8 @@ import 'package:news_app/screens/dashboard_and_news_detail/home/recent_page.dart
 import 'package:news_app/screens/dashboard_and_news_detail/home/trending_page.dart';
 import 'package:news_app/utils/app_colors.dart';
 
+import 'components/custom_advanced_drawer.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -21,13 +23,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
-    _tabController.addListener(_handlerTab);
-  }
-
-  void _handlerTab() {
-    setState(() {
-      print(_tabController.index);
-    });
   }
 
   void _handleMuneButtonPressed() {
@@ -36,13 +31,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return AdvancedDrawer(
-      animationCurve: Curves.easeInOut,
-      backdropColor: Colors.black,
-      animateChildDecoration: true,
-      animationDuration: const Duration(milliseconds: 300),
-      controller: _advancedDrawerController,
-      childDecoration: BoxDecoration(borderRadius: BorderRadius.circular(32)),
+    return CustomAdvancedDrawer(
+      advancedDrawerController: _advancedDrawerController,
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -70,30 +60,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16.0),
-            TabBar(
-              controller: _tabController,
-              isScrollable: true,
-              labelStyle: const TextStyle(
-                fontSize: 22.0,
-                fontWeight: FontWeight.w900,
-              ),
-              unselectedLabelStyle: const TextStyle(
-                fontSize: 22.0,
-                fontWeight: FontWeight.w400,
-              ),
-              indicatorColor: Colors.white,
-              labelColor: AppColors.appBlack,
-              unselectedLabelColor: AppColors.unSelectedTabColor,
-              tabs: [
-                Tab(text: 'Popular'),
-                Tab(text: 'Trending'),
-                Tab(text: 'Recent'),
-              ],
-            ),
+            _homeTabBar(),
             Expanded(
               child: TabBarView(
                 controller: _tabController,
-                children: [
+                children: const [
                   PopularPage(),
                   TrendingPage(),
                   RecentPage(),
@@ -103,99 +74,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ],
         ),
       ),
-      drawer: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.only(left: 12),
-          child: ListTileTheme(
-            textColor: Colors.white,
-            iconColor: Colors.white,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(left: 18, bottom: 12, top: 36),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      CircleAvatar(
-                        maxRadius: 36,
-                        backgroundColor: Colors.white,
-                        backgroundImage:
-                            AssetImage("assets/images/avatar_sample.png"),
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        "Tiana Vetrovs",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      SizedBox(height: 6),
-                      Text(
-                        "View Profile",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: AppColors.colorE8,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Icons.home),
-                  title: Text("Home"),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Icons.bookmark),
-                  title: Text("Saved News"),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Icons.edit),
-                  title: Text("Write news"),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Icons.credit_card),
-                  title: Text("Membership"),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Icons.help),
-                  title: Text("Help"),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Icons.settings),
-                  title: Text("Setting"),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Icons.logout),
-                  title: Text("Log out"),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 16, top: 36),
-                  child: Text(
-                    "Version 1.0",
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.colorE8,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
+    );
+  }
+
+  TabBar _homeTabBar() {
+    return TabBar(
+      controller: _tabController,
+      isScrollable: true,
+      labelStyle: const TextStyle(
+        fontSize: 22.0,
+        fontWeight: FontWeight.w900,
       ),
+      unselectedLabelStyle: const TextStyle(
+        fontSize: 22.0,
+        fontWeight: FontWeight.w400,
+      ),
+      indicatorColor: Colors.white,
+      labelColor: AppColors.appBlack,
+      unselectedLabelColor: AppColors.unSelectedTabColor,
+      tabs: const [
+        Tab(text: 'Popular'),
+        Tab(text: 'Trending'),
+        Tab(text: 'Recent'),
+      ],
     );
   }
 }
