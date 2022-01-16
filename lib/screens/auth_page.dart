@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:news_app/colors.dart';
 import 'package:news_app/screens/SignUp_page.dart';
 import 'package:news_app/screens/email_page.dart';
-import 'package:news_app/screens/home_page.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);

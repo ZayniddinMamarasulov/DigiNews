@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/pages/Dashboard/home_page.dart';
 import 'package:news_app/utils/colors.dart';
 
 class PickTopicsPage extends StatefulWidget {
@@ -46,7 +47,7 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
         children: [
           Container(
             child: Padding(
-              padding: const EdgeInsets.all(36),
+              padding: const EdgeInsets.only(left: 36,right: 36,top: 10),
               child: Column(
                 children:  [
                   const Text(
@@ -70,7 +71,9 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                       borderRadius: BorderRadius.circular(18),
                     ),
                     child: FlatButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.pushNamed(context, HomePage.id);
+                      },
                       child: const Center(
                         child: Text("Get Started",style: TextStyle(fontWeight: FontWeight.w700,color: Colors.white,fontSize: 16),),
                       ),

@@ -19,6 +19,7 @@ dependencies:
   bouncing_widget: ^2.0.0
   numeric_keyboard: ^1.1.0
   flutter_verification_code: ^1.1.1
+  carousel_slider: ^4.0.0
 
 dev_dependencies:
   flutter_test:
