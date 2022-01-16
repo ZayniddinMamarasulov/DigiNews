@@ -23,6 +23,9 @@ dependencies:
   carousel_slider: ^4.0.0
   percent_indicator: ^3.4.0
   shared_preferences: ^2.0.12
+  image_picker: ^0.8.4+4
+  dotted_border: ^2.0.0+2
+
 
 
 

@@ -32,6 +32,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: TextButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed(MainNavigationRouteNames.writeNews);
+          },
+          child: const Text('write news'),
+        ),
         leading: IconButton(
           icon: Image.asset('assets/icons/ic_menu.png'),
           onPressed: () => Scaffold.of(context).openDrawer(),

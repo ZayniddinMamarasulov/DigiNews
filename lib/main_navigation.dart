@@ -11,6 +11,7 @@ import 'package:news_app/screens/register_and_login/otp_authentication/authentic
 import 'package:news_app/screens/register_and_login/password_recovery/email_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/password_recovery/phone_number_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/signup_page/signup_page.dart';
+import 'package:news_app/screens/write_news/write_new_articl.dart';
 
 abstract class MainNavigationRouteNames {
   static const splashScreen = '/splash_screen';
@@ -23,7 +24,8 @@ abstract class MainNavigationRouteNames {
   static const authentication = '/auth/sign_up/authentication';
   static const home = '/home';
   static const notification = '/notification';
-  static const savedNews = '/savedNews';
+  static const savedNews = '/saved_news';
+  static const writeNews = '/write_news';
 }
 
 class MainNavigation {
@@ -46,5 +48,6 @@ class MainNavigation {
     MainNavigationRouteNames.notification: (context) =>
         const NotificationPage(),
     MainNavigationRouteNames.savedNews: (context) => const SavedPage(),
+    MainNavigationRouteNames.writeNews: (context) => const WriteNewsPage(),
   };
 }
