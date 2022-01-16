@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/colors.dart';
 
+import 'dashboad_page.dart';
+
 class NotiPage extends StatefulWidget {
   const NotiPage({Key? key}) : super(key: key);
 
@@ -17,9 +19,13 @@ class _NotiPageState extends State<NotiPage> {
         children: [
           SizedBox(height: 49),
           IconButton(
-            icon: Icon(Icons.arrow_back_rounded),
+            icon: Image.asset("assets/Icons/img.png"),
             iconSize: 24,
             onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DashboardPage()),
+              );
               setState(() {});
             },
           ),
@@ -248,7 +254,7 @@ class _NotiPageState extends State<NotiPage> {
                             borderRadius: BorderRadius.circular(12)),
                         width: 90,
                         height: 36,
-                        child: Center(
+                        child: const Center(
                             child: Text(
                           "Follow",
                           style: TextStyle(color: Colors.black),

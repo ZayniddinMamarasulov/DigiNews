@@ -65,7 +65,7 @@ class _LogingPageState extends State<LogingPage> {
                     padding: const EdgeInsets.all(16),
                     child: Row(
                       children: [
-                        Image.asset("assets/girl.png"),
+                        Image.asset("assets/facebook.png"),
                         const SizedBox(width: 54),
                         const Text(
                           "Continue with Facebook",
@@ -90,7 +90,7 @@ class _LogingPageState extends State<LogingPage> {
                     padding: const EdgeInsets.all(16),
                     child: Row(
                       children: [
-                        Image.asset("assets/img_1.png"),
+                        Image.asset("assets/google.png"),
                         const SizedBox(width: 54),
                         const Text(
                           "Continue with emile",
@@ -121,8 +121,8 @@ class _LogingPageState extends State<LogingPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
-                    children: [
-                      const Text("By continuing, you accept the"),
+                    children: const [
+                      Text("By continuing, you accept the"),
                     ],
                   ),
                 )
