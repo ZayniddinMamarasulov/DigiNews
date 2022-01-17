@@ -60,6 +60,7 @@ class DigiTheme {
 
   static ThemeData light() {
     return ThemeData(
+      fontFamily: 'SFPRo',
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith(
