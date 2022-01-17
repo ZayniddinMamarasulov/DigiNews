@@ -104,7 +104,7 @@ class ForgotPasswordPage extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         child: Image.asset('assets/call.png'),
-                        backgroundColor: AppColors.avatarBg,
+                        backgroundColor: AppColors.carouselButtonColor,
                       ),
                       const SizedBox(width: 16),
                       Column(

@@ -156,7 +156,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   title: Text("Saved News"),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, MainNavigationRouteNames.writeNews);
+                  },
                   leading: Icon(Icons.edit),
                   title: Text("Write news"),
                 ),
