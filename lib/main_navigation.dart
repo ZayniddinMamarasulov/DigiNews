@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/dashboard_and_news_detail/bookmarks/bookmarks.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/home_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/notification_page/notification_page.dart';
+import 'package:news_app/screens/drawer/write_news/write_news.dart';
 import 'package:news_app/screens/onboarding/onboarding.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
@@ -11,6 +11,7 @@ import 'package:news_app/screens/register_and_login/otp_authentication/authentic
 import 'package:news_app/screens/register_and_login/password_recovery/email_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/password_recovery/phone_number_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/signup_page/signup_page.dart';
+import 'package:news_app/screens/drawer/bookmarks/bookmarks.dart';
 
 abstract class MainNavigationRouteNames {
   static const splashScreen = '/splash_screen';
@@ -24,10 +25,11 @@ abstract class MainNavigationRouteNames {
   static const home = '/home';
   static const notification = '/notification';
   static const bookmarks = '/bookmarks';
+  static const writeNews = '/write_news';
 }
 
 class MainNavigation {
-  String initialRoute() => MainNavigationRouteNames.bookmarks;
+  String initialRoute() => MainNavigationRouteNames.writeNews;
 
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.splashScreen: (context) => const OnboardingApp(),
@@ -47,5 +49,6 @@ class MainNavigation {
         const NotificationPage(),
     MainNavigationRouteNames.bookmarks: (context) =>
         const BookmarksPage(),
+    MainNavigationRouteNames.writeNews: (context) => const WriteNews(),
   };
 }

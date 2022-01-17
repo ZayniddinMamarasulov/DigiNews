@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/drawer/bookmarks/components/app_bar.dart';
 import 'package:news_app/utils/static_data.dart';
 
-import 'components/app_bar.dart';
 
 class BookmarksPage extends StatefulWidget {
   const BookmarksPage({Key? key}) : super(key: key);

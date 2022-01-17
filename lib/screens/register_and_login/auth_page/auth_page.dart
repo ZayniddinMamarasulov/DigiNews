@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
-
-import '../../../../main.dart';
+import 'package:news_app/main.dart';
 import 'components/agreement_text.dart';
 import 'components/login_text_button.dart';
 import 'components/sign_buttons.dart';
