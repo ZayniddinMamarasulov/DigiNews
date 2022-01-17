@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 class AppColors {
-  static const Color white =  Color(0xFFE5E5E5);
-  static const Color unselectedLabel = Color(0x00b8b8b8);
+  static const Color appBlack = Color(0xFF121212);
+  static const Color unSelectedTabColor = Color(0xFFB8B8B8);
+  static const Color carouselButtonColor = Color(0xFF1212121);
+  static const Color colorE8 = Color(0xFFE8E8E8);
 
 
   //TODO : MOVE LIST BELOW to another file

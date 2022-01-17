@@ -34,30 +34,33 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: buildAppBar(context),
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            children: [
-              const Text(
-                'Pick topics to start reading and saving news',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(height: 24),
-              Wrap(
-                runAlignment: WrapAlignment.start,
-                crossAxisAlignment: WrapCrossAlignment.start,
-                spacing: 12,
-                runSpacing: 12,
-                children: topics,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, MainNavigationRouteNames.home);
-                },
-                child: const Text('Next'),
-              )
-            ],
+      body: SingleChildScrollView(
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              children: [
+                const Text(
+                  'Pick topics to start reading and saving news',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(height: 24),
+                Wrap(
+                  runAlignment: WrapAlignment.start,
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  spacing: 12,
+                  runSpacing: 12,
+                  children: topics,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushNamed(MainNavigationRouteNames.home);
+                  },
+                  child: const Text('Next'),
+                )
+              ],
+            ),
           ),
         ),
       ),

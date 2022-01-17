@@ -3,6 +3,7 @@ import 'package:news_app/screens/register_and_login/login_page/components/app_ba
 import 'package:news_app/screens/register_and_login/otp_authentication/components/resend_code.dart';
 import 'package:news_app/screens/register_and_login/otp_authentication/components/verify_login_text.dart';
 
+import '../../../main_navigation.dart';
 import 'components/enter_otp_code.dart';
 
 class AuthenticationPage extends StatefulWidget {
@@ -23,10 +24,17 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
           padding: const EdgeInsets.symmetric(horizontal: 22.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               VerifyLoginText(),
               EnterCodeForm(),
               ResendCode(),
+              TextButton(
+                  onPressed: (){
+                    Navigator.of(context)
+                        .pushNamed(MainNavigationRouteNames.home);
+                  },
+                  child: Text("Text")
+              )
             ],
           ),
         ),
