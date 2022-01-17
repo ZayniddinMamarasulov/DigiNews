@@ -1,7 +1,6 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/drawer/write_news/components/app_bar.dart';
-
+import 'package:news_app/screens/drawer/write_news/components/img_upload.dart';
 
 class WriteNews extends StatefulWidget {
   const WriteNews({Key? key}) : super(key: key);
@@ -32,42 +31,7 @@ class _WriteNewsState extends State<WriteNews> {
               const SizedBox(
                 height: 8,
               ),
-              DottedBorder(
-                dashPattern: const [6, 6],
-                borderType: BorderType.RRect,
-                color: Colors.grey.shade300,
-                radius: const Radius.circular(12),
-                padding: const EdgeInsets.all(6),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(12)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: SizedBox(
-                      height: 120,
-                      width: double.infinity,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Icon(Icons.cloud_upload_outlined),
-                          SizedBox(
-                            height: 16,
-                          ),
-                          Text(
-                            'Upload PDF, PNG, JPG, MP4 (max 5MB)',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              height: 1.3,
-                              color: Colors.grey,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              uploadWidget(),
               const SizedBox(
                 height: 16,
               ),
@@ -83,12 +47,52 @@ class _WriteNewsState extends State<WriteNews> {
                 height: 8,
               ),
               TextField(
-                  decoration: InputDecoration(
-                filled: true,
-                border: const OutlineInputBorder(),
-                fillColor: Colors.grey.shade200,
-                hintText: "Write a title",
-              )),
+                decoration: InputDecoration(
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        const BorderSide(color: Colors.white,),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white,),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  fillColor: Colors.grey.shade200,
+                  hintText: "Write a title",
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              const Text(
+                "Content",
+                style: TextStyle(
+                  fontSize: 18,
+                  height: 1.4,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              TextField(
+                maxLines: 6,
+                decoration: InputDecoration(
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide:
+                    const BorderSide(color: Colors.white,),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white,),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  fillColor: Colors.grey.shade200,
+                  hintText: "Write a title",
+                ),
+              ),
             ],
           ),
         ),
