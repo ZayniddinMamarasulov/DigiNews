@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
@@ -48,7 +49,7 @@ class _UploadCoverWidgetState extends State<UploadCoverWidget> {
               radius: const Radius.circular(16),
               dashPattern: const [6, 3],
               borderType: BorderType.RRect,
-              color: isLoadedImage ? Colors.transparent : Colors.grey.shade200,
+              color: image != null ? Colors.transparent : Colors.grey.shade200,
               child: Container(
                 height: 120,
                 width: double.infinity,
@@ -66,20 +67,39 @@ class _UploadCoverWidgetState extends State<UploadCoverWidget> {
 
   Widget childWidget() {
     if (image != null) {
-      setState(() {
-        isLoadedImage = true;
-      });
       return ClipRRect(
         borderRadius: BorderRadius.circular(16),
-        child: Image.file(
-          image!,
-          fit: BoxFit.cover,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Image.file(
+              image!,
+              fit: BoxFit.cover,
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                colors: [Colors.black26, Colors.black26],
+              )),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(
+                  Icons.cloud_upload_rounded,
+                  color: Colors.white,
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Change image',
+                  style: TextStyle(color: Colors.white, fontSize: 12),
+                ),
+              ],
+            )
+          ],
         ),
       );
     } else {
-      setState(() {
-        isLoadedImage = false;
-      });
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
