@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class ResetPassInfoText extends StatelessWidget {
@@ -14,17 +15,17 @@ class ResetPassInfoText extends StatelessWidget {
       children: [
         const SizedBox(height: 12),
         const Text(
-          'Reset Password',
+          'resetPass',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-        ),
+        ).tr(),
         const SizedBox(height: 12),
         Text(
-          'Enter your $method and we will send you a link to reset your password.',
+          'senPhoneText',
           style: TextStyle(
               fontSize: 16,
               color: Colors.grey.shade600,
               fontWeight: FontWeight.w400),
-        ),
+        ).tr(args: [method]),
       ],
     );
   }

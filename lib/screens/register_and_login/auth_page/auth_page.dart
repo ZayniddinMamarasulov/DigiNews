@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
 
@@ -46,15 +47,18 @@ class _AuthPageState extends State<AuthPage> {
                 SignButtons(
                   color: Colors.black,
                   icon: 'assets/images/sms.png',
-                  txt: 'Continue with Email',
+                  txt: ('continueWith').tr(args: ['Email']),
                   func: () {
+                    setState(() {
+                      context.setLocale(Locale('ru', 'RU'));
+                    });
                     print('email');
                   },
                 ),
                 SignButtons(
                   color: Colors.blue,
                   icon: 'assets/images/fb_icon.png',
-                  txt: 'Continue with Facebook',
+                  txt: ('continueWith').tr(args: ['Facebook']),
                   func: () {
                     print('facebook');
                   },
@@ -62,7 +66,7 @@ class _AuthPageState extends State<AuthPage> {
                 SignButtons(
                   color: Colors.white,
                   icon: 'assets/images/google_icon.png',
-                  txt: 'Continue with Google',
+                  txt: ('continueWith').tr(args: ['Google']),
                   func: () {
                     Navigator.of(context)
                         .pushNamed(MainNavigationRouteNames.signUp);

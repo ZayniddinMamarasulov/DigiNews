@@ -46,7 +46,7 @@ class SignButtons extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       color:
                           color == Colors.white ? Colors.black : Colors.white),
-                )
+                ),
               ],
             ),
           ),

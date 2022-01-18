@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_carousel.dart';
@@ -23,21 +24,21 @@ class _PopularPageState extends State<PopularPage> {
             padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text(
-                  'Latest News',
+              children: [
+                const Text(
+                  'latestNews',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
-                ),
-                Text(
-                  'See more',
+                ).tr(),
+                const Text(
+                  'seeMore',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.redAccent,
                   ),
-                ),
+                ).tr(),
               ],
             ),
           ),
@@ -92,12 +93,12 @@ class _PopularPageState extends State<PopularPage> {
                             children: [
                               Row(
                                 children: [
-                                  const Text(
-                                    '1 days ago  •  ',
-                                    style: TextStyle(color: Colors.grey),
+                                  Text(
+                                    '1 ${'dayAgo'.tr()}  •  ',
+                                    style: const TextStyle(color: Colors.grey),
                                   ),
                                   Text(
-                                    '${list.readingTime} mins read',
+                                    '${list.readingTime} ${'readTime'.tr()}',
                                     style: const TextStyle(color: Colors.grey),
                                   ),
                                 ],

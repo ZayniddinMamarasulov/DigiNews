@@ -29,7 +29,7 @@ abstract class MainNavigationRouteNames {
 }
 
 class MainNavigation {
-  String initialRoute() => MainNavigationRouteNames.home;
+  String initialRoute() => MainNavigationRouteNames.auth;
 
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.splashScreen: (context) => const OnboardingApp(),

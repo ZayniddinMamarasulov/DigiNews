@@ -1,0 +1,89 @@
+{
+  "onTitle1": "Discover Curated News",
+  "onTitle2": "Update News Everyday",
+  "onTitle3": "Browse by Categories",
+  "onText1": "Keep up-to-date with the actual and valid news everyday",
+  "onText2": "Get the recent news everyday with DigiNews",
+  "onText3": "Get the recent news everyday with DigiNews",
+  "skip" : "Skip",
+
+  "welcomeDigiNews": "Welcome to DigiNews",
+  "continueWith": "Continue with {}",
+  "alreadyAccount": "Already have an account?",
+  "loginButton": " Login",
+  "byContinuing": "By continuing, you accept the ",
+  "termsOfUse": " Terms of Use",
+  "and": "  and ",
+  "privacyPolicy": "Privacy Policy",
+
+  "signUp": "Sign Up",
+  "minuteToCreate": "It only  takes a minute to create your account",
+  "name": "Name",
+  "email": "Email",
+  "password": "Passowrd",
+  "createAccButton": "Create account",
+  "alreadyRegistered": "Already registered? ",
+
+  "welcomeBack": "Welcome back!",
+  "enterYourEmail": "Enter your email address and password to login",
+  "forgotPassword": "Forgot Password",
+  "dontHaveAccount": "Don’t have an account?",
+
+  "verifyLogin": "Verify Login",
+  "verifyText1": "Enter OTP Code send to",
+  "verifyText2": "This code will expired in",
+  "verifyText3": "Didn’t received the code? ",
+  "resendCode": "Resend Code",
+
+  "resetPass": "Reset Password",
+  "resetPAssText": "Select verification method and we will send verification code",
+  "phoneNumber":"Phone Number",
+  "sendToEmail": "Send to your email",
+  "sentToPhone": "Send to your phone number",
+  "continue": "Continue",
+
+  "senPhoneText": "Enter your {} and we will send you a link to reset your password.",
+  "sendOTPCode": "Send OTP Code",
+
+  "topicsPageText": "Pick topics to start reading and saving news",
+  "getStarted": "Get Started",
+  "music": "\uD83C\uDFB6 Music",
+
+  "business": "\uD83D\uDCBC Business",
+  "design": "\uD83C\uDFA8 Design",
+  "book": "\uD83D\uDCD6 Book",
+  "photography": "\uD83D\uDCF7 Photography",
+  "architecture": "\uD83C\uDFDB Architecture",
+  "writing": "✍\uD83C\uDFFB Writing",
+  "education": "\u200D\uD83C\uDFEB Education",
+  "enternaiment": "\uD83C\uDFAE Entertainment",
+  "nature": "\uD83C\uDF43 Nature",
+  "travel": "\uD83C\uDFDD Travel",
+  "sport": "\uD83C\uDFD3 Sports",
+  "health": "⚕️ Health",
+  "recipes": "\uD83C\uDF73 Recipes",
+  "fitness": "\uD83D\uDCAA Gym & Fitness",
+
+  "popular": "Popular",
+  "trending": "Trending",
+  "recent": "Recent",
+  "latestNews": "Latest News",
+  "seeMore": "See more",
+
+  "dayAgo": " days ago",
+  "readTime": "min read",
+
+  "viewProfile": "View Profile",
+  "home": "Home",
+  "savedNews": "Saved News",
+  "writeNews": "Write News",
+  "membership": "Membership",
+  "help": "Help",
+  "setting": "Setting",
+  "logout": "Logout"
+
+
+
+
+}
+

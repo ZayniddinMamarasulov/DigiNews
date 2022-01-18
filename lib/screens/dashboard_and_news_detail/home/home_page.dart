@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:news_app/main_navigation.dart';
@@ -92,10 +93,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       indicatorColor: Colors.white,
       labelColor: AppColors.appBlack,
       unselectedLabelColor: AppColors.unSelectedTabColor,
-      tabs: const [
-        Tab(text: 'Popular'),
-        Tab(text: 'Trending'),
-        Tab(text: 'Recent'),
+      tabs: [
+        Tab(text: ('popular').tr()),
+        Tab(text: 'trending'.tr()),
+        Tab(text: 'recent'.tr()),
       ],
     );
   }

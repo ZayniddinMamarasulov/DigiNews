@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
@@ -12,13 +13,13 @@ class SignUptextButton extends StatelessWidget {
       child: Center(
         child: RichText(
           text: TextSpan(
-            text: 'Don’t have an account?  ',
+            text: 'dontHaveAccount'.tr(),
             style: const TextStyle(
               color: Colors.grey,
             ),
             children: [
               TextSpan(
-                text: 'Sign Up',
+                text: 'signUp'.tr(),
                 style: const TextStyle(
                   color: Colors.redAccent,
                   fontWeight: FontWeight.bold,

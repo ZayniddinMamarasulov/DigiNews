@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:news_app/main_navigation.dart';
@@ -40,14 +41,14 @@ class _CustomAdvancedDrawerState extends State<CustomAdvancedDrawer> {
                   padding: const EdgeInsets.only(left: 18, bottom: 12, top: 36),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       CircleAvatar(
                         maxRadius: 36,
                         backgroundColor: Colors.white,
                         backgroundImage:
                             AssetImage("assets/images/avatar_sample.png"),
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       Text(
                         "Tiana Vetrovs",
                         style: TextStyle(
@@ -56,35 +57,35 @@ class _CustomAdvancedDrawerState extends State<CustomAdvancedDrawer> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      SizedBox(height: 6),
-                      Text(
-                        "View Profile",
+                      const SizedBox(height: 6),
+                      const Text(
+                        "viewProfile",
                         style: TextStyle(
                           fontSize: 12,
                           color: AppColors.colorE8,
                           fontWeight: FontWeight.w400,
                         ),
-                      )
+                      ).tr()
                     ],
                   ),
                 ),
                 _buildListTile(
-                  'Home',
+                  'home'.tr(),
                   Icons.home,
                   () => Navigator.of(context)
                       .pushNamed(MainNavigationRouteNames.home),
                 ),
-                _buildListTile('Saved News', Icons.bookmark, () {}),
+                _buildListTile('savedNews'.tr(), Icons.bookmark, () {}),
                 _buildListTile(
-                  'Write news',
+                  'writeNews'.tr(),
                   Icons.edit,
                   () => Navigator.of(context)
                       .pushNamed(MainNavigationRouteNames.writeNews),
                 ),
-                _buildListTile('Membership', Icons.credit_card, () {}),
-                _buildListTile('Help', Icons.help, () {}),
-                _buildListTile('Setting', Icons.settings, () {}),
-                _buildListTile('Log out', Icons.logout, () {}),
+                _buildListTile('membership'.tr(), Icons.credit_card, () {}),
+                _buildListTile('help'.tr(), Icons.help, () {}),
+                _buildListTile('setting'.tr(), Icons.settings, () {}),
+                _buildListTile('logout'.tr(), Icons.logout, () {}),
                 const Padding(
                   padding: EdgeInsets.only(left: 16, top: 36),
                   child: Text(

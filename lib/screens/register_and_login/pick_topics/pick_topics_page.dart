@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
 import 'package:news_app/models/my_topic.dart';
@@ -29,9 +30,9 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                 padding:
                     EdgeInsets.only(top: height * 0.01, bottom: height * 0.05),
                 child: const Text(
-                  'Pick topics to start reading and saving news',
+                  'topicsPageText',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-                ),
+                ).tr(),
               ),
               Wrap(
                 runSpacing: 12,
@@ -74,23 +75,24 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                 height: 56,
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context)
-                          .pushNamed(MainNavigationRouteNames.home);
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12))),
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.grey.shade900),
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushNamed(MainNavigationRouteNames.home);
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12))),
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.grey.shade900),
+                  ),
+                  child: const Text(
+                    'getStarted',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
                     ),
-                    child: const Text(
-                      'Get Started',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )),
+                  ).tr(),
+                ),
               )
             ],
           ),

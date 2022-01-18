@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class CreateButton extends StatelessWidget {
@@ -23,11 +24,11 @@ class CreateButton extends StatelessWidget {
           ),
           height: 56,
           width: double.infinity,
-          child: const Padding(
-            padding: EdgeInsets.all(16.0),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Create account',
-              style: TextStyle(
+              'createAccButton'.tr(),
+              style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Colors.white),

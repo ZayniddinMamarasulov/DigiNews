@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 
@@ -25,20 +26,21 @@ AppBar customAppBar(BuildContext context) {
     ),
     actions: [
       TextButton(
-          onPressed: () {
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => const AuthPage()),
-              (route) => false,
-            );
-          },
-          child: const Text(
-            'Skip',
-            style: TextStyle(
-              color: Colors.redAccent,
-              fontSize: 17,
-            ),
-          )),
+        onPressed: () {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const AuthPage()),
+            (route) => false,
+          );
+        },
+        child: const Text(
+          'skip',
+          style: TextStyle(
+            color: Colors.redAccent,
+            fontSize: 17,
+          ),
+        ).tr(),
+      ),
     ],
   );
 }
