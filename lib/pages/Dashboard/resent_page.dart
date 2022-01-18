@@ -54,7 +54,7 @@ class _ResentPageState extends State<ResentPage> {
                             borderRadius: BorderRadius.circular(24)
                         ),
                         child: const Center(
-                          child: Text("Food",style: TextStyle(fontSize: 12,color: AppColors.foodColor),),
+                          child: Text("Food",style: TextStyle(fontSize: 12,color: AppColors.colorE8),),
                         ),
                       )
                     ],
