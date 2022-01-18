@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NatificationPage extends StatefulWidget {
@@ -31,9 +30,9 @@ class _NatificationPageState extends State<NatificationPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children:  [
                 const Text("Notification",style: TextStyle(fontSize: 24,fontWeight: FontWeight.w700),),
-                SizedBox(height: 24,),
+                const SizedBox(height: 24,),
                 const Text("Recent",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,19 +50,19 @@ class _NatificationPageState extends State<NatificationPage> {
                         Text('23 mins ago',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Colors.grey),),
                       ],
                     ),
-                    SizedBox(width: 90,),
+                    const SizedBox(width: 90,),
                     FlatButton(onPressed: (){},
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)
                       ),
                       color: Colors.red[700],
-                      child:Text('Follow',style: TextStyle(fontSize:14,fontWeight: FontWeight.w400,color: Colors.white ),),
+                      child:Text('Follow',style: const TextStyle(fontSize:14,fontWeight: FontWeight.w400,color: Colors.white ),),
                     )
                   ],
                 ),
-                SizedBox(height: 16,),
+                const SizedBox(height: 16,),
                 const Divider(height: 20,color: Colors.grey,),
-                SizedBox(height: 8,),
+                const SizedBox(height: 8,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,17 +84,17 @@ class _NatificationPageState extends State<NatificationPage> {
                     Image.asset('assets/person_5.png')
                   ],
                 ),
-                SizedBox(height: 24,),
+                const SizedBox(height: 24,),
                 const Text("Older Notification",style: TextStyle(fontWeight: FontWeight.w900,fontSize:18 ),),
-                SizedBox(height: 16,),
+                const SizedBox(height: 16,),
                 Row(
                   children: [
                     Image.asset('assets/10K.png'),
                     SizedBox(width: 14,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text("Congratuiations Tiana, you have 10k",style: TextStyle(fontWeight: FontWeight.w900,fontSize: 14),),
+                      children: const [
+                        Text("Congratuiations Tiana, you have 10k",style: TextStyle(fontWeight: FontWeight.w900,fontSize: 14),),
                         SizedBox(height: 5,),
                         Text("followers!",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w900),),
                         SizedBox(height: 5,),
@@ -105,9 +104,9 @@ class _NatificationPageState extends State<NatificationPage> {
 
                   ],
                 ),
-                SizedBox(height: 16,),
+                const SizedBox(height: 16,),
                 const Divider(height: 20,color: Colors.grey,),
-                SizedBox(height: 8,),
+                const SizedBox(height: 8,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -135,9 +134,9 @@ class _NatificationPageState extends State<NatificationPage> {
                     )
                   ],
                 ),
-                SizedBox(height: 16,),
+                const SizedBox(height: 16,),
                 const Divider(height: 20,color: Colors.grey,),
-                SizedBox(height: 8,),
+                const SizedBox(height: 8,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -147,20 +146,20 @@ class _NatificationPageState extends State<NatificationPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          children: [
+                          children: const [
                             Text('Jessica',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w900),),
                             Text(" and 200 more following you",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w700,color: Colors.grey),)
                           ],
                         ),
                         SizedBox(height: 5,),
-                        Text("2 days ago",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12,color: Colors.grey),)
+                        const Text("2 days ago",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12,color: Colors.grey),)
                       ],
                     )
                   ],
                 ),
-                SizedBox(height: 16,),
+                const SizedBox(height: 16,),
                 const Divider(height: 20,color: Colors.grey,),
-                SizedBox(height: 8,),
+                const SizedBox(height: 8,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -171,13 +170,13 @@ class _NatificationPageState extends State<NatificationPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          children: [
+                          children: const [
                             Text('John Doe',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w900),),
                             Text(" liked your post",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w700,color: Colors.grey),)
                           ],
                         ),
                         SizedBox(height: 5,),
-                        Text("2 days ago",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12,color: Colors.grey),)
+                        const Text("2 days ago",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12,color: Colors.grey),)
                       ],
                     ),
                     SizedBox(width: 70,),
@@ -186,7 +185,7 @@ class _NatificationPageState extends State<NatificationPage> {
                   ],
                 ),
                 const Divider(height: 20,color: Colors.grey,),
-                SizedBox(height: 8,),
+                const SizedBox(height: 8,),
               ],
             ),
           ],
