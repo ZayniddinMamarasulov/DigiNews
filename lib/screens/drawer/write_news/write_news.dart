@@ -111,6 +111,28 @@ class _WriteNewsState extends State<WriteNews> {
                 height: 8,
               ),
               const AddTopics(),
+              Container(
+                height: 56,
+                margin: const EdgeInsets.symmetric(vertical: 28),
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    backgroundColor:
+                    MaterialStateProperty.all(Colors.grey.shade900),
+                  ),
+                  child: const Text(
+                    'Publish',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),
