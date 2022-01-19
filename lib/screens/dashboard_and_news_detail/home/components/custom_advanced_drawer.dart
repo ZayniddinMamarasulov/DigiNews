@@ -2,6 +2,7 @@ import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:news_app/main_navigation.dart';
+import 'package:news_app/screens/dashboard_and_news_detail/saved_page/saved_page.dart';
 import 'package:news_app/utils/app_colors.dart';
 
 class CustomAdvancedDrawer extends StatefulWidget {
@@ -75,7 +76,10 @@ class _CustomAdvancedDrawerState extends State<CustomAdvancedDrawer> {
                   () => Navigator.of(context)
                       .pushNamed(MainNavigationRouteNames.home),
                 ),
-                _buildListTile('savedNews'.tr(), Icons.bookmark, () {}),
+                _buildListTile('savedNews'.tr(), Icons.bookmark, () {
+                  Navigator.of(context)
+                      .pushNamed(MainNavigationRouteNames.savedNews);
+                }),
                 _buildListTile(
                   'writeNews'.tr(),
                   Icons.edit,

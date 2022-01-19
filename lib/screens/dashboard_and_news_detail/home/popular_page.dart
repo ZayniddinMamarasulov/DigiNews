@@ -1,8 +1,11 @@
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/models/news.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_carousel.dart';
+import 'package:news_app/services/PreferenceService.dart';
 import 'package:news_app/utils/static_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PopularPage extends StatefulWidget {
   const PopularPage({Key? key}) : super(key: key);
@@ -12,6 +15,26 @@ class PopularPage extends StatefulWidget {
 }
 
 class _PopularPageState extends State<PopularPage> {
+  List<News> bookList = [];
+  late final PreferenceService preferenceService;
+
+  @override
+  void initState() {
+    super.initState();
+    preferenceService = PreferenceService();
+  }
+
+  _saveBookmark(News news) async {
+    bookList.add(news);
+    preferenceService.saveBookmarks(bookList);
+  }
+
+  _updateBookmarks(News news) async {
+    bookList.remove(news);
+    preferenceService.saveBookmarks(bookList);
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,6 +130,11 @@ class _PopularPageState extends State<PopularPage> {
                                 onTap: () {
                                   setState(() {
                                     list.isSaved = !list.isSaved;
+                                    if (list.isSaved) {
+                                      _saveBookmark(list);
+                                    } else {
+                                      _updateBookmarks(list);
+                                    }
                                   });
                                 },
                                 child: Icon(

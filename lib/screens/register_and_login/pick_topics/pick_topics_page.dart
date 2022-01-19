@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
 import 'package:news_app/models/my_topic.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/app_bar.dart';
+import 'package:news_app/utils/static_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PickTopicsPage extends StatefulWidget {
   const PickTopicsPage({Key? key}) : super(key: key);
@@ -15,6 +17,11 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
   List<MyTopic> topics = MyTopic.topics;
 
   List<MyTopic> selectTopics = [];
+
+  void _saveLogin() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool(StaticData.IS_LOG_IN, true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +83,7 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
+                    _saveLogin();
                     Navigator.of(context)
                         .pushNamed(MainNavigationRouteNames.home);
                   },

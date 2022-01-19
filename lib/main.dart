@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
+import 'package:news_app/utils/static_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'utils/app_theme.dart';
 
@@ -20,13 +21,23 @@ void main() async {
       ],
       path: 'assets/lang', // <-- change the path of the translation files
       fallbackLocale: Locale(Platform.localeName),
-      child: NewsApp(),
+      child: NewsApp(await initialRoute()),
     ),
   );
 }
 
+Future<String> initialRoute() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool isLogIn = prefs.getBool(StaticData.IS_LOG_IN) ?? false;
+  return isLogIn
+      ? MainNavigationRouteNames.home
+      : MainNavigationRouteNames.auth;
+}
+
 class NewsApp extends StatelessWidget {
-  NewsApp({Key? key}) : super(key: key);
+  final String initialRoute;
+
+  NewsApp(this.initialRoute, {Key? key}) : super(key: key);
 
   final mainNavigation = MainNavigation();
 
@@ -41,7 +52,7 @@ class NewsApp extends StatelessWidget {
           theme: snapshot.data ? DigiTheme.light() : DigiTheme.dark(),
           debugShowCheckedModeBanner: false,
           title: "News App",
-          initialRoute: mainNavigation.initialRoute(),
+          initialRoute: initialRoute,
           routes: mainNavigation.routes,
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,

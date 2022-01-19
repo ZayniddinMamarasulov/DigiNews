@@ -12,6 +12,8 @@ import 'package:news_app/screens/register_and_login/password_recovery/email_pass
 import 'package:news_app/screens/register_and_login/password_recovery/phone_number_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/signup_page/signup_page.dart';
 import 'package:news_app/screens/write_news/write_new_articl.dart';
+import 'package:news_app/utils/static_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class MainNavigationRouteNames {
   static const splashScreen = '/splash_screen';
@@ -29,7 +31,8 @@ abstract class MainNavigationRouteNames {
 }
 
 class MainNavigation {
-  String initialRoute() => MainNavigationRouteNames.auth;
+
+
 
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.splashScreen: (context) => const OnboardingApp(),
