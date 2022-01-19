@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/drawer/write_news/components/add_topic.dart';
 import 'package:news_app/screens/drawer/write_news/components/app_bar.dart';
 import 'package:news_app/screens/drawer/write_news/components/img_upload.dart';
 
@@ -50,12 +51,15 @@ class _WriteNewsState extends State<WriteNews> {
                 decoration: InputDecoration(
                   filled: true,
                   enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        const BorderSide(color: Colors.white,),
+                    borderSide: const BorderSide(
+                      color: Colors.white,
+                    ),
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white,),
+                    borderSide: const BorderSide(
+                      color: Colors.white,
+                    ),
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   fillColor: Colors.grey.shade200,
@@ -81,18 +85,32 @@ class _WriteNewsState extends State<WriteNews> {
                 decoration: InputDecoration(
                   filled: true,
                   enabledBorder: OutlineInputBorder(
-                    borderSide:
-                    const BorderSide(color: Colors.white,),
+                    borderSide: const BorderSide(
+                      color: Colors.white,
+                    ),
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white,),
+                    borderSide: const BorderSide(
+                      color: Colors.white,
+                    ),
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   fillColor: Colors.grey.shade200,
                   hintText: "Write a title",
                 ),
               ),
+              const SizedBox(
+                height: 8,
+              ),
+              const Text(
+                'Topic',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              const AddTopics(),
             ],
           ),
         ),
