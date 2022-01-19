@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/dashboard/bookmarks_page/bookmarks_page.dart';
 import 'package:news_app/screens/dashboard/components/drawer_page.dart';
+import 'package:news_app/screens/dashboard/notification/notification_page.dart';
 import 'package:news_app/screens/home_page.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/board_page/board_page.dart';
@@ -21,6 +23,8 @@ abstract class MainNavigationRouteNames {
   static const authentication = '/auth/sign_up/authentication';
   static const home = '/home';
   static const drawer = '/drawer';
+  static const notification = '/notification';
+  static const bookmarks = '/bookmark';
 }
 
 class MainNavigation {
@@ -42,5 +46,8 @@ class MainNavigation {
     MainNavigationRouteNames.drawer: (context) => const DrawerPage(
           child: HomePage(),
         ),
+    MainNavigationRouteNames.notification: (context) =>
+        const NotificationPage(),
+    MainNavigationRouteNames.bookmarks: (context) => const BookMarksPage(),
   };
 }

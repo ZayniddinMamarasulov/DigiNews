@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/dashboard/customread_page/example_page.dart';
+import 'package:news_app/screens/dashboard/customread_page/hero_animation.dart';
 import 'package:news_app/utils/app_theme.dart';
 import 'package:news_app/main_navigation.dart';
 
@@ -17,9 +19,9 @@ class NewsApp extends StatelessWidget {
       theme: DigiTheme.light(),
       debugShowCheckedModeBanner: false,
       title: "News App",
-      
-      initialRoute: mainNavigation.initialRoute(),
-      routes: mainNavigation.routes,
+      home: ExamplePage(),
+      // initialRoute: mainNavigation.initialRoute(),
+      // routes: mainNavigation.routes,
     );
   }
 }

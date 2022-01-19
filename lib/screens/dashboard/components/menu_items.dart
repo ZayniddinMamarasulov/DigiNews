@@ -16,21 +16,10 @@ class MenuItems extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20.0),
       child: GestureDetector(
-        onTap: () {
-          // Navigator.pushNamed(context, MainNavigationRouteNames.login);
-        },
-        child: Row(
-          children: [
-            Image.asset(image),
-            const SizedBox(
-              width: 16.0,
-            ),
-            Expanded(
-                child: Text(
-              title,
-              style: const TextStyle(fontSize: 16.0, color: Colors.white),
-            ))
-          ],
+        child: ListTile(
+          title: Text(title),
+          leading: Image.asset(image),
+          onTap: () {},
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/main_navigation.dart';
 import 'package:news_app/screens/dashboard/components/drawer_page.dart';
 import 'package:news_app/screens/dashboard/popular_page.dart';
 
@@ -41,12 +42,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Padding(
                     padding: const EdgeInsets.only(left: 240.0),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, MainNavigationRouteNames.bookmarks);
+                      },
                       icon: Image.asset("assets/Icons/Search.png"),
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, MainNavigationRouteNames.notification);
+                    },
                     icon: Image.asset("assets/Icons/Notification.png"),
                   )
                 ],
