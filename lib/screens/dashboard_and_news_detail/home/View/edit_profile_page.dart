@@ -69,6 +69,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
            child: Column(
              crossAxisAlignment: CrossAxisAlignment.start,
              children: [
+               PhonePages(),
               Text("Bio",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
                SizedBox(height: 10,),
                Container(
@@ -83,8 +84,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                    child: Text("I am a passionate writer, currently working as a Content Creator at FizzBuzz. Based in Prague.",style: TextStyle(fontWeight: FontWeight.w400,fontSize: 18),),
                  ),
                ),
-               SizedBox(height: 10,),
-               PhonePages(),
+                SizedBox(height: 10,),
                Container(
                    padding: EdgeInsets.symmetric(horizontal: 20),
                    child: ViewButton(func: _func)
