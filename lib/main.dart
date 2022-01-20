@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/pages/detail_news.dart';
 import 'package:news_app/pages/menu_page.dart';
 import 'package:news_app/screens/News/saved_news.dart';
 import 'package:news_app/screens/dashboad_page.dart';
 import 'package:news_app/screens/loging_page.dart';
 import 'package:news_app/widjets/cantrol_page.dart';
+import 'package:news_app/widjets/dlya_cantrol.dart';
 
 void main() {
   runApp(const NewsApp());
@@ -26,7 +28,7 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "News App",
-      home: LogingPage(),
+      home: DetailNews(),
     );
   }
 }

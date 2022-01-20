@@ -19,7 +19,7 @@ class _NotiPageState extends State<NotiPage> {
         children: [
           SizedBox(height: 49),
           IconButton(
-            icon: Image.asset("assets/Icons/img.png"),
+            icon: Image.asset("assets/Icons/img_detailNews.png"),
             iconSize: 24,
             onPressed: () {
               Navigator.push(
@@ -146,7 +146,7 @@ class _NotiPageState extends State<NotiPage> {
                         width: 90,
                         height: 80,
                         child: Image.asset(
-                          "assets/img_3.png",
+                          "assets/img_icon1.png",
                           height: 60,
                           width: 70,
                         ),
@@ -475,7 +475,7 @@ class _NotiPageState extends State<NotiPage> {
                         width: 90,
                         height: 80,
                         child: Image.asset(
-                          "assets/img_3.png",
+                          "assets/img_icon1.png",
                           height: 60,
                           width: 70,
                         ),

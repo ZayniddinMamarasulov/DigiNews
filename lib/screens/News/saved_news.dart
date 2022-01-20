@@ -23,7 +23,7 @@ class _SavedNewsState extends State<SavedNews> {
             child: Row(
               children: [
                 IconButton(
-                  icon: Image.asset("assets/Icons/img.png"),
+                  icon: Image.asset("assets/Icons/img_detailNews.png"),
                   iconSize: 24,
                   onPressed: () {
                     Navigator.push(
@@ -117,7 +117,7 @@ class _SavedNewsState extends State<SavedNews> {
                         borderRadius: BorderRadius.circular(20), // Image border
                         child: SizedBox.fromSize(
                           size: const Size.fromRadius(48), // Image radius
-                          child: Image.asset('assets/Image/img.png',
+                          child: Image.asset('assets/Image/img_detailNews.png',
                               fit: BoxFit.cover),
                         ),
                       ),
