@@ -19,6 +19,7 @@ class _FormFieldPagesState extends State<FormFieldPages> {
   bool passError = false;
   bool nameError = false;
   bool emailError = false;
+  bool textError =false;
 
   String? errorText;
   
@@ -30,29 +31,30 @@ class _FormFieldPagesState extends State<FormFieldPages> {
         children: [
           nameFormField(),
           emailFormField(),
-          ErrorText(errorText: errorText),
-          CreateButton(
-            func: _func,
-          ),
+           // textFormField(),
+          //ErrorText(errorText: errorText),
+          // CreateButton(
+          //   func: _func,
+          // ),
         ],
       ),
     );
   }
-  void _func() {
-    final isValid = _formKey.currentState!.validate();
-
-    if (isValid) {
-      _formKey.currentState!.setState(() {});
-      if (!passError && !emailError & !nameError) {
-        Navigator.of(context).pushNamed(MainNavigationRouteNames.login);
-        errorText = null;
-      } else {
-        print('error');
-      }
-    } else {
-      print('error');
-    }
-  }
+  // void _func() {
+  //   final isValid = _formKey.currentState!.validate();
+  //
+  //   if (isValid) {
+  //     _formKey.currentState!.setState(() {});
+  //     if (!passError && !emailError & !nameError) {
+  //       Navigator.of(context).pushNamed(MainNavigationRouteNames.login);
+  //       errorText = null;
+  //     } else {
+  //       print('error');
+  //     }
+  //   } else {
+  //     print('error');
+  //   }
+  // }
   CustomContainer emailFormField() {
     return CustomContainer(
       titleForm: 'Email',
@@ -103,4 +105,7 @@ class _FormFieldPagesState extends State<FormFieldPages> {
       ),
     );
   }
+
+
+
 }

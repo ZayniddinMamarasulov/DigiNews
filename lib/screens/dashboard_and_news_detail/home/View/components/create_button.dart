@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CreateButton extends StatelessWidget {
+class ViewButton extends StatelessWidget {
   final void Function() func;
-  const CreateButton({
+  const ViewButton({
     Key? key,
     required this.func,
   }) : super(key: key);
@@ -26,7 +26,7 @@ class CreateButton extends StatelessWidget {
           child: const Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              'Sign Up',
+              'Save changes',
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
