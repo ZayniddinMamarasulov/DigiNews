@@ -2,7 +2,6 @@ import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:news_app/main_navigation.dart';
-import 'package:news_app/screens/dashboard_and_news_detail/saved_page/saved_page.dart';
 import 'package:news_app/utils/app_colors.dart';
 
 class CustomAdvancedDrawer extends StatefulWidget {
@@ -26,7 +25,12 @@ class _CustomAdvancedDrawerState extends State<CustomAdvancedDrawer> {
       animateChildDecoration: false,
       animationDuration: const Duration(milliseconds: 300),
       controller: widget.advancedDrawerController,
-      childDecoration: BoxDecoration(borderRadius: BorderRadius.circular(32)),
+      childDecoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(16),
+          topLeft: Radius.circular(16),
+        ),
+      ),
       child: widget.child,
       drawer: SafeArea(
         child: Container(

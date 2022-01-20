@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_controller.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/carousel_item.dart';
 import 'package:news_app/utils/app_colors.dart';
@@ -71,7 +72,7 @@ class _PopularBannerState extends State<PopularBanner> {
                     style: const TextStyle(color: AppColors.appBlack),
                   ),
                   const SizedBox(width: 4),
-                  Text(" • ${widget.item.readTime} min read • "),
+                  Text(" • ${widget.item.readTime} ${'readTime'.tr()} • "),
                   const SizedBox(width: 4),
                   SizedBox(
                     height: 28,

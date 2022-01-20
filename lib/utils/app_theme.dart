@@ -58,50 +58,46 @@ class DigiTheme {
     ),
   );
 
-  static ThemeData light() {
-    return ThemeData(
-      fontFamily: 'SFPRo',
-      brightness: Brightness.light,
-      checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateColor.resolveWith(
-          (states) {
-            return Colors.black;
-          },
-        ),
+  static ThemeData light = ThemeData(
+    fontFamily: 'SFPRo',
+    brightness: Brightness.light,
+    checkboxTheme: CheckboxThemeData(
+      fillColor: MaterialStateColor.resolveWith(
+        (states) {
+          return Colors.black;
+        },
       ),
-      appBarTheme: const AppBarTheme(
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.white,
-      ),
-      scaffoldBackgroundColor: Colors.white,
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
-      ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.green,
-      ),
-      textTheme: lightTextTheme,
-    );
-  }
+    ),
+    appBarTheme: const AppBarTheme(
+      foregroundColor: Colors.black,
+      backgroundColor: Colors.white,
+    ),
+    scaffoldBackgroundColor: Colors.white,
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      foregroundColor: Colors.white,
+      backgroundColor: Colors.black,
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedItemColor: Colors.green,
+    ),
+    textTheme: lightTextTheme,
+  );
 
-  static ThemeData dark() {
-    return ThemeData(
-      brightness: Brightness.dark,
-      appBarTheme: AppBarTheme(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.grey[900],
-        elevation: 0,
-      ),
-      hintColor: Colors.grey,
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.green,
-      ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.green,
-      ),
-      textTheme: darkTextTheme,
-    );
-  }
+  static ThemeData dark = ThemeData(
+    brightness: Brightness.dark,
+    appBarTheme: AppBarTheme(
+      foregroundColor: Colors.white,
+      backgroundColor: Colors.grey[900],
+      elevation: 0,
+    ),
+    hintColor: Colors.grey,
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      foregroundColor: Colors.white,
+      backgroundColor: Colors.green,
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedItemColor: Colors.green,
+    ),
+    textTheme: darkTextTheme,
+  );
 }

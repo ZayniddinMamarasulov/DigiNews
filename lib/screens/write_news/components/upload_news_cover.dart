@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dotted_border/dotted_border.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -37,9 +38,9 @@ class _UploadCoverWidgetState extends State<UploadCoverWidget> {
       children: [
         const SizedBox(height: 12),
         const Text(
-          'Upload News Cover',
+          'uploadCover',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-        ),
+        ).tr(),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: GestureDetector(
@@ -84,16 +85,16 @@ class _UploadCoverWidgetState extends State<UploadCoverWidget> {
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(
+              children: [
+                const Icon(
                   Icons.cloud_upload_rounded,
                   color: Colors.white,
                 ),
-                SizedBox(height: 8),
-                Text(
-                  'Change image',
+                const SizedBox(height: 8),
+                const Text(
+                  'changeImage',
                   style: TextStyle(color: Colors.white, fontSize: 12),
-                ),
+                ).tr(),
               ],
             )
           ],
@@ -132,7 +133,7 @@ class _UploadCoverWidgetState extends State<UploadCoverWidget> {
                       Navigator.of(context).pop();
                       pickImage(ImageSource.gallery);
                     },
-                    child: const Text('Gallery'),
+                    child: const Text('gallery').tr(),
                   ),
                 ],
               ),
@@ -145,7 +146,7 @@ class _UploadCoverWidgetState extends State<UploadCoverWidget> {
                       Navigator.of(context).pop();
                       pickImage(ImageSource.camera);
                     },
-                    child: const Text('Camera'),
+                    child: const Text('camera').tr(),
                   ),
                 ],
               ),

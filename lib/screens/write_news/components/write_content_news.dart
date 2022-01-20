@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class WriteContentNews extends StatelessWidget {
@@ -13,9 +14,9 @@ class WriteContentNews extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Content',
+            'content',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-          ),
+          ).tr(),
           const SizedBox(height: 8),
           Container(
             height: 260,
@@ -31,7 +32,7 @@ class WriteContentNews extends StatelessWidget {
               decoration: InputDecoration(
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                hintText: 'Write something here',
+                hintText: 'writingArea'.tr(),
                 hintStyle: TextStyle(color: Colors.grey.shade500),
                 border: InputBorder.none,
               ),

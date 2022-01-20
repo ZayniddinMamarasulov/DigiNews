@@ -80,7 +80,22 @@
   "membership": "Membership",
   "help": "Help",
   "setting": "Setting",
-  "logout": "Logout"
+  "logout": "Logout",
+
+  "bookmarks": "Bookmarks",
+
+  "uploadCover": "Upload News Cover",
+  "changeImage": "Change image",
+  "gallery": "Gallery",
+  "camera": "Camera",
+  "title": "Title",
+  "writeTitle": "Write a title",
+  "content": "Content",
+  "writingArea": "Write something here",
+  "topic": "Topic",
+  "addTopic": "Add Topic",
+  "publish": "Publish"
+
 
 
 

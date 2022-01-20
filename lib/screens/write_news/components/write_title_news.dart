@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class WriteTitleNews extends StatelessWidget {
@@ -13,9 +14,9 @@ class WriteTitleNews extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Title',
+            'title',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-          ),
+          ).tr(),
           const SizedBox(height: 8),
           Container(
             height: 56,
@@ -28,7 +29,7 @@ class WriteTitleNews extends StatelessWidget {
               controller: _controller,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-                hintText: 'Write a title',
+                hintText: 'writeTitle'.tr(),
                 hintStyle: TextStyle(color: Colors.grey.shade500),
                 border: InputBorder.none,
               ),

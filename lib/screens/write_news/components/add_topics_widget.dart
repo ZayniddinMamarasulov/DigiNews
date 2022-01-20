@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/my_topic.dart';
 
@@ -37,9 +38,9 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Topic',
+            'topic',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-          ),
+          ).tr(),
           const SizedBox(height: 8),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -51,7 +52,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 selectedTopics.isEmpty
-                    ? Text('Add Topic',
+                    ? Text('addTopic'.tr(),
                         style: TextStyle(color: Colors.grey.shade400))
                     : Expanded(
                         child: Wrap(

@@ -24,8 +24,8 @@ class News {
 
   Map<String, dynamic> toJson() {
     return {
-      "name": category,
-      "age": image,
+      "category": category,
+      "image": image,
       "title": title,
       "readingTime": readingTime,
       "isSaved": isSaved,

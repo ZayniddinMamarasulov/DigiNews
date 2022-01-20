@@ -2,7 +2,6 @@ import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:news_app/main_navigation.dart';
-import 'package:news_app/models/news.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/popular_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/recent_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/trending_page.dart';
@@ -44,6 +43,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             },
           ),
           actions: [
+            TextButton(
+                onPressed: () {
+                  setState(() {
+                    context.setLocale(Locale('uz', 'UZ'));
+                  });
+                },
+                child: Text('uz')),
+            TextButton(
+                onPressed: () {
+                  setState(() {
+                    context.setLocale(Locale('ru', 'RU'));
+                  });
+                },
+                child: Text('ru')),
+            TextButton(
+                onPressed: () {
+                  setState(() {
+                    context.setLocale(Locale('en', 'US'));
+                  });
+                },
+                child: Text('en')),
             IconButton(
               onPressed: () {},
               icon: Image.asset('assets/icons/ic_search.png'),

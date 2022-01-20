@@ -1,55 +1,40 @@
-import 'dart:async';
-import 'dart:io';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
-import 'package:news_app/utils/static_data.dart';
+import 'package:news_app/services/theme_service.dart';
+import 'package:news_app/utils/app_localization.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'utils/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
-  runApp(
-    EasyLocalization(
-      supportedLocales: const [
-        Locale('en', 'US'),
-        Locale('ru', 'RU'),
-        Locale('uz', 'UZ'),
-      ],
-      path: 'assets/lang', // <-- change the path of the translation files
-      fallbackLocale: Locale(Platform.localeName),
-      child: NewsApp(await initialRoute()),
-    ),
-  );
-}
+  final mainNavigation = MainNavigation();
 
-Future<String> initialRoute() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool isLogIn = prefs.getBool(StaticData.IS_LOG_IN) ?? false;
-  return isLogIn
-      ? MainNavigationRouteNames.home
-      : MainNavigationRouteNames.auth;
+  SharedPreferences pref = await SharedPreferences.getInstance();
+  bool isDark = pref.getBool('darkTheme') ?? false;
+
+  runApp(ChangeNotifierProvider(
+    create: (BuildContext context) => ThemeServiceProvider(isDark),
+    child: EasyLocalizationCustomWidget(
+      child: NewsApp(initialRoute: await mainNavigation.initialRoute()),
+    ),
+  ));
 }
 
 class NewsApp extends StatelessWidget {
   final String initialRoute;
-
-  NewsApp(this.initialRoute, {Key? key}) : super(key: key);
+  NewsApp({Key? key, required this.initialRoute}) : super(key: key);
 
   final mainNavigation = MainNavigation();
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: StreamControllerHelper.setTheme.stream,
-      initialData: true,
-      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        print(snapshot.data);
+    return Consumer<ThemeServiceProvider>(
+      builder: (BuildContext context, value, Widget? child) {
         return MaterialApp(
-          theme: snapshot.data ? DigiTheme.light() : DigiTheme.dark(),
+          theme: value.getTheme(),
           debugShowCheckedModeBanner: false,
           title: "News App",
           initialRoute: initialRoute,
@@ -61,8 +46,4 @@ class NewsApp extends StatelessWidget {
       },
     );
   }
-}
-
-class StreamControllerHelper {
-  static StreamController<bool> setTheme = StreamController();
 }

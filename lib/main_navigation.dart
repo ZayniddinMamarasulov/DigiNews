@@ -31,8 +31,13 @@ abstract class MainNavigationRouteNames {
 }
 
 class MainNavigation {
-
-
+  Future<String> initialRoute() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool isLogIn = prefs.getBool(StaticData.IS_LOG_IN) ?? false;
+    return isLogIn
+        ? MainNavigationRouteNames.home
+        : MainNavigationRouteNames.auth;
+  }
 
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.splashScreen: (context) => const OnboardingApp(),

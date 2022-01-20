@@ -1,8 +1,9 @@
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
+import 'package:news_app/services/theme_service.dart';
+import 'package:provider/provider.dart';
 
-import '../../../../main.dart';
 import 'components/agreement_text.dart';
 import 'components/login_text_button.dart';
 import 'components/sign_buttons.dart';
@@ -31,10 +32,10 @@ class _AuthPageState extends State<AuthPage> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: IconButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      context.read<ThemeServiceProvider>().changeTheme();
                       setState(() {
                         isLight = !isLight;
-                        StreamControllerHelper.setTheme.add(isLight);
                       });
                     },
                     icon: Icon(
