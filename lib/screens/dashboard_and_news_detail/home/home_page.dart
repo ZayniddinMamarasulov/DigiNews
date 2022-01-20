@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   padding: const EdgeInsets.only(left: 18, bottom: 12, top: 36),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children:  [
                       CircleAvatar(
                         maxRadius: 36,
                         backgroundColor: Colors.white,
@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             AssetImage("assets/images/avatar_sample.png"),
                       ),
                       SizedBox(height: 16),
-                      Text(
+                      const Text(
                         "Tiana Vetrovs",
                         style: TextStyle(
                           fontSize: 18,
@@ -134,13 +134,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ),
                       SizedBox(height: 6),
-                      Text(
-                        "View Profile",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: AppColors.colorE8,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      TextButton(onPressed: (){
+                        Navigator.of(context)
+                            .pushNamed(MainNavigationRouteNames.view);
+                      },
+                          child:const Text(
+                            "View Profile",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: AppColors.colorE8,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          )
                       )
                     ],
                   ),

@@ -5,7 +5,6 @@ import 'package:news_app/ui/screens/register_and_login/otp_authentication/compon
 import 'package:news_app/ui/screens/register_and_login/pick_topics/pick_topics_page.dart';
 
 import 'custom_container_for_forms.dart';
-import 'custom_input_decoration.dart';
 
 class OtpPage extends StatefulWidget {
   const OtpPage({
@@ -71,7 +70,7 @@ class _OtpPage extends State<OtpPage> {
         cursorWidth: 3,
         cursorHeight: 24,
         textAlign: TextAlign.center,
-        decoration: customInputDecoration(),
+        decoration: InputDecoration(),
         style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
@@ -92,7 +91,7 @@ class _OtpPage extends State<OtpPage> {
         cursorWidth: 3,
         cursorHeight: 24,
         textAlign: TextAlign.center,
-        decoration: customInputDecoration(),
+        decoration: InputDecoration(),
         style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
@@ -113,7 +112,7 @@ class _OtpPage extends State<OtpPage> {
         cursorWidth: 3,
         cursorHeight: 24,
         textAlign: TextAlign.center,
-        decoration: customInputDecoration(),
+        decoration: InputDecoration(),
         style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
@@ -137,7 +136,7 @@ class _OtpPage extends State<OtpPage> {
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
         ],
-        decoration: customInputDecoration(),
+        decoration: const InputDecoration(),
         style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         onChanged: (value) {
           if (value.length == 1) {

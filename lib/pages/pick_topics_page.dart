@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/pages/Dashboard/home_page.dart';
+// import 'package:news_app/pages/Dashboard/home_page.dart';
 import 'package:news_app/utils/colors.dart';
+
+import '../main_navigation.dart';
 
 class PickTopicsPage extends StatefulWidget {
    PickTopicsPage({Key? key}) : super(key: key);
@@ -72,7 +74,7 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                     ),
                     child: FlatButton(
                       onPressed: (){
-                        Navigator.pushNamed(context, HomePage.id);
+                        Navigator.of(context).pushNamed(MainNavigationRouteNames.home);
                       },
                       child: const Center(
                         child: Text("Get Started",style: TextStyle(fontWeight: FontWeight.w700,color: Colors.white,fontSize: 16),),

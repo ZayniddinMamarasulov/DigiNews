@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/pages/otp_page.dart';
 
 class VerifyPage extends StatefulWidget {
   static const String id="verifypage";
@@ -30,30 +29,39 @@ class _VerifyPageState extends State<VerifyPage> {
             padding: const EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
+              children: [
                 const SizedBox(height: 44,),
-                const Text("Verify Login",style: TextStyle(fontSize: 24,fontWeight: FontWeight.w700),),
+                const Text("Verify Login",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),),
                 const SizedBox(height: 16,),
-                const Text("Enter OTP Code send to tianaxxx@gmail.com",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w300),),
+                const Text("Enter OTP Code send to tianaxxx@gmail.com",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),),
                 const SizedBox(height: 10,),
                 Row(
-                  children:  const [
-                    Text("This code will expired in",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w300),),
+                  children: const [
+                    Text("This code will expired in", style: TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.w300),),
                     SizedBox(width: 5,),
-                    Text("01:30",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.red),)
+                    Text("01:30", style: TextStyle(fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.red),)
                   ],
                 ),
                 const SizedBox(height: 40,),
-                OtpPage(),
+                OtpPage()(),
                 SizedBox(height: 15,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Didn’t received the code?",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                    const Text("Didn’t received the code?", style: TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w400),),
                     SizedBox(width: 5,),
                     FlatButton(
-                        onPressed:(){},
-                        child:const Text("Resend Cod",style: TextStyle(fontWeight: FontWeight.w700,color: Colors.red,fontSize: 14),)
+                        onPressed: () {},
+                        child: const Text("Resend Cod", style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: Colors.red,
+                            fontSize: 14),)
                     )
                   ],
                 )
@@ -64,4 +72,6 @@ class _VerifyPageState extends State<VerifyPage> {
       ),
     );
   }
+
+  OtpPage() {}
 }

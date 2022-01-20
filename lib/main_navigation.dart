@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/dashboard_and_news_detail/home/View/edit_profile_page.dart';
+import 'package:news_app/screens/dashboard_and_news_detail/home/View/view_profile_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/home_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/notification_page/notification_page.dart';
 import 'package:news_app/screens/onboarding/onboarding.dart';
@@ -22,10 +24,12 @@ abstract class MainNavigationRouteNames {
   static const authentication = '/auth/sign_up/authentication';
   static const home = '/home';
   static const notification = '/notification';
+  static const view = '/view';
+  static const edit = '/edit';
 }
 
 class MainNavigation {
-  String initialRoute() => MainNavigationRouteNames.home;
+  String initialRoute() => MainNavigationRouteNames.auth;
 
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.splashScreen: (context) => const OnboardingApp(),
@@ -43,5 +47,9 @@ class MainNavigation {
     MainNavigationRouteNames.home: (context) => const HomePage(),
     MainNavigationRouteNames.notification: (context) =>
         const NotificationPage(),
+    MainNavigationRouteNames.view: (context) =>
+    const ViewProfilePage(),
+    MainNavigationRouteNames.edit: (context) =>
+    const EditProfilePage(),
   };
 }
