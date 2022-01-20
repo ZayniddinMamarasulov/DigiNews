@@ -70,7 +70,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
              crossAxisAlignment: CrossAxisAlignment.start,
              children: [
                PhonePages(),
-              Text("Bio",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
+              const Text("Bio",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
                SizedBox(height: 10,),
                Container(
                  height: 104,

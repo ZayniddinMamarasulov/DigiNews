@@ -70,109 +70,159 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
             ],
           ),
           SizedBox(height: 16,),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/design_logo.png'),
-              SizedBox(width: 10,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-               Text("Design",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w900,color: Colors.grey[600]),),
-                  const Text("The  Only  Page  Your  Portofolio",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
-                  SizedBox(height: 5,),
-                  const Text("Needs",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
-                  Row(
+          Expanded(
+            child: ListView(
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/design_logo.png'),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Design",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w900,color: Colors.grey[600]),),
+                        const Text("The  Only  Page  Your  Portofolio",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
+                        SizedBox(height: 5,),
+                        const Text("Needs",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
+                        Row(
 
-                    children: [
-                     Row(
-                       children: [
-                         Text('1 week ago',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
-                         const SizedBox(width: 6,),
-                         Image.asset('assets/images/img.png'),
-                         const SizedBox(width: 6,),
-                         Text('12 min read',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
+                          children: [
+                            Row(
+                              children: [
+                                Text('1 week ago',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
+                                const SizedBox(width: 6,),
+                                Image.asset('assets/images/img.png'),
+                                const SizedBox(width: 6,),
+                                Text('12 min read',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
 
-                       ],
+                              ],
+                            ),
+                            const SizedBox(width:114),
+                            Image.asset('assets/icons/ic_archive.png')
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                Divider(height: 30,color: Colors.grey[400],),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                   Container(
+                      height: 96,
+                     width: 80,
+                     decoration: BoxDecoration(
+                       image: DecorationImage(
+                         fit: BoxFit.cover,
+                         image: AssetImage("assets/images/post_image_3.png")
+                       ),
+                       borderRadius: BorderRadius.circular(12),
                      ),
-                      SizedBox(width:114),
-                      Image.asset('assets/icons/ic_archive.png')
+                   ),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Design",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w900,color: Colors.grey[600]),),
+                        const Text("5 Fashion Trend for Spring",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
+                        SizedBox(height: 5,),
+                        const Text("2021 You Should Know",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
+                        Row(
+                          children: [
+                            Row(
+                              children: [
+                                Text('4 days ago',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
+                                const SizedBox(width: 6,),
+                                Image.asset('assets/images/img.png'),
+                                const SizedBox(width: 6,),
+                                Text('8 min read',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
 
-                    ],
-                  )
-                ],
-              )
-            ],
-          ),
-          Divider(height: 30,color: Colors.grey[400],),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset("assets/images/post_image_3.png"),
-              SizedBox(width: 10,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Design",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w900,color: Colors.grey[600]),),
-                  const Text("5 Fashion Trend for Spring",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
-                  SizedBox(height: 5,),
-                  const Text("2021 You Should Know",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
-                  Row(
-                    children: [
-                      Row(
-                        children: [
-                          Text('4 days ago',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
-                          const SizedBox(width: 6,),
-                          Image.asset('assets/images/img.png'),
-                          const SizedBox(width: 6,),
-                          Text('8 min read',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
+                              ],
+                            ),
+                            SizedBox(width:114),
+                            Image.asset('assets/icons/ic_archive.png')
 
-                        ],
-                      ),
-                      SizedBox(width:114),
-                      Image.asset('assets/icons/ic_archive.png')
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                Divider(height: 30,color: Colors.grey[400],),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/design_logo.png'),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Design",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w900,color: Colors.grey[600]),),
+                        const Text("The  Only  Page  Your  Portofolio",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
+                        SizedBox(height: 5,),
+                        const Text("Needs",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
+                        Row(
 
-                    ],
-                  )
-                ],
-              )
-            ],
-          ),
-          Divider(height: 30,color: Colors.grey[400],),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/design_logo.png'),
-              SizedBox(width: 10,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Design",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w900,color: Colors.grey[600]),),
-                  const Text("The  Only  Page  Your  Portofolio",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
-                  SizedBox(height: 5,),
-                  const Text("Needs",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
-                  Row(
+                          children: [
+                            Row(
+                              children: [
+                                Text('1 week ago',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
+                                const SizedBox(width: 6,),
+                                Image.asset('assets/images/img.png'),
+                                const SizedBox(width: 6,),
+                                Text('12 min read',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
 
-                    children: [
-                      Row(
-                        children: [
-                          Text('1 week ago',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
-                          const SizedBox(width: 6,),
-                          Image.asset('assets/images/img.png'),
-                          const SizedBox(width: 6,),
-                          Text('12 min read',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
+                              ],
+                            ),
+                            SizedBox(width:114),
+                            Image.asset('assets/icons/ic_archive.png')
 
-                        ],
-                      ),
-                      SizedBox(width:114),
-                      Image.asset('assets/icons/ic_archive.png')
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                Divider(height: 30,color: Colors.grey[400],),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/design_logo.png'),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Design",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w900,color: Colors.grey[600]),),
+                        const Text("The  Only  Page  Your  Portofolio",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
+                        SizedBox(height: 5,),
+                        const Text("Needs",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),),
+                        Row(
 
-                    ],
-                  )
-                ],
-              )
-            ],
-          ),
+                          children: [
+                            Row(
+                              children: [
+                                Text('1 week ago',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
+                                const SizedBox(width: 6,),
+                                Image.asset('assets/images/img.png'),
+                                const SizedBox(width: 6,),
+                                Text('12 min read',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.grey),),
+
+                              ],
+                            ),
+                            SizedBox(width:114),
+                            Image.asset('assets/icons/ic_archive.png')
+
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
+          )
         ],
       ),
       ),
