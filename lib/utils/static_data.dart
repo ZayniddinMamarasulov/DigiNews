@@ -3,6 +3,8 @@ import 'package:news_app/models/carousel_item.dart';
 import 'package:news_app/models/news.dart';
 
 class StaticData {
+  static String IS_LOG_IN = "is_log_in";
+
   static List<CarouselItem> popularBanners = [
     CarouselItem(
         'Omikron O‘zbekistonda. SSV ehtiyot choralari kuchaytirilishini ma’lum qildi',

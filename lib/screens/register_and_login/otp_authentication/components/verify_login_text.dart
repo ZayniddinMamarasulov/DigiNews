@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,18 +22,18 @@ class _VerifyLoginTextState extends State<VerifyLoginText> {
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
         const Text(
-          'Verify Login',
+          'verifyLogin',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w700,
           ),
-        ),
+        ).tr(),
         const SizedBox(height: 8),
-        Text('Enter OTP Code send to $email'),
+        Text('${'verifyText1'.tr()} $email'),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('This code will expired in '),
+            const Text('verifyText2').tr(),
             TweenAnimationBuilder(
               duration: const Duration(seconds: 60),
               tween: IntTween(begin: 60, end: 0),

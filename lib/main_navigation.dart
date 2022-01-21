@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/home_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/notification_page/notification_page.dart';
-import 'package:news_app/screens/drawer/write_news.dart';
+import 'package:news_app/screens/dashboard_and_news_detail/saved_page/saved_page.dart';
 import 'package:news_app/screens/onboarding/onboarding.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
@@ -11,6 +11,9 @@ import 'package:news_app/screens/register_and_login/otp_authentication/authentic
 import 'package:news_app/screens/register_and_login/password_recovery/email_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/password_recovery/phone_number_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/signup_page/signup_page.dart';
+import 'package:news_app/screens/write_news/write_new_articl.dart';
+import 'package:news_app/utils/static_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class MainNavigationRouteNames {
   static const splashScreen = '/splash_screen';
@@ -23,11 +26,13 @@ abstract class MainNavigationRouteNames {
   static const authentication = '/auth/sign_up/authentication';
   static const home = '/home';
   static const notification = '/notification';
+  static const savedNews = '/saved_news';
   static const writeNews = '/write_news';
 }
 
 class MainNavigation {
-  String initialRoute() => MainNavigationRouteNames.home;
+
+
 
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.splashScreen: (context) => const OnboardingApp(),
@@ -45,7 +50,7 @@ class MainNavigation {
     MainNavigationRouteNames.home: (context) => const HomePage(),
     MainNavigationRouteNames.notification: (context) =>
         const NotificationPage(),
-    MainNavigationRouteNames.writeNews: (context) =>
-    const WriteNews(),
+    MainNavigationRouteNames.savedNews: (context) => const SavedPage(),
+    MainNavigationRouteNames.writeNews: (context) => const WriteNewsPage(),
   };
 }

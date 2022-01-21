@@ -9,3 +9,12 @@ auth screen:
 
 ![](assets/screens/sp1.png)
 
+
+write news page screen:
+
+![](assets/screens/sv1.png)  ![](assets/screens/sv2.png)
+
+
+
+
+

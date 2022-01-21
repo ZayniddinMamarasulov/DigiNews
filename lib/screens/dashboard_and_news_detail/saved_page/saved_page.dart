@@ -1,77 +1,88 @@
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/news.dart';
-import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_carousel.dart';
 import 'package:news_app/services/PreferenceService.dart';
 import 'package:news_app/utils/static_data.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class PopularPage extends StatefulWidget {
-  const PopularPage({Key? key}) : super(key: key);
+class SavedPage extends StatefulWidget {
+  const SavedPage({Key? key}) : super(key: key);
 
   @override
-  _PopularPageState createState() => _PopularPageState();
+  _SavedPageState createState() => _SavedPageState();
 }
 
-class _PopularPageState extends State<PopularPage> {
-  List<News> bookList = [];
+class _SavedPageState extends State<SavedPage> {
+  final controller = TextEditingController();
   late final PreferenceService preferenceService;
+
+  List<News> bookmarks = [];
 
   @override
   void initState() {
     super.initState();
     preferenceService = PreferenceService();
+
+    _getBookmark();
   }
 
-  _saveBookmark(News news) async {
-    bookList.add(news);
-    preferenceService.saveBookmarks(bookList);
+  _getBookmark() async {
+    bookmarks = await preferenceService.getBookmarks();
+    setState(() {});
   }
 
   _updateBookmarks(News news) async {
-    bookList.remove(news);
-    preferenceService.saveBookmarks(bookList);
+    bookmarks.remove(news);
+    preferenceService.saveBookmarks(bookmarks);
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        shrinkWrap: true,
-        physics: const BouncingScrollPhysics(),
+      appBar: AppBar(
+        elevation: 0,
+        title: Container(
+            width: 250,
+            child: TextField(
+              decoration: const InputDecoration(
+                  hintText: 'search',
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                  )),
+              controller: controller,
+            )),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              setState(() {
+                // isTap = !isTap;
+                print(bookmarks.length);
+              });
+            },
+          )
+        ],
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          PopularCarousel(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'latestNews',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ).tr(),
-                const Text(
-                  'seeMore',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.redAccent,
-                  ),
-                ).tr(),
-              ],
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            child: const Text(
+              'Bookmarks',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
             ),
           ),
-          const SizedBox(height: 8),
           ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: StaticData.latestNews.length,
+            itemCount: bookmarks.length,
             itemBuilder: (BuildContext context, int index) {
-              var list = StaticData.latestNews[index];
+              var list = bookmarks[index];
               return Container(
                 height: 96,
                 margin: const EdgeInsets.symmetric(vertical: 4),
@@ -116,12 +127,12 @@ class _PopularPageState extends State<PopularPage> {
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    '1 ${'dayAgo'.tr()}  •  ',
-                                    style: const TextStyle(color: Colors.grey),
+                                  const Text(
+                                    '1 days ago  •  ',
+                                    style: TextStyle(color: Colors.grey),
                                   ),
                                   Text(
-                                    '${list.readingTime} ${'readTime'.tr()}',
+                                    '${list.readingTime} mins read',
                                     style: const TextStyle(color: Colors.grey),
                                   ),
                                 ],
@@ -130,11 +141,7 @@ class _PopularPageState extends State<PopularPage> {
                                 onTap: () {
                                   setState(() {
                                     list.isSaved = !list.isSaved;
-                                    if (list.isSaved) {
-                                      _saveBookmark(list);
-                                    } else {
-                                      _updateBookmarks(list);
-                                    }
+                                    _updateBookmarks(list);
                                   });
                                 },
                                 child: Icon(
@@ -160,7 +167,7 @@ class _PopularPageState extends State<PopularPage> {
                 child: Divider(),
               );
             },
-          )
+          ),
         ],
       ),
     );

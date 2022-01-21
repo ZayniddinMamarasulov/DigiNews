@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class LoginButton extends StatelessWidget {
@@ -23,15 +24,15 @@ class LoginButton extends StatelessWidget {
           ),
           height: 56,
           width: double.infinity,
-          child: const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Login',
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: const Text(
+              'loginButton',
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Colors.white),
-            ),
+            ).tr(),
           ),
         ),
       ),

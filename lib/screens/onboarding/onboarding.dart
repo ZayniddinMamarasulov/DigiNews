@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -33,11 +34,13 @@ class _OnboardingAppState extends State<OnboardingApp> {
       backgroundColor: Colors.white,
       appBar: customAppBar(context),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             flex: 5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 imagesInPageView(),
                 CustomCaruselIndicators(currentIndex: currentIndex),
@@ -51,7 +54,9 @@ class _OnboardingAppState extends State<OnboardingApp> {
               radius: 100,
               lineWidth: 4.0,
               percent: percent,
-              animationDuration: 500,
+              animationDuration: 800,
+              animateFromLastPercent: true,
+              animation: true,
               backgroundColor: Colors.transparent,
               progressColor: Colors.black,
               center: GestureDetector(

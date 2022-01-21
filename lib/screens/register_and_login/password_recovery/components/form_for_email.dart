@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class EmailFormRecoveryPass extends StatefulWidget {
@@ -111,17 +112,17 @@ Align _errorText({required String errorMessage}) {
 
 Text buildTitleText() {
   return const Text(
-    'Email',
+    'email',
     style: TextStyle(fontSize: 16),
-  );
+  ).tr();
 }
 
 Text buttonChildText() {
   return const Text(
-    'Send OTP Code',
+    'sendOTPCode',
     style: TextStyle(
         fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
-  );
+  ).tr();
 }
 
 ButtonStyle buildButtonStyle() {

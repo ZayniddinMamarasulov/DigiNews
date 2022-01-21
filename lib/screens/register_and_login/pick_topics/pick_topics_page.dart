@@ -1,7 +1,10 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
 import 'package:news_app/models/my_topic.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/app_bar.dart';
+import 'package:news_app/utils/static_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PickTopicsPage extends StatefulWidget {
   const PickTopicsPage({Key? key}) : super(key: key);
@@ -14,6 +17,11 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
   List<MyTopic> topics = MyTopic.topics;
 
   List<MyTopic> selectTopics = [];
+
+  void _saveLogin() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool(StaticData.IS_LOG_IN, true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +37,9 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                 padding:
                     EdgeInsets.only(top: height * 0.01, bottom: height * 0.05),
                 child: const Text(
-                  'Pick topics to start reading and saving news',
+                  'topicsPageText',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-                ),
+                ).tr(),
               ),
               Wrap(
                 runSpacing: 12,
@@ -74,23 +82,25 @@ class _PickTopicsPageState extends State<PickTopicsPage> {
                 height: 56,
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context)
-                          .pushNamed(MainNavigationRouteNames.home);
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12))),
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.grey.shade900),
+                  onPressed: () {
+                    _saveLogin();
+                    Navigator.of(context)
+                        .pushNamed(MainNavigationRouteNames.home);
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12))),
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.grey.shade900),
+                  ),
+                  child: const Text(
+                    'getStarted',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
                     ),
-                    child: const Text(
-                      'Get Started',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )),
+                  ).tr(),
+                ),
               )
             ],
           ),

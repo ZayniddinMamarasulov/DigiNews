@@ -1,3 +1,5 @@
+import 'package:easy_localization/src/public_ext.dart';
+
 class MyTopic {
   String title;
   bool isSelected;
@@ -10,20 +12,20 @@ class MyTopic {
   MyTopic(this.title, {this.isSelected = false});
 
   static List<MyTopic> topics = [
-    MyTopic('🎶 Music'),
-    MyTopic('💼 Business'),
-    MyTopic('🎨 Design'),
-    MyTopic('📖 Book'),
-    MyTopic('📷 Photography'),
-    MyTopic('🏛 Architecture'),
-    MyTopic('✍🏻 Writing'),
-    MyTopic('‍🏫 Education'),
-    MyTopic('🎮 Entertainment'),
-    MyTopic('🍃 Nature'),
-    MyTopic('🏝 Travel'),
-    MyTopic('🏓 Sports'),
-    MyTopic('⚕️ Health'),
-    MyTopic('🍳 Recipes'),
-    MyTopic('💪 Gym & Fitness'),
+    MyTopic('music'.tr()),
+    MyTopic('business'.tr()),
+    MyTopic('design'.tr()),
+    MyTopic('book'.tr()),
+    MyTopic('photography'.tr()),
+    MyTopic('architecture'.tr()),
+    MyTopic('writing'.tr()),
+    MyTopic('education'.tr()),
+    MyTopic('enternaiment'.tr()),
+    MyTopic('nature'.tr()),
+    MyTopic('travel'.tr()),
+    MyTopic('sport'.tr()),
+    MyTopic('health'.tr()),
+    MyTopic('recipes'.tr()),
+    MyTopic('fitness'.tr()),
   ];
 }
