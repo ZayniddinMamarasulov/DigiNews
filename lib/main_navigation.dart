@@ -36,7 +36,7 @@ class MainNavigation {
     bool isLogIn = prefs.getBool(StaticData.IS_LOG_IN) ?? false;
     return isLogIn
         ? MainNavigationRouteNames.home
-        : MainNavigationRouteNames.auth;
+        : MainNavigationRouteNames.splashScreen;
   }
 
   final routes = <String, Widget Function(BuildContext)>{

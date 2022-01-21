@@ -16,5 +16,8 @@ write news page screen:
 
 
 
+![](assets/screens/record.gif)
+
+
 
 
