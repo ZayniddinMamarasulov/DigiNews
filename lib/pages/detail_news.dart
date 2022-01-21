@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/dashboad_page.dart';
+import 'package:news_app/screens/loging_page.dart';
+import 'package:news_app/screens/sing_up.dart';
 import '../colors.dart';
 
 class DetailNews extends StatefulWidget {
@@ -107,7 +109,9 @@ class _DetailNewsState extends State<DetailNews> {
                                           child: Text(
                                         "Food",
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 12),
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
                                       )),
                                     ),
                                     const SizedBox(width: 11),
@@ -149,98 +153,11 @@ class _DetailNewsState extends State<DetailNews> {
                         padding: const EdgeInsets.only(left: 24),
                         child: Row(
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(40)),
-                              width: 155,
-                              height: 36,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  IconButton(
-                                    icon: Image.asset("assets/Icons/img_2.png"),
-                                    iconSize: 24,
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const DashboardPage()),
-                                      );
-                                      setState(() {});
-                                    },
-                                  ),
-                                  const SizedBox(width: 10),
-                                  const Text(
-                                    "Jean Prangley",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 14),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            signButtonss(),
                             const SizedBox(width: 26),
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: AppColors.blac,
-                                  borderRadius: BorderRadius.circular(40)),
-                              width: 85,
-                              height: 36,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  IconButton(
-                                    icon: Image.asset("assets/Icons/like.png"),
-                                    iconSize: 24,
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const DashboardPage()),
-                                      );
-                                      setState(() {});
-                                    },
-                                  ),
-                                  const SizedBox(width: 1),
-                                  const Text(
-                                    "634",
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            signButtons(),
                             const SizedBox(width: 16),
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: AppColors.blac,
-                                  borderRadius: BorderRadius.circular(40)),
-                              width: 70,
-                              height: 36,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  IconButton(
-                                    icon: Icon(Icons.comment),
-                                    iconSize: 24,
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const DashboardPage()),
-                                      );
-                                      setState(() {});
-                                    },
-                                  ),
-                                  const Text(
-                                    "32",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            signButtonEnd()
                           ],
                         ),
                       ),
@@ -342,5 +259,138 @@ class _DetailNewsState extends State<DetailNews> {
         ],
       ),
     );
+  }
+
+  Widget signButtons() {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(_createRoute());
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            color: AppColors.blac, borderRadius: BorderRadius.circular(40)),
+        width: 85,
+        height: 36,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("assets/Icons/like.png", width: 24, height: 24),
+            const SizedBox(width: 10),
+            const Text(
+              "634",
+              style: TextStyle(fontSize: 14),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget signButtonss() {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(_createRoutes());
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.black, borderRadius: BorderRadius.circular(40)),
+        width: 155,
+        height: 36,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/Icons/img_2.png",
+              width: 30,
+              height: 30,
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              "Jean Prangley",
+              style: TextStyle(color: Colors.white, fontSize: 14),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget signButtonEnd() {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(_createRouteEnd());
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            color: AppColors.blac, borderRadius: BorderRadius.circular(40)),
+        width: 70,
+        height: 36,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Icon(Icons.comment),
+            SizedBox(width: 10),
+            Text(
+              "32",
+              style: TextStyle(fontSize: 12),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animations, secondaryAnimation) => SingUp(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.easeInOutQuad;
+
+          var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        });
+  }
+
+  Route _createRoutes() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animations, secondaryAnimation) => LogingPage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.easeInOutQuad;
+
+          var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        });
+  }
+
+  Route _createRouteEnd() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animations, secondaryAnimation) => LogingPage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.easeInOutQuad;
+
+          var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        });
   }
 }

@@ -207,7 +207,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         borderRadius: BorderRadius.circular(20), // Image border
                         child: SizedBox.fromSize(
                           size: const Size.fromRadius(48), // Image radius
-                          child: Image.asset('assets/Image/img_detailNews.png',
+                          child: Image.asset('assets/Image/img.png',
                               fit: BoxFit.cover),
                         ),
                       ),
