@@ -10,12 +10,13 @@ class HeroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.grey[900 - brightness],
       body: SizedBox(
         child: Hero(
+          transitionOnUserGestures: false,
           tag: Image.asset("assets/dashboard/Okk.png"),
           child: Material(
-              color: Colors.transparent,
+              color: Colors.grey[900 - brightness],
               child: InkWell(
                 onTap: () {
                   Navigator.pop(context);
@@ -124,7 +125,9 @@ class HeroPage extends StatelessWidget {
                                                 BorderRadius.circular(12))),
                                     backgroundColor: MaterialStateProperty.all(
                                         Colors.grey.shade900)),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
                                 child: const Text('Done'),
                               ))
                         ],

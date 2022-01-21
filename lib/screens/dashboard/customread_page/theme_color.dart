@@ -25,7 +25,6 @@ class _ThemeColorState extends State<ThemeColor> {
               icon: CircleAvatar(
                 backgroundColor: Colors.grey[300],
                 radius: 20,
-                
               )),
           IconButton(
               onPressed: () {},

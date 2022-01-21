@@ -7,9 +7,10 @@ class FontSize extends StatefulWidget {
   State<FontSize> createState() => _FontSizeState();
 }
 
+double count = 1.0;
+
 class _FontSizeState extends State<FontSize> {
-  RangeValues values = const RangeValues(0.0, 100.0);
-  double count = 0.0;
+  RangeValues values = const RangeValues(0.0, 36.0);
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +33,10 @@ class _FontSizeState extends State<FontSize> {
               valueIndicatorColor: Colors.white),
           child: Slider(
               min: 0.0,
-              max: 100.0,
+              max: 36.0,
               divisions: 10,
               value: count,
-              onChanged: (value) {
-                setState(() {
-                  count = value;
-                });
-              }),
+              onChanged: (double value) => _changed(value)),
         ),
         const Text(
           "A",
@@ -47,5 +44,11 @@ class _FontSizeState extends State<FontSize> {
         ),
       ],
     );
+  }
+
+  void _changed(value) {
+    setState(() {
+      count = value;
+    });
   }
 }

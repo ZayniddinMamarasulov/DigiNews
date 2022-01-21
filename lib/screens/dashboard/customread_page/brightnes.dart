@@ -7,9 +7,9 @@ class BrightnesPage extends StatefulWidget {
   State<BrightnesPage> createState() => _BrightnesPageState();
 }
 
-class _BrightnesPageState extends State<BrightnesPage> {
-  double count = 0.0;
+int brightness = 0;
 
+class _BrightnesPageState extends State<BrightnesPage> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,22 +22,20 @@ class _BrightnesPageState extends State<BrightnesPage> {
         SliderTheme(
           data: SliderThemeData(
               activeTrackColor: Colors.black,
-              thumbShape:
-                  const RoundSliderThumbShape(enabledThumbRadius: 8.0),
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8.0),
               trackHeight: 4.0,
               inactiveTrackColor: Colors.grey[400],
               thumbColor: Colors.black,
               minThumbSeparation: 100.0,
               valueIndicatorTextStyle: const TextStyle(fontSize: 10.0),
               valueIndicatorColor: Colors.teal),
-          child: Slider(
+          child: Slider.adaptive(
               min: 0.0,
-              max: 100.0,
-              value: count,
-              onChanged: (value) {
-                setState(() {
-                  count = value;
-                });
+              max: 800.0,
+              label: "$brightness",
+              value: brightness.toDouble(),
+              onChanged: (newBrightness) {
+                setState(() => brightness = newBrightness.toInt());
               }),
         ),
         const Icon(Icons.wb_sunny_outlined),
