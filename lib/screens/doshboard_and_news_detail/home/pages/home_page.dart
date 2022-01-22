@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:news_app/screens/doshboard_and_news_detail/home/components/custom_advansed_drawer.dart';
-import 'package:news_app/screens/doshboard_and_news_detail/home/popular_page.dart';
-import 'package:news_app/screens/doshboard_and_news_detail/home/recent_page.dart';
-import 'package:news_app/screens/doshboard_and_news_detail/home/trending_page.dart';
+import 'package:news_app/screens/doshboard_and_news_detail/home/pages/popular_page.dart';
+import 'package:news_app/screens/doshboard_and_news_detail/home/pages/recent_page.dart';
+import 'package:news_app/screens/doshboard_and_news_detail/home/pages/trending_page.dart';
 import 'package:news_app/utils/colors.dart';
+
+import '../../../../main_navigation.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -47,7 +49,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
             IconButton(
               onPressed: () {
-
+                Navigator.of(context)
+                    .pushNamed(MainNavigationRouteNames.notification);
               },
               icon: Image.asset('assets/icons/ic_notification.png'),
             ),

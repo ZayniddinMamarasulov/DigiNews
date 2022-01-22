@@ -84,9 +84,9 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
                   }
                 },
                 style: buildButtonStyle(),
-                child: buttonChildText(),
-              ),
-            )
+                child: buttonChildText()
+              )
+            ),
           ],
         ),
       ),
@@ -108,6 +108,14 @@ EdgeInsets marginHeight(BuildContext context) {
       top: 12, bottom: MediaQuery.of(context).size.height * 0.2);
 }
 
+Text buttonChildText() {
+  return const Text(
+    'sendOTPCode',
+    style: TextStyle(
+        fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
+  );
+}
+
 Text buildTitleText() {
   return const Text(
     'Phone Number',
@@ -119,14 +127,6 @@ BoxDecoration _customDecoration() {
   return BoxDecoration(
     borderRadius: BorderRadius.circular(12),
     border: Border.all(color: Colors.redAccent),
-  );
-}
-
-Text buttonChildText() {
-  return const Text(
-    'Send OTP Code',
-    style: TextStyle(
-        fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
   );
 }
 

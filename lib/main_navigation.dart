@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/doshboard_and_news_detail/home/components/editprofil_page.dart';
-import 'package:news_app/screens/doshboard_and_news_detail/home/components/myprofil_page.dart';
-import 'package:news_app/screens/doshboard_and_news_detail/home/home_page.dart';
+import 'package:news_app/screens/doshboard_and_news_detail/home/pages/editprofil_page.dart';
+import 'package:news_app/screens/doshboard_and_news_detail/home/pages/myprofil_page.dart';
+import 'package:news_app/screens/doshboard_and_news_detail/home/pages/home_page.dart';
+import 'package:news_app/screens/doshboard_and_news_detail/notification_page/notification_page.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
 import 'package:news_app/screens/register_and_login/login_page/login_page.dart';
@@ -23,6 +24,7 @@ abstract class MainNavigationRouteNames {
   static const writeNews = '/write_news';
   static const myprofil='myprofil';
   static const editprofil='editprofil';
+  static const notification = '/notification';
 }
 
 class MainNavigation {
@@ -43,7 +45,7 @@ class MainNavigation {
     MainNavigationRouteNames.home: (context) => const HomePage(),
     MainNavigationRouteNames.myprofil: (context) => const MyProfilPage(),
     MainNavigationRouteNames.editprofil: (context) => const EditProfilPage(),
-
-
+    MainNavigationRouteNames.notification: (context) =>
+    const NotificationPage(),
   };
 }

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/utils/static_data.dart';
 
-import 'components/popular_carousel.dart';
+import '../components/popular_carousel.dart';
 
 class PopularPage extends StatefulWidget {
   const PopularPage({Key? key}) : super(key: key);
