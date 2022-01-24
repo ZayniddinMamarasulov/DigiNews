@@ -41,7 +41,7 @@ class _NewsDetailState extends State<NewsDetail> {
                             children: [
                               IconButton(
                                 icon: Image.asset(
-                                  "assets/Icons/img.png",
+                                  "assets/icons/img.png",
                                   color: Colors.white,
                                 ),
                                 iconSize: 40,
@@ -57,7 +57,7 @@ class _NewsDetailState extends State<NewsDetail> {
                               ),
                               const SizedBox(width: 277),
                               IconButton(
-                                icon: Image.asset("assets/Icons/img_icon1.png",
+                                icon: Image.asset("assets/icons/img_icon1.png",
                                     color: Colors.white, height: 24, width: 24),
                                 onPressed: () {
                                   // Navigator.push(
@@ -74,7 +74,7 @@ class _NewsDetailState extends State<NewsDetail> {
                           Padding(
                             padding: const EdgeInsets.only(left: 335),
                             child: IconButton(
-                              icon: Image.asset("assets/Icons/img_icon2.png",
+                              icon: Image.asset("assets/icons/img_icon2.png",
                                   color: Colors.white, width: 24, height: 24),
                               onPressed: () {
                                 // Navigator.push(
