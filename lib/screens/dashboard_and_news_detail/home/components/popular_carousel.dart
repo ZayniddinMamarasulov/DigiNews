@@ -4,7 +4,7 @@ import 'package:news_app/screens/dashboard_and_news_detail/home/components/popul
 import 'package:news_app/utils/static_data.dart';
 
 class PopularCarousel extends StatefulWidget {
-  PopularCarousel({Key? key}) : super(key: key);
+  const PopularCarousel({Key? key}) : super(key: key);
 
   @override
   _PopularCarouselState createState() => _PopularCarouselState();

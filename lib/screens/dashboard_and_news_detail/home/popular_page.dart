@@ -43,7 +43,7 @@ class _PopularPageState extends State<PopularPage> {
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
         children: [
-          PopularCarousel(),
+          const PopularCarousel(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
             child: Row(
@@ -72,11 +72,12 @@ class _PopularPageState extends State<PopularPage> {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: StaticData.latestNews.length,
             itemBuilder: (BuildContext context, int index) {
-              var list = StaticData.latestNews[index];
+              var news = StaticData.latestNews[index];
               return InkWell(
                 onTap: () {
-                  Navigator.of(context)
-                      .pushNamed(MainNavigationRouteNames.newsDetail);
+                  Navigator.of(context).pushNamed(
+                      MainNavigationRouteNames.newsDetail,
+                      arguments: {'news': news});
                 },
                 child: Container(
                   height: 96,
@@ -92,8 +93,8 @@ class _PopularPageState extends State<PopularPage> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: NetworkImage(list.image),
+                            fit: BoxFit.cover,
+                            image: NetworkImage(news.image),
                           ),
                         ),
                       ),
@@ -104,11 +105,11 @@ class _PopularPageState extends State<PopularPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              list.category,
+                              news.category,
                               style: TextStyle(color: Colors.grey[600]),
                             ),
                             Text(
-                              list.title,
+                              news.title,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
@@ -128,7 +129,7 @@ class _PopularPageState extends State<PopularPage> {
                                           const TextStyle(color: Colors.grey),
                                     ),
                                     Text(
-                                      '${list.readingTime} ${'readTime'.tr()}',
+                                      '${news.readingTime} ${'readTime'.tr()}',
                                       style:
                                           const TextStyle(color: Colors.grey),
                                     ),
@@ -137,19 +138,19 @@ class _PopularPageState extends State<PopularPage> {
                                 GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      list.isSaved = !list.isSaved;
-                                      if (list.isSaved) {
-                                        _saveBookmark(list);
+                                      news.isSaved = !news.isSaved;
+                                      if (news.isSaved) {
+                                        _saveBookmark(news);
                                       } else {
-                                        _updateBookmarks(list);
+                                        _updateBookmarks(news);
                                       }
                                     });
                                   },
                                   child: Icon(
-                                    list.isSaved
+                                    news.isSaved
                                         ? Icons.bookmark_added_outlined
                                         : Icons.bookmark_add_outlined,
-                                    color: list.isSaved
+                                    color: news.isSaved
                                         ? Colors.black
                                         : Colors.grey,
                                   ),
