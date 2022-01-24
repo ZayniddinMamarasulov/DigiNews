@@ -20,7 +20,6 @@ void main() async {
         Locale('uz', 'UZ'),
       ],
       path: 'assets/lang', // <-- change the path of the translation files
-      fallbackLocale: Locale(Platform.localeName),
       child: NewsApp(await initialRoute()),
     ),
   );
