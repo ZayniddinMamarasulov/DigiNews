@@ -30,28 +30,28 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                   backgroundImage:
                       AssetImage("assets/images/avatar_sample.png"),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
-                Column(
-                  children: const [
-                    Text(
-                      "Tiana vetrovs",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      "Passionate Writer",
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  width: 82,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        "Tiana vetrovs",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w700),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Passionate Writer",
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
                 ),
                 TextButton(
                     onPressed: () {
@@ -119,65 +119,67 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                       SizedBox(
                         width: 10,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Design",
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.grey[600]),
-                          ),
-                          const Text(
-                            "The  Only  Page  Your  Portofolio",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          const Text(
-                            "Needs",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black),
-                          ),
-                          Row(
-                            children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    '1 week ago',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 12,
-                                        color: Colors.grey),
-                                  ),
-                                  const SizedBox(
-                                    width: 6,
-                                  ),
-                                  Image.asset('assets/images/img.png'),
-                                  const SizedBox(
-                                    width: 6,
-                                  ),
-                                  Text(
-                                    '12 min read',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 12,
-                                        color: Colors.grey),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(width: 114),
-                              Image.asset('assets/icons/ic_archive.png')
-                            ],
-                          )
-                        ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Design",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.grey[600]),
+                            ),
+                            const Text(
+                              "The  Only  Page  Your  Portofolio",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            const Text(
+                              "Needs",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black),
+                            ),
+                            Row(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      '1 week ago',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12,
+                                          color: Colors.grey),
+                                    ),
+                                    const SizedBox(
+                                      width: 6,
+                                    ),
+                                    Image.asset('assets/images/img.png'),
+                                    const SizedBox(
+                                      width: 6,
+                                    ),
+                                    Text(
+                                      '12 min read',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12,
+                                          color: Colors.grey),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(width: 114),
+                                Image.asset('assets/icons/ic_archive.png')
+                              ],
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
