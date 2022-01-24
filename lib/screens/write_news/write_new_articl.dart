@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 import 'components/add_topics_widget.dart';
@@ -44,9 +45,9 @@ class _WriteNewsPageState extends State<WriteNewsPage> {
                         MaterialStateProperty.all(Colors.grey.shade900),
                   ),
                   child: const Text(
-                    'Publish',
+                    'publish',
                     style: TextStyle(fontSize: 18),
-                  ),
+                  ).tr(),
                 ),
               ),
             ],
