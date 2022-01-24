@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/utils/app_colors.dart';
 
-class DetailNews extends StatefulWidget {
-  const DetailNews({Key? key}) : super(key: key);
+class NewsDetail extends StatefulWidget {
+  const NewsDetail({Key? key}) : super(key: key);
 
   @override
-  State<DetailNews> createState() => _DetailNewsState();
+  State<NewsDetail> createState() => _NewsDetailState();
 }
 
-class _DetailNewsState extends State<DetailNews> {
+class _NewsDetailState extends State<NewsDetail> {
   final bool _pinned = false;
   final bool _snap = false;
   final bool _floating = false;
@@ -261,11 +261,12 @@ class _DetailNewsState extends State<DetailNews> {
   Widget signButtons() {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(_createRoute());
+        // Navigator.of(context).push(_createRoute());
       },
       child: Container(
         decoration: BoxDecoration(
-            color: AppColors.blac, borderRadius: BorderRadius.circular(40)),
+            color: AppColors.blackw200,
+            borderRadius: BorderRadius.circular(40)),
         width: 85,
         height: 36,
         child: Row(
@@ -286,7 +287,7 @@ class _DetailNewsState extends State<DetailNews> {
   Widget signButtonss() {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(_createRoutes());
+        // Navigator.of(context).push(_createRoutes());
       },
       child: Container(
         decoration: BoxDecoration(
@@ -315,11 +316,11 @@ class _DetailNewsState extends State<DetailNews> {
   Widget signButtonEnd() {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(_createRouteEnd());
+        // Navigator.of(context).push(_createRouteEnd());
       },
       child: Container(
         decoration: BoxDecoration(
-            color: AppColors.blac, borderRadius: BorderRadius.circular(40)),
+            color: AppColors.blackw200, borderRadius: BorderRadius.circular(40)),
         width: 70,
         height: 36,
         child: Row(
@@ -337,57 +338,57 @@ class _DetailNewsState extends State<DetailNews> {
     );
   }
 
-  Route _createRoute() {
-    return PageRouteBuilder(
-        pageBuilder: (context, animations, secondaryAnimation) => SingUp(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(1.0, 0.0);
-          const end = Offset.zero;
-          const curve = Curves.easeInOutQuad;
+  // Route _createRoute() {
+  //   return PageRouteBuilder(
+  //       pageBuilder: (context, animations, secondaryAnimation) => SingUp(),
+  //       transitionsBuilder: (context, animation, secondaryAnimation, child) {
+  //         const begin = Offset(1.0, 0.0);
+  //         const end = Offset.zero;
+  //         const curve = Curves.easeInOutQuad;
+  //
+  //         var tween =
+  //             Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+  //
+  //         return SlideTransition(
+  //           position: animation.drive(tween),
+  //           child: child,
+  //         );
+  //       });
+  // }
 
-          var tween =
-              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+  // Route _createRoutes() {
+  //   return PageRouteBuilder(
+  //       pageBuilder: (context, animations, secondaryAnimation) => LogingPage(),
+  //       transitionsBuilder: (context, animation, secondaryAnimation, child) {
+  //         const begin = Offset(1.0, 0.0);
+  //         const end = Offset.zero;
+  //         const curve = Curves.easeInOutQuad;
+  //
+  //         var tween =
+  //             Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+  //
+  //         return SlideTransition(
+  //           position: animation.drive(tween),
+  //           child: child,
+  //         );
+  //       });
+  // }
 
-          return SlideTransition(
-            position: animation.drive(tween),
-            child: child,
-          );
-        });
-  }
-
-  Route _createRoutes() {
-    return PageRouteBuilder(
-        pageBuilder: (context, animations, secondaryAnimation) => LogingPage(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(1.0, 0.0);
-          const end = Offset.zero;
-          const curve = Curves.easeInOutQuad;
-
-          var tween =
-              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-          return SlideTransition(
-            position: animation.drive(tween),
-            child: child,
-          );
-        });
-  }
-
-  Route _createRouteEnd() {
-    return PageRouteBuilder(
-        pageBuilder: (context, animations, secondaryAnimation) => LogingPage(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(1.0, 0.0);
-          const end = Offset.zero;
-          const curve = Curves.easeInOutQuad;
-
-          var tween =
-              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-          return SlideTransition(
-            position: animation.drive(tween),
-            child: child,
-          );
-        });
-  }
+  // Route _createRouteEnd() {
+  //   return PageRouteBuilder(
+  //       pageBuilder: (context, animations, secondaryAnimation) => LogingPage(),
+  //       transitionsBuilder: (context, animation, secondaryAnimation, child) {
+  //         const begin = Offset(1.0, 0.0);
+  //         const end = Offset.zero;
+  //         const curve = Curves.easeInOutQuad;
+  //
+  //         var tween =
+  //             Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+  //
+  //         return SlideTransition(
+  //           position: animation.drive(tween),
+  //           child: child,
+  //         );
+  //       });
+  // }
 }

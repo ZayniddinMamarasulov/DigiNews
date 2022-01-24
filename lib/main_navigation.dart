@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/home_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/notification_page/notification_page.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/saved_page/saved_page.dart';
+import 'package:news_app/screens/news_detail.dart';
 import 'package:news_app/screens/onboarding/onboarding.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
@@ -27,13 +28,11 @@ abstract class MainNavigationRouteNames {
   static const home = '/home';
   static const notification = '/notification';
   static const savedNews = '/saved_news';
+  static const newsDetail = '/news_detail';
   static const writeNews = '/write_news';
 }
 
 class MainNavigation {
-
-
-
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.splashScreen: (context) => const OnboardingApp(),
     MainNavigationRouteNames.auth: (context) => const AuthPage(),
@@ -52,5 +51,6 @@ class MainNavigation {
         const NotificationPage(),
     MainNavigationRouteNames.savedNews: (context) => const SavedPage(),
     MainNavigationRouteNames.writeNews: (context) => const WriteNewsPage(),
+    MainNavigationRouteNames.newsDetail: (context) => const NewsDetail(),
   };
 }
