@@ -5,6 +5,7 @@ import 'package:news_app/screens/dashboard_and_news_detail/notification_page/not
 import 'package:news_app/screens/dashboard_and_news_detail/saved_page/saved_page.dart';
 import 'package:news_app/screens/news_detail/news_detail.dart';
 import 'package:news_app/screens/onboarding/onboarding.dart';
+import 'package:news_app/screens/profile/view_profile_page.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
 import 'package:news_app/screens/register_and_login/login_page/login_page.dart';
@@ -28,6 +29,7 @@ abstract class MainNavigationRouteNames {
   static const home = '/home';
   static const notification = '/notification';
   static const savedNews = '/saved_news';
+  static const profile = '/profile';
   static const newsDetail = '/news_detail';
   static const writeNews = '/write_news';
 }
@@ -52,5 +54,6 @@ class MainNavigation {
     MainNavigationRouteNames.savedNews: (context) => const SavedPage(),
     MainNavigationRouteNames.writeNews: (context) => const WriteNewsPage(),
     MainNavigationRouteNames.newsDetail: (context) => const NewsDetail(),
+    MainNavigationRouteNames.profile: (context) => const ViewProfilePage(),
   };
 }

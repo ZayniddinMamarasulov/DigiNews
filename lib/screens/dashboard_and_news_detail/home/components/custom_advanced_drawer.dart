@@ -59,14 +59,20 @@ class _CustomAdvancedDrawerState extends State<CustomAdvancedDrawer> {
                         ),
                       ),
                       const SizedBox(height: 6),
-                      const Text(
-                        "viewProfile",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: AppColors.colorE8,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ).tr()
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(MainNavigationRouteNames.profile);
+                        },
+                        child: const Text(
+                          "viewProfile",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: AppColors.colorE8,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ).tr(),
+                      )
                     ],
                   ),
                 ),
