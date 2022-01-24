@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/news.dart';
+import 'package:news_app/screens/customread_page/hero_animation.dart';
 import 'package:news_app/utils/app_colors.dart';
 
 class NewsDetail extends StatefulWidget {
@@ -55,10 +56,18 @@ class _NewsDetailState extends State<NewsDetail> {
                           Padding(
                             padding: const EdgeInsets.only(left: 335),
                             child: IconButton(
-                              icon: Image.asset("assets/icons/img_icon2.png",
-                                  color: Colors.white, width: 24, height: 24),
+                              icon: Image.asset(
+                                  "assets/icons/ic_font_setting.png",
+                                  color: Colors.white,
+                                  width: 24,
+                                  height: 24),
                               onPressed: () {
-                                setState(() {});
+                                showDialog(
+                                  barrierDismissible: true,
+                                  useRootNavigator: true,
+                                  context: context,
+                                  builder: (context) => const HeroPage(),
+                                );
                               },
                             ),
                           ),
