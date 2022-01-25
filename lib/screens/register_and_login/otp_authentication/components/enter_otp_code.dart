@@ -15,6 +15,7 @@ class EnterCodeForm extends StatefulWidget {
 }
 
 class _EnterCodeFormState extends State<EnterCodeForm> {
+  late FocusNode pin1FocusNode;
   late FocusNode pin2FocusNode;
   late FocusNode pin3FocusNode;
   late FocusNode pin4FocusNode;
@@ -23,6 +24,7 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
   void initState() {
     super.initState();
 
+    pin1FocusNode = FocusNode();
     pin2FocusNode = FocusNode();
     pin3FocusNode = FocusNode();
     pin4FocusNode = FocusNode();
@@ -30,6 +32,7 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
 
   @override
   void dispose() {
+    pin1FocusNode.dispose();
     pin2FocusNode.dispose();
     pin3FocusNode.dispose();
     pin4FocusNode.dispose();
@@ -37,8 +40,16 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
     super.dispose();
   }
 
+  //keyingiga o'tish
   void nextForm({required String value, required FocusNode focusNode}) {
     if (value.length == 1) {
+      focusNode.requestFocus();
+    }
+  }
+
+  // o'chirganda oldingiga qaytish
+  void prevForm({required String value, required FocusNode focusNode}) {
+    if (value.isEmpty) {
       focusNode.requestFocus();
     }
   }
@@ -62,13 +73,18 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
     return CustomContainerForCode(
       child: TextField(
         autofocus: true,
+        focusNode: pin1FocusNode,
         keyboardType: TextInputType.number,
         cursorColor: Colors.redAccent,
         cursorWidth: 3,
         cursorHeight: 24,
         textAlign: TextAlign.center,
         decoration: customInputDecoration(),
-        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+        style: const TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+          color: Colors.black,
+        ),
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
         ],
@@ -89,12 +105,20 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
         cursorHeight: 24,
         textAlign: TextAlign.center,
         decoration: customInputDecoration(),
-        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+        style: const TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+          color: Colors.black,
+        ),
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
         ],
         onChanged: (value) {
+          // 1chi katakka yozilsa 2chiga otish
           nextForm(value: value, focusNode: pin3FocusNode);
+
+          // 2chi katak ochirilsa 1chiga qaytish
+          prevForm(value: value, focusNode: pin1FocusNode);
         },
       ),
     );
@@ -110,12 +134,20 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
         cursorHeight: 24,
         textAlign: TextAlign.center,
         decoration: customInputDecoration(),
-        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+        style: const TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+          color: Colors.black,
+        ),
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
         ],
         onChanged: (value) {
+          // 2chi katakka yozilsa 3chiga otish
           nextForm(value: value, focusNode: pin4FocusNode);
+
+          // 3chi katak ochirilsa 2chiga qaytish
+          prevForm(value: value, focusNode: pin2FocusNode);
         },
       ),
     );
@@ -134,13 +166,21 @@ class _EnterCodeFormState extends State<EnterCodeForm> {
           LengthLimitingTextInputFormatter(1),
         ],
         decoration: customInputDecoration(),
-        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+        style: const TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+          color: Colors.black,
+        ),
         onChanged: (value) {
+          //tortinchi katak tolsa keyingi pagega otib ketish
           if (value.length == 1) {
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => PickTopicsPage()));
+                builder: (context) => const PickTopicsPage()));
             print('ok');
           }
+
+          // 4chi katak ochirilsa 3chiga qaytish
+          prevForm(value: value, focusNode: pin3FocusNode);
         },
       ),
     );

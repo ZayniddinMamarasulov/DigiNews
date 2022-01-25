@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
@@ -12,13 +13,13 @@ class LoginTextButton extends StatelessWidget {
       child: Center(
         child: RichText(
           text: TextSpan(
-            text: 'Already have an account?  ',
+            text: ('alreadyAccount').tr(),
             style: const TextStyle(
               color: Colors.grey,
             ),
             children: [
               TextSpan(
-                text: 'Login',
+                text: ('loginButton').tr(),
                 style: const TextStyle(
                   color: Colors.redAccent,
                   fontWeight: FontWeight.bold,

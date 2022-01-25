@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 import 'continue_button.dart';
@@ -19,22 +20,24 @@ class _VerificationMethodState extends State<VerificationMethod> {
     return Column(
       children: [
         resetPassMethod(
-          methodTxt: 'Email',
-          text: 'Send to your email',
+          methodTxt: 'email'.tr(),
+          text: 'sendToEmail'.tr(),
           icon: 'email.png',
           method: 1,
         ),
         resetPassMethod(
-          methodTxt: 'Phone Number',
-          text: 'Send to your phone number',
+          methodTxt: 'phoneNumber'.tr(),
+          text: 'sentToPhone'.tr(),
           icon: 'phone.png',
-          method: 2 ,
+          method: 2,
         ),
         ContinueButton(selectMethod: selectMethod),
       ],
     );
   }
 
+  // email yoki nomer metodlarini custom shakli
+  // qaysi biridir bosilganda ikkala metoddan bittasini selectMethod olvoladi oziga
   Widget resetPassMethod({
     required String methodTxt,
     required String text,

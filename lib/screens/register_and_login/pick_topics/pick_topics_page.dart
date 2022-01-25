@@ -1,95 +1,111 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
-import 'package:news_app/utils/colors.dart';
+import 'package:news_app/models/my_topic.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/app_bar.dart';
+import 'package:news_app/utils/static_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PickTopicsPage extends StatefulWidget {
-  PickTopicsPage({Key? key}) : super(key: key);
+  const PickTopicsPage({Key? key}) : super(key: key);
 
   @override
   _PickTopicsPageState createState() => _PickTopicsPageState();
 }
 
 class _PickTopicsPageState extends State<PickTopicsPage> {
+  List<MyTopic> topics = MyTopic.topics;
+
+  List<MyTopic> selectTopics = [];
+
+  void _saveLogin() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool(StaticData.IS_LOG_IN, true);
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Widget> topics = [
-      getChip(AppColors.topics[0], 0),
-      getChip(AppColors.topics[1], 1),
-      getChip(AppColors.topics[2], 2),
-      getChip(AppColors.topics[3], 3),
-      getChip(AppColors.topics[4], 4),
-      getChip(AppColors.topics[5], 5),
-      getChip(AppColors.topics[6], 6),
-      getChip(AppColors.topics[7], 7),
-      getChip(AppColors.topics[8], 8),
-      getChip(AppColors.topics[9], 9),
-      getChip(AppColors.topics[10], 10),
-      getChip(AppColors.topics[11], 11),
-      getChip(AppColors.topics[12], 12),
-      getChip(AppColors.topics[13], 13),
-      getChip(AppColors.topics[14], 14),
-    ];
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: buildAppBar(context),
-      body: Container(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             children: [
-              const Text(
-                'Pick topics to start reading and saving news',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+              Padding(
+                padding:
+                    EdgeInsets.only(top: height * 0.01, bottom: height * 0.05),
+                child: const Text(
+                  'topicsPageText',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                ).tr(),
               ),
-              const SizedBox(height: 24),
               Wrap(
-                runAlignment: WrapAlignment.start,
-                crossAxisAlignment: WrapCrossAlignment.start,
-                spacing: 12,
                 runSpacing: 12,
-                children: topics,
+                spacing: 16,
+                children: List.generate(topics.length, (index) {
+                  var topic = topics[index];
+                  return ChoiceChip(
+                    label: Text(
+                      topic.title,
+                      style: TextStyle(
+                          color:
+                              topic.isSelected ? Colors.white : Colors.black),
+                    ),
+                    selectedColor: Colors.grey.shade900,
+                    selected: topic.isSelected,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+                    pressElevation: 0,
+                    onSelected: (bool newValue) {
+                      setState(() {
+                        topic.isSelected = !topic.isSelected;
+                        if (topic.isSelected) {
+                          selectTopics.add(topic);
+                        } else {
+                          selectTopics.remove(topic);
+                        }
+
+                        // tanlanganlar
+                        print(selectTopics);
+                      });
+                    },
+                  );
+                }),
               ),
               Container(
-                  height: height * 0.08,
-                  width: double.infinity,
-                  margin: EdgeInsets.symmetric(vertical: height * 0.06),
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12))),
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.grey.shade900)),
-                    onPressed: () {
-                      Navigator.pushNamed(
-                          context, MainNavigationRouteNames.drawer);
-                    },
-                    child: const Text('Get Started'),
-                  ))
+                margin: EdgeInsets.only(top: height * 0.08),
+                height: 56,
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    _saveLogin();
+                    Navigator.of(context)
+                        .pushNamed(MainNavigationRouteNames.home);
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12))),
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.grey.shade900),
+                  ),
+                  child: const Text(
+                    'getStarted',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ).tr(),
+                ),
+              )
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Widget getChip(MyTopic topic, int count) {
-    bool isSelected = topic.isSelected;
-    return ChoiceChip(
-      backgroundColor: Colors.grey[100],
-      label: Text(
-        topic.title,
-      ),
-      selectedColor: Colors.black,
-      labelStyle: TextStyle(color: isSelected ? Colors.white : Colors.black),
-      selected: isSelected,
-      onSelected: (bool value) {
-        setState(() {
-          isSelected = !isSelected;
-          AppColors.topics[count].isSelected = isSelected;
-        });
-      },
     );
   }
 }

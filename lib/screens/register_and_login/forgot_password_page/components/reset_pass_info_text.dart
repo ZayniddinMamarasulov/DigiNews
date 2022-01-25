@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class ResetPassInfoText extends StatelessWidget {
@@ -13,17 +14,17 @@ class ResetPassInfoText extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Reset Password',
+            'resetPass',
             style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
-          ),
+          ).tr(),
           const SizedBox(height: 8),
           Text(
-            'Select verification method and we will send verification code',
+            'resetPAssText',
             style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 16,
                 color: Colors.grey.shade600),
-          ),
+          ).tr(),
         ],
       ),
     );

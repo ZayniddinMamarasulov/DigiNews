@@ -1,6 +1,6 @@
-class Author{
+class Author {
   String name;
-  String imgUrl;
+  String imageUrl;
 
-  Author(this.name,this.imgUrl);
+  Author(this.name, this.imageUrl);
 }

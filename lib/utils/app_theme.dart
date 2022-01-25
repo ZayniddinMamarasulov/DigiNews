@@ -60,10 +60,11 @@ class DigiTheme {
 
   static ThemeData light() {
     return ThemeData(
+      fontFamily: 'SFPRo',
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith(
-              (states) {
+          (states) {
             return Colors.black;
           },
         ),
@@ -72,6 +73,7 @@ class DigiTheme {
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
       ),
+      scaffoldBackgroundColor: Colors.white,
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
         backgroundColor: Colors.black,
@@ -89,7 +91,9 @@ class DigiTheme {
       appBarTheme: AppBarTheme(
         foregroundColor: Colors.white,
         backgroundColor: Colors.grey[900],
+        elevation: 0,
       ),
+      hintColor: Colors.grey,
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
         backgroundColor: Colors.green,

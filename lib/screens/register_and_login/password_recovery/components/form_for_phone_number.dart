@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -110,9 +111,9 @@ EdgeInsets marginHeight(BuildContext context) {
 
 Text buildTitleText() {
   return const Text(
-    'Phone Number',
+    'phoneNumber',
     style: TextStyle(fontSize: 16),
-  );
+  ).tr();
 }
 
 BoxDecoration _customDecoration() {
@@ -124,10 +125,10 @@ BoxDecoration _customDecoration() {
 
 Text buttonChildText() {
   return const Text(
-    'Send OTP Code',
+    'sendOTPCode',
     style: TextStyle(
         fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
-  );
+  ).tr();
 }
 
 ButtonStyle buildButtonStyle() {

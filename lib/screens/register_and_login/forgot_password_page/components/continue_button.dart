@@ -1,9 +1,9 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
 
 class ContinueButton extends StatelessWidget {
   final int selectMethod;
-
   const ContinueButton({Key? key, required this.selectMethod})
       : super(key: key);
 
@@ -34,9 +34,9 @@ class ContinueButton extends StatelessWidget {
 
 Text buildText() {
   return const Text(
-    'Continue',
+    'continue',
     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-  );
+  ).tr();
 }
 
 ButtonStyle buildButtonStyle() {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/app_bar.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/form_fields.dart';
-import 'package:news_app/screens/register_and_login/login_page/components/signup_button.dart';
+import 'package:news_app/screens/register_and_login/login_page/components/signup_text_button.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/welcome_back_text.dart';
 
 class LoginPage extends StatefulWidget {
@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const WelcomeBackText(),
               FormFields(),
-              const SignUpButton(),
+              const SignUptextButton(),
             ],
           ),
         ),

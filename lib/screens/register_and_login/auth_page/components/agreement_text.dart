@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -8,26 +9,30 @@ class AgreementText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.only(top: 100.0, bottom: 8),
+        padding:
+            EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.14),
         child: Column(
           children: [
             RichText(
               text: TextSpan(
-                text: 'By continuing, you accept the ',
-                style: const TextStyle(
-                  color: Colors.grey,
-                ),
+                text: '',
                 children: [
                   TextSpan(
-                    text: ' Terms of Use',
+                    text: ('byContinuing').tr(),
+                    style: const TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                  TextSpan(
+                    text: 'termsOfUse'.tr(),
                     style: const TextStyle(
                       color: Colors.black,
                     ),
                     recognizer: TapGestureRecognizer()..onTap = () {},
                   ),
-                  const TextSpan(
-                    text: '  and ',
-                    style: TextStyle(
+                  TextSpan(
+                    text: 'and'.tr(),
+                    style: const TextStyle(
                       color: Colors.grey,
                     ),
                   ),
@@ -38,7 +43,7 @@ class AgreementText extends StatelessWidget {
               onTap: () {
                 print('hi');
               },
-              child: const Text('Privacy Policy'),
+              child: const Text('privacyPolicy').tr(),
             ),
           ],
         ),

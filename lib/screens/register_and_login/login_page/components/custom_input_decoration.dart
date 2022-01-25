@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 InputDecoration customInputDecoration(bool isError, String hintText) {
   return InputDecoration(
-    contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 17),
+    contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
     suffixIcon: hintText == 'Your password'
         ? IconButton(onPressed: () {}, icon: Icon(Icons.visibility))
         : null,

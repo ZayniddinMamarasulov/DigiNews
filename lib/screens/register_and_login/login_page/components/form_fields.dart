@@ -1,3 +1,4 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
 import 'package:news_app/screens/register_and_login/login_page/components/forgot_password.dart';
@@ -65,9 +66,10 @@ class _FormFieldsState extends State<FormFields> {
 
   CustomContainer passwordFormField(context) {
     return CustomContainer(
-      titleForm: 'Password',
+      titleForm: 'password'.tr(),
       isError: passError,
       child: TextFormField(
+        style: const TextStyle(color: Colors.black),
         validator: (value) {
           if (value!.isEmpty) {
             setState(() {
@@ -95,9 +97,10 @@ class _FormFieldsState extends State<FormFields> {
 
   CustomContainer emailFormField() {
     return CustomContainer(
-      titleForm: 'Email',
+      titleForm: 'email'.tr(),
       isError: emailError,
       child: TextFormField(
+        style: const TextStyle(color: Colors.black),
         controller: _emailController,
         validator: (value) {
           if (value!.isEmpty) {
@@ -123,7 +126,7 @@ class _FormFieldsState extends State<FormFields> {
 
   InputDecoration customPasswordInputDecoration(bool isError, String hintText) {
     return InputDecoration(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 17),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
       suffixIcon: IconButton(
         onPressed: () {
           _toggleVisibility();
@@ -137,6 +140,7 @@ class _FormFieldsState extends State<FormFields> {
             )
           : InputBorder.none,
       hintText: hintText,
+      // hintStyle: TextStyle(color: Colors.black),
       enabledBorder: isError
           ? OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
