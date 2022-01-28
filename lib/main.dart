@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
+import 'package:news_app/services/PreferenceService.dart';
 import 'package:news_app/utils/static_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,7 +21,7 @@ void main() async {
         Locale('uz', 'UZ'),
       ],
       path: 'assets/lang', // <-- change the path of the translation files
-      child: NewsApp(await initialRoute()),
+      child: NewsApp(await initialRoute(), await themeMode()),
     ),
   );
 }
@@ -33,10 +34,16 @@ Future<String> initialRoute() async {
       : MainNavigationRouteNames.auth;
 }
 
+Future<bool> themeMode() async {
+  PreferenceService service = PreferenceService();
+  return service.getThemeMode();
+}
+
 class NewsApp extends StatelessWidget {
   final String initialRoute;
+  final bool isDarkMode;
 
-  NewsApp(this.initialRoute, {Key? key}) : super(key: key);
+  NewsApp(this.initialRoute, this.isDarkMode, {Key? key}) : super(key: key);
 
   final mainNavigation = MainNavigation();
 
@@ -44,11 +51,10 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: StreamControllerHelper.setTheme.stream,
-      initialData: true,
+      initialData: isDarkMode,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        print(snapshot.data);
         return MaterialApp(
-          theme: snapshot.data ? DigiTheme.light() : DigiTheme.dark(),
+          theme: snapshot.data ? DigiTheme.dark() : DigiTheme.light(),
           debugShowCheckedModeBanner: false,
           title: "News App",
           initialRoute: initialRoute,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/news.dart';
 import 'package:news_app/screens/customread_page/hero_animation.dart';
 import 'package:news_app/utils/app_colors.dart';
+import 'package:news_app/utils/screen_size.dart';
 
 class NewsDetail extends StatefulWidget {
   const NewsDetail({Key? key}) : super(key: key);
@@ -38,75 +39,84 @@ class _NewsDetailState extends State<NewsDetail> {
                   flexibleSpace: FlexibleSpaceBar(
                     background: Container(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           const SizedBox(height: 60),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              IconButton(
-                                icon: Image.asset("assets/icons/img_icon1.png",
-                                    color: Colors.white, height: 24, width: 24),
-                                onPressed: () {
-                                  setState(() {});
-                                },
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 335),
-                            child: IconButton(
-                              icon: Image.asset(
-                                  "assets/icons/ic_font_setting.png",
-                                  color: Colors.white,
-                                  width: 24,
-                                  height: 24),
-                              onPressed: () {
-                                showDialog(
-                                  barrierDismissible: true,
-                                  useRootNavigator: true,
-                                  context: context,
-                                  builder: (context) => const HeroPage(),
-                                );
-                              },
-                            ),
-                          ),
-                          const SizedBox(height: 180),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                          SizedBox(
+                            height: Screen.displayHeight(context) * 0.5 * 0.1,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-                                      width: 52,
-                                      height: 24,
-                                      child: Center(
-                                          child: Text(
-                                        news.category,
-                                        style: const TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold),
-                                      )),
-                                    ),
-                                    const SizedBox(width: 11),
-                                    const Text("6 min read 10 mins ago"),
-                                  ],
-                                ),
-                                const SizedBox(height: 12),
-                                Text(
-                                  news.title,
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 24),
+                                IconButton(
+                                  icon: Image.asset("assets/icons/ic_bookmark.png",
+                                      color: Colors.white, height: 24, width: 24),
+                                  onPressed: () {
+                                    setState(() {});
+                                  },
                                 ),
                               ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: Screen.displayHeight(context) * 0.5 * 0.1,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 335),
+                              child: IconButton(
+                                icon: Image.asset(
+                                    "assets/icons/ic_font_setting.png",
+                                    color: Colors.white,
+                                    width: 24,
+                                    height: 24),
+                                onPressed: () {
+                                  showDialog(
+                                    barrierDismissible: true,
+                                    useRootNavigator: true,
+                                    context: context,
+                                    builder: (context) => const HeroPage(),
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: Screen.displayHeight(context) * 0.5 * 0.7,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.black,
+                                            borderRadius:
+                                                BorderRadius.circular(12)),
+                                        width: 52,
+                                        height: 24,
+                                        child: Center(
+                                            child: Text(
+                                          news.category,
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                      ),
+                                      const SizedBox(width: 11),
+                                      const Text("6 min read 10 mins ago"),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 12),
+                                  Text(
+                                    news.title,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 24),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],

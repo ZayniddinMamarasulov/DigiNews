@@ -5,6 +5,7 @@ import 'package:news_app/screens/dashboard_and_news_detail/notification_page/not
 import 'package:news_app/screens/dashboard_and_news_detail/saved_page/saved_page.dart';
 import 'package:news_app/screens/news_detail/news_detail.dart';
 import 'package:news_app/screens/onboarding/onboarding.dart';
+import 'package:news_app/screens/profile/edit_profile_page.dart';
 import 'package:news_app/screens/profile/view_profile_page.dart';
 import 'package:news_app/screens/register_and_login/auth_page/auth_page.dart';
 import 'package:news_app/screens/register_and_login/forgot_password_page/forgot_password_page.dart';
@@ -13,6 +14,7 @@ import 'package:news_app/screens/register_and_login/otp_authentication/authentic
 import 'package:news_app/screens/register_and_login/password_recovery/email_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/password_recovery/phone_number_pass_recovery.dart';
 import 'package:news_app/screens/register_and_login/signup_page/signup_page.dart';
+import 'package:news_app/screens/settings/setting_page.dart';
 import 'package:news_app/screens/write_news/write_new_articl.dart';
 import 'package:news_app/utils/static_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -30,8 +32,10 @@ abstract class MainNavigationRouteNames {
   static const notification = '/notification';
   static const savedNews = '/saved_news';
   static const profile = '/profile';
+  static const profileEdit = '/profile/edit';
   static const newsDetail = '/news_detail';
   static const writeNews = '/write_news';
+  static const setting = '/setting';
 }
 
 class MainNavigation {
@@ -55,5 +59,7 @@ class MainNavigation {
     MainNavigationRouteNames.writeNews: (context) => const WriteNewsPage(),
     MainNavigationRouteNames.newsDetail: (context) => const NewsDetail(),
     MainNavigationRouteNames.profile: (context) => const ViewProfilePage(),
+    MainNavigationRouteNames.profileEdit: (context) => const EditProfilePage(),
+    MainNavigationRouteNames.setting: (context) => const SettingPage(),
   };
 }

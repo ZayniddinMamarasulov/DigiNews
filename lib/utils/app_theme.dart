@@ -87,6 +87,7 @@ class DigiTheme {
 
   static ThemeData dark() {
     return ThemeData(
+      fontFamily: 'SFPRo',
       brightness: Brightness.dark,
       appBarTheme: AppBarTheme(
         foregroundColor: Colors.white,

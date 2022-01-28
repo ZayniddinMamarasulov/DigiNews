@@ -68,7 +68,7 @@ class _PopularBannerState extends State<PopularBanner> {
                   const SizedBox(width: 8),
                   Text(
                     widget.item.author.name,
-                    style: const TextStyle(color: AppColors.appBlack),
+                    style: const TextStyle(color: AppColors.colorBlack12),
                   ),
                   const SizedBox(width: 4),
                   Text(" • ${widget.item.readTime} min read • "),
@@ -79,7 +79,7 @@ class _PopularBannerState extends State<PopularBanner> {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        onPrimary: AppColors.appBlack,
+                        onPrimary: AppColors.colorBlack12,
                         primary: Colors.grey[400],
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(24.0),

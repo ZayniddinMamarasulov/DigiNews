@@ -26,7 +26,7 @@ class _CustomAdvancedDrawerState extends State<CustomAdvancedDrawer> {
       animateChildDecoration: false,
       animationDuration: const Duration(milliseconds: 300),
       controller: widget.advancedDrawerController,
-      childDecoration: BoxDecoration(borderRadius: BorderRadius.circular(32)),
+      childDecoration: BoxDecoration(borderRadius: BorderRadius.circular(0)),
       child: widget.child,
       drawer: SafeArea(
         child: Container(
@@ -43,7 +43,7 @@ class _CustomAdvancedDrawerState extends State<CustomAdvancedDrawer> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         maxRadius: 36,
                         backgroundColor: Colors.white,
                         backgroundImage:
@@ -94,7 +94,11 @@ class _CustomAdvancedDrawerState extends State<CustomAdvancedDrawer> {
                 ),
                 _buildListTile('membership'.tr(), Icons.credit_card, () {}),
                 _buildListTile('help'.tr(), Icons.help, () {}),
-                _buildListTile('setting'.tr(), Icons.settings, () {}),
+                _buildListTile(
+                    'setting'.tr(),
+                    Icons.settings,
+                    () => Navigator.of(context)
+                        .pushNamed(MainNavigationRouteNames.setting)),
                 _buildListTile('logout'.tr(), Icons.logout, () {}),
                 const Padding(
                   padding: EdgeInsets.only(left: 16, top: 36),

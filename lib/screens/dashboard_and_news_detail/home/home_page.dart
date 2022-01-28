@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         fontWeight: FontWeight.w400,
       ),
       indicatorColor: Colors.white,
-      labelColor: AppColors.appBlack,
+      labelColor: AppColors.colorBlack12,
       unselectedLabelColor: AppColors.unSelectedTabColor,
       tabs: [
         Tab(text: ('popular').tr()),
