@@ -2,9 +2,12 @@ import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/main_navigation.dart';
+import 'package:news_app/models/articls.dart';
 import 'package:news_app/models/news.dart';
 import 'package:news_app/screens/dashboard_and_news_detail/home/components/popular_carousel.dart';
+import 'package:news_app/screens/dashboard_and_news_detail/home/news_item.dart';
 import 'package:news_app/services/PreferenceService.dart';
+import 'package:news_app/services/api_client.dart';
 import 'package:news_app/utils/static_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,6 +26,7 @@ class _PopularPageState extends State<PopularPage> {
   void initState() {
     super.initState();
     preferenceService = PreferenceService();
+    _apiClient.getFromApi('ru');
   }
 
   _saveBookmark(News news) async {
@@ -33,8 +37,12 @@ class _PopularPageState extends State<PopularPage> {
   _updateBookmarks(News news) async {
     bookList.remove(news);
     preferenceService.saveBookmarks(bookList);
-    setState(() {});
+    setState(() {
+      
+    });
   }
+
+  final _apiClient=ApiClient();
 
   @override
   Widget build(BuildContext context) {
@@ -67,111 +75,32 @@ class _PopularPageState extends State<PopularPage> {
             ),
           ),
           const SizedBox(height: 8),
-          ListView.separated(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: StaticData.latestNews.length,
-            itemBuilder: (BuildContext context, int index) {
-              var news = StaticData.latestNews[index];
-              return InkWell(
-                onTap: () {
-                  Navigator.of(context).pushNamed(
-                      MainNavigationRouteNames.newsDetail,
-                      arguments: {'news': news});
-                },
-                child: Container(
-                  height: 96,
-                  margin: const EdgeInsets.symmetric(vertical: 4),
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 96,
-                        width: 84,
-                        margin: const EdgeInsets.only(right: 16.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(news.image),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 240,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              news.category,
-                              style: TextStyle(color: Colors.grey[600]),
-                            ),
-                            Text(
-                              news.title,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                height: 1.3,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      '1 ${'dayAgo'.tr()}  •  ',
-                                      style:
-                                          const TextStyle(color: Colors.grey),
-                                    ),
-                                    Text(
-                                      '${news.readingTime} ${'readTime'.tr()}',
-                                      style:
-                                          const TextStyle(color: Colors.grey),
-                                    ),
-                                  ],
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      news.isSaved = !news.isSaved;
-                                      if (news.isSaved) {
-                                        _saveBookmark(news);
-                                      } else {
-                                        _updateBookmarks(news);
-                                      }
-                                    });
-                                  },
-                                  child: Icon(
-                                    news.isSaved
-                                        ? Icons.bookmark_added_outlined
-                                        : Icons.bookmark_add_outlined,
-                                    color: news.isSaved
-                                        ? Colors.black
-                                        : Colors.grey,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+      Container(
+        margin: const EdgeInsets.only(top: 8.0),
+        child: FutureBuilder(
+          future: _apiClient.getFromApi('ru'),
+          builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(),
               );
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
-                child: Divider(),
-              );
-            },
-          )
+            } else if (snapshot.hasData) {
+              return ListView.builder(
+                  itemCount: snapshot.data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
+                      children: [
+                        NewsItem(article: snapshot.data[index] as Article),
+                        const Divider(thickness: 1.0),
+                      ],
+                    );
+                  });
+            } else {
+              return Container();
+            }
+          },
+        ),
+      ),
         ],
       ),
     );
