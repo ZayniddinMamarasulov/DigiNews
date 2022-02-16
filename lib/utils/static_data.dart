@@ -19,7 +19,7 @@ class StaticData {
         'https://storage.kun.uz/source/8/5X73logbix8KzHlW2yu-16dIDHIRgCGd.jpg',
         Author('kun.uz', 'kun.uz rasm'),
         7),
-  ];
+   ];
 
   static List<News> latestNews = [
     News(
@@ -55,4 +55,6 @@ class StaticData {
       isSaved: false,
     ),
   ];
-}
+
+ }
+
