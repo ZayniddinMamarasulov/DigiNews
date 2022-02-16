@@ -44,7 +44,7 @@ class _PopularPageState extends State<PopularPage> {
             ),
           ),
        FutureBuilder(
-       future: _apiNews.getFromApi('ru'),
+       future: _apiNews.getFromApi('tesla'),
          builder: (BuildContext context , AsyncSnapshot<dynamic> snapshot) {
          if(snapshot.connectionState== ConnectionState.waiting) {
            return const Center(
